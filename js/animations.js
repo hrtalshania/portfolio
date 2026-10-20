@@ -12,11 +12,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // ---- Hero entrance timeline ----
   const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-  tl.from(".hero-title",       { y: 44, opacity: 0, duration: 0.85 })
-    .from(".hero-subtitle",    { y: 26, opacity: 0, duration: 0.6 }, "-=0.55")
+  tl.from(".hero-photo",     { y: 40, scale: 0.92, opacity: 0, duration: 0.9 })
+    .from(".hero-title",     { y: 44, opacity: 0, duration: 0.85 }, "-=0.6")
+    .from(".hero-subtitle",  { y: 26, opacity: 0, duration: 0.6 }, "-=0.55")
     .from(".hero-description", { y: 26, opacity: 0, duration: 0.6 }, "-=0.5")
-    .from(".hero-tagline",     { y: 26, opacity: 0, duration: 0.6 }, "-=0.5")
-    .from(".hero-cta .btn",    { y: 26, opacity: 0, duration: 0.5, stagger: 0.12 }, "-=0.5");
+    .from(".hero-tagline",   { y: 26, opacity: 0, duration: 0.6 }, "-=0.5")
+    .from(".hero-cta .btn",  { y: 26, opacity: 0, duration: 0.5, stagger: 0.12 }, "-=0.5");
 
   // ---- Section headers reveal ----
   gsap.utils.toArray(".section-header").forEach(header => {

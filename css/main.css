@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
   --bg-primary: #0a0a0a;
@@ -251,133 +251,374 @@ p {
 }
 
 /* ============================================================
+   HERO — two-column layout with photo placeholder
+   (overrides the centered single-column defaults in layout.css)
+   ============================================================ */
+.hero-content {
+  max-width: 1080px;
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 56px;
+  align-items: center;
+  text-align: left;
+}
+
+.hero-text { min-width: 0; }
+.hero-text .hero-cta { justify-content: flex-start; }
+
+.hero-photo-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-photo {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.hero-photo::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 26px;
+  padding: 3px;
+  background: linear-gradient(135deg, var(--border-hover), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-photo .photo-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-muted);
+}
+
+.hero-photo .photo-monogram {
+  font-size: 4.5rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, var(--text-secondary), var(--text-muted));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-photo .photo-placeholder small {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .hero-photo-wrap { order: -1; }
+  .hero-photo { width: 200px; height: 200px; border-radius: 20px; }
+  .hero-photo .photo-monogram { font-size: 3.5rem; }
+  .hero-text { text-align: center; }
+  .hero-text .hero-cta { justify-content: center; }
+  .hero-cta { justify-content: center; }
+}
+
+/* ============================================================
+   POLISH — depth & hierarchy for all modes
+   ============================================================ */
+
+/* Navbar: frosted glass pill (nav itself stays `fixed`, from layout.css) */
+
+nav .logo {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.nav-links a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 6px 2px;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--text-primary);
+  transition: width 0.25s ease;
+}
+
+.nav-links a:hover::after { width: 100%; }
+
+.theme-toggle, .accent-toggle { padding: 0; }
+
+.section-title { letter-spacing: -0.03em; }
+
+/* Buttons: more character */
+.btn {
+  padding: 15px 30px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+}
+
+/* Cards: gradient surface + real shadows + hover life */
+.service-card, .project-card, .more-project-card,
+.tech-category, .experience-card, .education-card {
+  background: linear-gradient(160deg, var(--bg-card), var(--bg-secondary));
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover, .project-card:hover, .more-project-card:hover,
+.tech-category:hover, .experience-card:hover, .education-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+}
+
+/* Project cards: index badge + stronger header */
+
+.project-index {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.project-title { font-size: 1.35rem; font-weight: 700; }
+
+.project-section h4 {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 6px 0;
+}
+
+.project-section h4::before {
+  content: "";
+  width: 14px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--text-muted);
+}
+
+.project-section + .project-section {
+  padding-top: 12px;
+  border-top: 1px dashed var(--border);
+}
+
+/* Tech tags: filled chips with lift */
+.tech-tag, .interest-tag {
+  display: inline-block;
+  padding: 5px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  margin: 0 6px 8px 0;
+  transition: var(--transition);
+}
+
+.tech-tag:hover, .interest-tag:hover {
+  transform: translateY(-2px);
+}
+
+/* Service icon container */
+.service-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-bottom: 18px;
+  transition: var(--transition);
+}
+
+.service-icon svg { width: 22px; height: 22px; }
+
+/* ============================================================
    ACCENT MODE — cycles the entire site into vibrant themes
    mono (default B&W) | violet | emerald | amber
    ============================================================ */
 
-.acc-toggle-btn,
 .accent-toggle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   border: 1px solid var(--border);
-  border-radius: 8px;
-  background: transparent;
-  color: var(--text-primary);
-  transition: var(--transition);
+  border-radius: 10px;
+  gap: 3px;
 }
 
-.accent-toggle:hover {
-  border-color: var(--border-hover);
-}
+.accent-toggle svg { width: 17px; height: 17px; }
+
+.accent-dots { display: flex; gap: 3px; align-items: center; }
 
 .accent-dot {
-  width: 9px;
-  height: 9px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
-  background: #a0a0a0;
-  box-shadow: 0 0 6px rgba(255, 255, 255, 0.35);
-  transition: background 0.4s ease, box-shadow 0.4s ease;
+  background: #666;
+  transition: background 0.4s ease, box-shadow 0.4s ease, height 0.3s ease;
 }
 
-/* ---- Palette: Violet Night (dark) ---- */
+/* active (middle) dot slightly taller */
+.accent-dot.is-active {
+  height: 14px;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.45);
+}
+
+/* ---- Palette: Violet Night ---- */
 html[data-accent="violet"] {
-  --bg-primary: #0b0a14;
-  --bg-secondary: #120f1e;
-  --bg-tertiary: #191428;
-  --bg-card: #16122a;
+  --bg-primary: #0b0916;
+  --bg-secondary: #110e20;
+  --bg-tertiary: #181331;
+  --bg-card: #120f24;
   --accent: #a78bfa;
   --accent-2: #f472b6;
-  --accent-soft: rgba(167, 139, 250, 0.12);
+  --accent-soft: rgba(167, 139, 250, 0.13);
+  --accent-glow: rgba(167, 139, 250, 0.35);
   --border: #2b2347;
-  --border-hover: #4a3d6e;
-  --text-secondary: #b0a5cf;
+  --border-hover: #544579;
+  --text-secondary: #b7abd8;
 }
 
 html[data-theme="light"][data-accent="violet"] {
-  --bg-primary: #faf8ff;
-  --bg-secondary: #f2edfe;
-  --bg-tertiary: #eae2fb;
-  --bg-card: #ffffff;
-  --accent: #7c3aed;
+  --bg-primary: #faf9ff;
+  --bg-secondary: #f1ecfd;
+  --bg-tertiary: #e7dff9;
+  --bg-card: #fdfcff;
+  --accent: #6d28d9;
   --accent-2: #db2777;
-  --accent-soft: rgba(124, 58, 237, 0.10);
-  --border: #e7dcfa;
-  --border-hover: #d0bdf5;
-  --text-secondary: #5f5580;
+  --accent-soft: rgba(109, 40, 217, 0.10);
+  --accent-glow: rgba(109, 40, 217, 0.25);
+  --border: #e2d7f7;
+  --border-hover: #c0a8ef;
+  --text-secondary: #574d75;
 }
 
-/* ---- Palette: Emerald Flow (dark) ---- */
+/* ---- Palette: Emerald Flow ---- */
 html[data-accent="emerald"] {
-  --bg-primary: #06120f;
-  --bg-secondary: #0a1a15;
-  --bg-tertiary: #0e241d;
-  --bg-card: #0b1e19;
+  --bg-primary: #051210;
+  --bg-secondary: #081c17;
+  --bg-tertiary: #0c271f;
+  --bg-card: #08201a;
   --accent: #34d399;
   --accent-2: #22d3ee;
-  --accent-soft: rgba(52, 211, 153, 0.12);
-  --border: #17362c;
-  --border-hover: #2a5a49;
-  --text-secondary: #97b8ac;
+  --accent-soft: rgba(52, 211, 153, 0.13);
+  --accent-glow: rgba(52, 211, 153, 0.35);
+  --border: #14332a;
+  --border-hover: #2c6c56;
+  --text-secondary: #8fb5a8;
 }
 
 html[data-theme="light"][data-accent="emerald"] {
-  --bg-primary: #f6fcf9;
-  --bg-secondary: #ecf7f2;
-  --bg-tertiary: #e0f0ea;
-  --bg-card: #ffffff;
-  --accent: #0d9e70;
-  --accent-2: #0891b2;
-  --accent-soft: rgba(13, 158, 112, 0.10);
-  --border: #d8ede4;
-  --border-hover: #b7dccd;
-  --text-secondary: #4d6b60;
+  --bg-primary: #f5fcf9;
+  --bg-secondary: #e9f5f0;
+  --bg-tertiary: #d9eee5;
+  --bg-card: #fcfffd;
+  --accent: #0a8c64;
+  --accent-2: #0e7490;
+  --accent-soft: rgba(10, 140, 100, 0.10);
+  --accent-glow: rgba(10, 140, 100, 0.25);
+  --border: #d2e8de;
+  --border-hover: #a8d2c1;
+  --text-secondary: #435e53;
 }
 
-/* ---- Palette: Amber Heat (dark) ---- */
+/* ---- Palette: Amber Heat ---- */
 html[data-accent="amber"] {
-  --bg-primary: #140e08;
-  --bg-secondary: #1c140c;
-  --bg-tertiary: #241a10;
-  --bg-card: #1c1509;
+  --bg-primary: #120c07;
+  --bg-secondary: #1a1309;
+  --bg-tertiary: #241a0c;
+  --bg-card: #191205;
   --accent: #fbbf24;
   --accent-2: #fb7185;
-  --accent-soft: rgba(251, 191, 36, 0.12);
-  --border: #3a2b16;
-  --border-hover: #5f4a25;
-  --text-secondary: #c4b096;
+  --accent-soft: rgba(251, 191, 36, 0.13);
+  --accent-glow: rgba(251, 191, 36, 0.35);
+  --border: #3d2c12;
+  --border-hover: #6e511f;
+  --text-secondary: #c9b193;
 }
 
 html[data-theme="light"][data-accent="amber"] {
-  --bg-primary: #fdfaf4;
-  --bg-secondary: #faf3e6;
-  --bg-tertiary: #f5ead4;
-  --bg-card: #ffffff;
-  --accent: #d97706;
-  --accent-2: #e11d48;
-  --accent-soft: rgba(217, 119, 6, 0.10);
-  --border: #f0e2c4;
-  --border-hover: #e2cb9a;
-  --text-secondary: #7a6a4d;
+  --bg-primary: #fdf9f2;
+  --bg-secondary: #f9f0de;
+  --bg-tertiary: #f2e6cb;
+  --bg-card: #fffcf7;
+  --accent: #b45309;
+  --accent-2: #be123c;
+  --accent-soft: rgba(180, 83, 9, 0.11);
+  --accent-glow: rgba(180, 83, 9, 0.25);
+  --border: #ecd8b4;
+  --border-hover: #d8b465;
+  --text-secondary: #6b573c;
 }
 
 /* ---- Colorful transformations (any palette except mono) ---- */
 html[data-accent]:not([data-accent="mono"]) body {
   background:
-    radial-gradient(1200px 500px at 85% -10%, var(--accent-soft), transparent 65%),
-    radial-gradient(900px 500px at -10% 110%, var(--accent-soft), transparent 65%),
+    radial-gradient(1100px 480px at 88% -8%, var(--accent-soft), transparent 62%),
+    radial-gradient(800px 460px at -8% 108%, var(--accent-soft), transparent 62%),
     var(--bg-primary);
   background-attachment: fixed;
 }
 
 html[data-accent]:not([data-accent="mono"]) .hero-title {
-  background: linear-gradient(95deg, var(--accent) 10%, var(--accent-2) 90%);
+  background: linear-gradient(95deg, var(--accent) 5%, var(--accent-2) 95%);
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+html[data-accent]:not([data-accent="mono"]) .hero-subtitle {
+  color: var(--accent-2);
 }
 
 html[data-accent]:not([data-accent="mono"]) .hero-tagline {
@@ -386,8 +627,12 @@ html[data-accent]:not([data-accent="mono"]) .hero-tagline {
 
 html[data-accent]:not([data-accent="mono"]) .btn-primary {
   background: linear-gradient(95deg, var(--accent), var(--accent-2));
-  color: #0b0a14;
-  box-shadow: 0 8px 30px var(--accent-soft);
+  color: #0b0916;
+  box-shadow: 0 6px 24px var(--accent-glow);
+}
+
+html[data-accent]:not([data-accent="mono"]) .btn-primary:hover {
+  box-shadow: 0 10px 32px var(--accent-glow);
 }
 
 html[data-accent]:not([data-accent="mono"]) .btn-secondary {
@@ -398,7 +643,7 @@ html[data-accent]:not([data-accent="mono"]) .btn-secondary {
 html[data-accent]:not([data-accent="mono"]) .section-title::after {
   content: "";
   display: block;
-  width: 64px;
+  width: 70px;
   height: 3px;
   margin: 16px auto 0;
   border-radius: 2px;
@@ -412,55 +657,58 @@ html[data-accent]:not([data-accent="mono"]) .interest-tag {
   color: var(--accent);
 }
 
+html[data-accent]:not([data-accent="mono"]) .tech-tag:hover,
+html[data-accent]:not([data-accent="mono"]) .interest-tag:hover {
+  box-shadow: 0 6px 16px var(--accent-glow);
+  border-color: var(--accent);
+}
+
 html[data-accent]:not([data-accent="mono"]) .step-number {
   background: linear-gradient(160deg, var(--accent), var(--accent-2));
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
 html[data-accent]:not([data-accent="mono"]) .service-icon {
   color: var(--accent);
+  border-color: var(--border-hover);
   background: var(--accent-soft);
-  border-radius: 10px;
 }
 
 html[data-accent]:not([data-accent="mono"]) .service-card:hover,
 html[data-accent]:not([data-accent="mono"]) .project-card:hover,
 html[data-accent]:not([data-accent="mono"]) .more-project-card:hover,
-html[data-accent]:not([data-accent="mono"]) .experience-card:hover {
+html[data-accent]:not([data-accent="mono"]) .tech-category:hover,
+html[data-accent]:not([data-accent="mono"]) .experience-card:hover,
+html[data-accent]:not([data-accent="mono"]) .education-card:hover {
   border-color: var(--accent);
-  box-shadow: 0 12px 40px var(--accent-soft);
+  box-shadow: 0 16px 44px var(--accent-glow);
 }
 
-html[data-accent]:not([data-accent="mono"]) .project-card {
-  border-left: 3px solid transparent;
-  border-image: linear-gradient(180deg, var(--accent), var(--accent-2)) 1;
-  border-top-width: 0;
-  border-right-width: 0;
-  border-bottom-width: 0;
+html[data-accent]:not([data-accent="mono"]) .project-section h4::before {
+  background: var(--accent);
+}
+
+html[data-accent]:not([data-accent="mono"]) .project-index {
+  color: var(--accent);
 }
 
 html[data-accent]:not([data-accent="mono"]) .philosophy-quote {
   border-left: 3px solid var(--accent);
   background: var(--accent-soft);
-  padding: 16px 20px;
-  border-radius: 0 10px 10px 0;
+  padding: 18px 24px;
+  border-radius: 0 12px 12px 0;
   color: var(--text-primary);
-}
-
-html[data-accent]:not([data-accent="mono"]) .philosophy-principles li::before {
-  color: var(--accent);
 }
 
 html[data-accent]:not([data-accent="mono"]) .tech-category-title,
 html[data-accent]:not([data-accent="mono"]) .more-project-tech,
-html[data-accent]:not([data-accent="mono"]) .focus-areas h3 {
+html[data-accent]:not([data-accent="mono"]) .experience-period {
   color: var(--accent);
 }
 
 html[data-accent]:not([data-accent="mono"]) .experience-period {
-  color: var(--accent);
   background: var(--accent-soft);
   padding: 4px 12px;
   border-radius: 20px;
@@ -470,11 +718,7 @@ html[data-accent]:not([data-accent="mono"]) .contact-email {
   background: linear-gradient(95deg, var(--accent), var(--accent-2));
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent;
-}
-
-html[data-accent]:not([data-accent="mono"]) .contact-social {
-  border-color: var(--border-hover);
+  -webkit-text-fill-color: transparent;
 }
 
 html[data-accent]:not([data-accent="mono"]) .contact-social:hover {
@@ -490,26 +734,31 @@ html[data-accent]:not([data-accent="mono"]) .nav-links a:hover {
   color: var(--accent);
 }
 
-html[data-accent]:not([data-accent="mono"]) .education-card,
-html[data-accent]:not([data-accent="mono"]) .approach-step {
-  border-color: var(--border-hover);
+html[data-accent]:not([data-accent="mono"]) .nav-links a::after {
+  background: var(--accent);
 }
 
-html[data-accent]:not([data-accent="mono"]) .accent-toggle {
-  border-color: var(--border-hover);
-}
-
-html[data-accent]:not([data-accent="mono"]) .accent-dot {
-  box-shadow: 0 0 10px var(--accent);
-}
-
-/* Nav hover states adapt in color modes too */
-html[data-accent]:not([data-accent="mono"]) .btn-resume {
-  border-color: var(--border-hover);
-  color: var(--text-primary);
-}
-
-html[data-accent]:not([data-accent="mono"]) .btn-resume:hover {
+html[data-accent]:not([data-accent="mono"]) .btn-resume:hover,
+html[data-accent]:not([data-accent="mono"]) .accent-toggle:hover {
   border-color: var(--accent);
-  color: var(--accent);
+}
+
+html[data-accent]:not([data-accent="mono"]) .hero-photo {
+  border-color: var(--border-hover);
+  box-shadow: 0 20px 60px var(--accent-glow);
+}
+
+/* Smooth palette transition when switching (applied briefly via JS) */
+.palette-transitioning,
+.palette-transitioning * {
+  transition: background-color 0.35s ease, border-color 0.35s ease,
+              color 0.35s ease, box-shadow 0.35s ease !important;
+}
+
+/* motion-reduced users: keep it calm */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
 }

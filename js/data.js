@@ -27,6 +27,7 @@ const portfolioData = {
     subtitle: ".NET · ASP.NET Core · Angular · Blazor",
     description: "I build complete systems — APIs, databases, and the UIs that use them. Currently focused on the .NET ecosystem: ASP.NET Core Minimal APIs, Angular frontends, and Blazor for client products.",
     tagline: "Working at Sky9 IT Craft Private Limited, Rajkot",
+    image: "", // TODO: put your photo at assets/profile.jpg and set this to "assets/profile.jpg"
     ctaPrimary: "View Projects",
     ctaSecondary: "Contact Me"
   },

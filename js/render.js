@@ -31,12 +31,15 @@ function renderNavbar() {
   `;
 
   const accentBtnHTML = `
-    <button class="accent-toggle" onclick="toggleAccent()" aria-label="Switch color palette">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
-        <circle cx="12" cy="12" r="10"/><circle cx="8.5" cy="10" r="1.4" fill="currentColor" stroke="none"/>
-        <circle cx="15.5" cy="9" r="1.4" fill="currentColor" stroke="none"/><circle cx="9" cy="15" r="1.4" fill="currentColor" stroke="none"/>
+    <button class="accent-toggle" onclick="toggleAccent()" aria-label="Switch color palette" title="Color mode (click to change)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3l7 5.2v7.6L12 21l-7-5.2V8.2L12 3z"/>
       </svg>
-      <span class="accent-dot"></span>
+      <span class="accent-dots">
+        <span class="accent-dot"></span>
+        <span class="accent-dot is-active"></span>
+        <span class="accent-dot"></span>
+      </span>
     </button>
   `;
 
@@ -68,14 +71,28 @@ function renderNavbar() {
 
 function renderHero() {
   const heroContent = document.querySelector('#hero .hero-content');
+  const photoSrc = portfolioData.hero.image; // TODO: drop your real photo (e.g. assets/profile.jpg) here later
+
+  const photoBlock = photoSrc
+    ? `<div class="hero-photo"><img src="${photoSrc}" alt="Harshit Talshania" /></div>`
+    : `<div class="hero-photo"><div class="photo-placeholder">
+         <span class="photo-monogram">HT</span>
+         <small>Photo coming soon</small>
+       </div></div>`;
+
   heroContent.innerHTML = `
-    <h1 class="hero-title">${portfolioData.hero.title}</h1>
-    <p class="hero-subtitle">${portfolioData.hero.subtitle}</p>
-    <p class="hero-description">${portfolioData.hero.description}</p>
-    <p class="hero-tagline">${portfolioData.hero.tagline}</p>
-    <div class="hero-cta">
-      <a href="#projects" class="btn btn-primary">${portfolioData.hero.ctaPrimary}</a>
-      <a href="#contact" class="btn btn-secondary">${portfolioData.hero.ctaSecondary}</a>
+    <div class="hero-text">
+      <h1 class="hero-title">${portfolioData.hero.title}</h1>
+      <p class="hero-subtitle">${portfolioData.hero.subtitle}</p>
+      <p class="hero-description">${portfolioData.hero.description}</p>
+      <p class="hero-tagline">${portfolioData.hero.tagline}</p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">${portfolioData.hero.ctaPrimary}</a>
+        <a href="#contact" class="btn btn-secondary">${portfolioData.hero.ctaSecondary}</a>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      ${photoBlock}
     </div>
   `;
 }
@@ -141,6 +158,7 @@ function renderProjects() {
   const projects = portfolioData.projects.map(project => `
     <div class="project-card">
       <div class="project-header">
+        <div class="project-index">${String(portfolioData.projects.indexOf(project) + 1).padStart(2, '0')} · Personal build</div>
         <h3 class="project-title">${project.title}</h3>
       </div>
       <div class="project-body">
@@ -200,23 +218,17 @@ function renderMoreProjects() {
 function renderTechnologies() {
   const container = document.getElementById('tech-grid');
   const tech = portfolioData.technologies;
-  
-  const categories = [
-    { name: 'Backend', items: tech.backend },
-    { name: 'Databases', items: tech.databases },
-    { name: 'Frontend', items: tech.frontend },
-    { name: 'Tools & Others', items: tech.tools }
-  ];
-  
-  const grid = categories.map(cat => `
+
+  // Categories come straight from data.js keys (order preserved).
+  const grid = Object.entries(tech).map(([name, items]) => `
     <div class="tech-category">
-      <h3 class="tech-category-title">${cat.name}</h3>
+      <h3 class="tech-category-title">${name}</h3>
       <ul class="tech-list">
-        ${cat.items.map(item => `<li>${item}</li>`).join('')}
+        ${items.map(item => `<li>${item}</li>`).join('')}
       </ul>
     </div>
   `).join('');
-  
+
   container.innerHTML = grid;
 }
 
