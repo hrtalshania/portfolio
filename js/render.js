@@ -38,7 +38,9 @@ function renderNavbar() {
     </button>
   `;
 
-  let navHTML = `<div class="logo">${logo}</div><div><ul class="nav-links">`;
+  const logoHTML = `<a href="#hero" class="logo">${logo}</a>`;
+
+  let navHTML = `<div>${logoHTML}</div><div><ul class="nav-links">`;
   links.forEach(link => {
     navHTML += `<li><a href="${link.href}">${link.label}</a></li>`;
   });
@@ -47,16 +49,20 @@ function renderNavbar() {
   nav.innerHTML = navHTML;
   
   const hamburgerHTML = `
-    <div class="logo">${logo}</div>
-    <div class="hamburger-menu">
-      <div class="hamburger-icon" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <div class="menu-links">
-        ${links.map(link => `<li><a href="${link.href}" onclick="toggleMenu()">${link.label}</a></li>`).join('')}
-        <li><a href="${portfolioData.nav.resume}" target="_blank" rel="noopener">Resume</a></li>
+    ${logoHTML}
+    <div class="hamburger-right">
+      ${accentBtnHTML}
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">${themeIcon}</button>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          ${links.map(link => `<li><a href="${link.href}" onclick="toggleMenu()">${link.label}</a></li>`).join('')}
+          <li class="menu-resume"><a href="${portfolioData.nav.resume}" target="_blank" rel="noopener" onclick="toggleMenu()">📄 Resume</a></li>
+        </div>
       </div>
     </div>
   `;

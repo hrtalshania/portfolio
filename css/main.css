@@ -519,9 +519,11 @@ html[data-theme="light"] #hamburger-nav {
   display: flex;
   align-items: center;
   justify-content: center;
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
 }
 
-.accent-toggle svg { width: 18px; height: 18px; }
+.accent-toggle svg { width: 18px; height: 18px; stroke-width: 2; }
 
 /* CSS-only palette indicator: bar recolors itself from the active palette's
    variables — no JS-painted colors, always renders correctly. */
@@ -624,7 +626,31 @@ html[data-theme="light"][data-accent="amber"] {
   --text-secondary: #6b573c;
 }
 
-/* ---- Colorful transformations (any palette except mono) ---- */
+/* Detail markers: readable on dark, and accent-colored in palette modes */
+.project-section li::before,
+.tech-list li::before,
+.experience-responsibilities li::before,
+.philosophy-principles li::before {
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.education-details,
+.project-section p,
+.more-project-description {
+  color: var(--text-secondary);
+}
+
+html[data-accent]:not([data-accent="mono"]) .project-section li::before,
+html[data-accent]:not([data-accent="mono"]) .tech-list li::before,
+html[data-accent]:not([data-accent="mono"]) .experience-responsibilities li::before,
+html[data-accent]:not([data-accent="mono"]) .philosophy-principles li::before {
+  color: var(--accent);
+}
+
+/* ============================================================
+   COLORFUL TRANSFORMATIONS (any palette except mono)
+   ============================================================ */
 html[data-accent]:not([data-accent="mono"]) body {
   background:
     radial-gradient(1100px 480px at 88% -8%, var(--accent-soft), transparent 62%),
@@ -785,3 +811,71 @@ html[data-accent]:not([data-accent="mono"]) .hero-photo {
     animation-duration: 0.01ms !important;
   }
 }
+/* ============================================================
+   MOBILE — hamburger nav polish
+   ============================================================ */
+@media (max-width: 768px) {
+  #hamburger-nav {
+    padding: 12px 20px;
+    gap: 12px;
+  }
+
+  #hamburger-nav .logo {
+    font-size: 1.25rem;
+    flex: 1;
+  }
+
+  .hamburger-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .hamburger-right .accent-toggle,
+  .hamburger-right .theme-toggle {
+    width: 36px;
+    height: 36px;
+    border-radius: 9px;
+  }
+
+  .hamburger-menu {
+    position: relative;
+  }
+
+  .menu-links {
+    min-width: 230px;
+    padding: 14px;
+    margin-top: 14px;
+  }
+
+  .menu-links li {
+    margin: 0 0 4px 0;
+  }
+
+  .menu-links a {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    padding: 12px 14px;
+    border-radius: 10px;
+    transition: background-color 0.2s ease;
+  }
+
+  .menu-links a:hover {
+    background: var(--bg-tertiary);
+  }
+
+  .menu-links li.menu-resume {
+    margin: 10px 0 0 0;
+    border-top: 1px solid var(--border);
+    padding-top: 10px;
+  }
+}
+
+/* Mono-mode diamond for the accent toggle is text-colored; ensure
+   crisp rendering in all palettes */
+.accent-toggle svg {
+  display: block;
+}
+

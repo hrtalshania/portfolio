@@ -40,8 +40,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // ---- Card grids / lists stagger in ----
-  [
+  // ---- Detail sections: every card animates as IT enters the viewport ----
+  const cardSelectors = [
     "#services-grid .service-card",
     "#projects-grid .project-card",
     "#more-projects-grid .more-project-card",
@@ -49,16 +49,17 @@ document.addEventListener("DOMContentLoaded", function () {
     "#experience-list .experience-card",
     "#education-list .education-card",
     "#approach-content .approach-step"
-  ].forEach(selector => {
-    const items = gsap.utils.toArray(selector);
-    if (!items.length) return;
-    gsap.from(items, {
-      y: 32, opacity: 0, duration: 0.65, stagger: 0.09,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: items[0].parentElement,
-        start: "top 82%"
-      }
+  ];
+
+  let total = 0;
+  cardSelectors.forEach(selector => {
+    gsap.utils.toArray(selector).forEach(card => {
+      gsap.from(card, {
+        y: 34, opacity: 0, duration: 0.65,
+        ease: "power2.out",
+        scrollTrigger: { trigger: card, start: "top 88%", once: true }
+      });
+      total++;
     });
   });
 
@@ -67,10 +68,9 @@ document.addEventListener("DOMContentLoaded", function () {
   if (about) {
     gsap.from(about.children, {
       y: 26, opacity: 0, duration: 0.7, stagger: 0.15,
-      scrollTrigger: { trigger: about, start: "top 82%" }
+      scrollTrigger: { trigger: about, start: "top 85%", once: true }
     });
   }
 
-  const triggers = ScrollTrigger.getAll().length;
-  console.log(`[portfolio] animations active — GSAP ${gsap.version} · ${triggers} scroll triggers · reduced-motion: ${reduceMotion}`);
+  console.log(`[portfolio] animations active — GSAP ${gsap.version} · ${ScrollTrigger.getAll().length} triggers (${total} cards) · reduced-motion: ${reduceMotion}`);
 });
