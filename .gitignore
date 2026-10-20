@@ -1,0 +1,16 @@
+# Archives / drafts
+*.zip
+_drafts/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Env / secrets
+.env
+.env.*
+
+# Editor
+.vscode/
+.idea/
+html-css-js-portfolio-tutorial-2-main/
