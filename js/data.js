@@ -243,11 +243,11 @@ const portfolioData = {
     title: "Get In Touch",
     subtitle: "Have a project or a role where .NET matters? Let's talk.",
     description: "Open to remote jobs, freelance work, and interesting systems problems.",
-    email: "TODO@your.email", // TODO: real email
+    email: "hrtalshania@gmail.com",
     socials: [
       { platform: "GitHub", url: "#", icon: "github" },      // TODO: real URL
       { platform: "LinkedIn", url: "#", icon: "linkedin" },  // TODO: real URL
-      { platform: "Email", url: "mailto:TODO@your.email", icon: "mail" } // TODO: real email
+      { platform: "Email", url: "mailto:hrtalshania@gmail.com", icon: "mail" } // TODO: real email
     ],
     form: {
       enabled: false,

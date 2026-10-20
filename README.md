@@ -16,9 +16,18 @@ css/              main.css (theme/typography), layout.css (grids)
 js/data.js        ALL site content — the file you edit
 js/render.js      renders content into the page
 js/theme-toggle.js / scroll-effects.js
-assets/           images & icons
-resume/           resume PDF (linked from the nav)
+resume/           resume PDF (linked from the nav) + builder/
+docs/CONTEXT.md   decision log & working notes — read this first
+assets/           images & icons (screenshots go here)
 _drafts/          old design drafts, kept out of git
+```
+
+## Resume
+
+The resume is generated: `resume/builder/build.js` reads `resume/builder/data.json` and writes the docx from which the commit-able PDF (`resume/Harshit_Talshania_Resume.pdf`) comes. Edit `data.json`, then run:
+
+```
+cd resume/builder && node build.js
 ```
 
 ## Projects shown

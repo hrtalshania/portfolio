@@ -1,6 +1,11 @@
 # Archives / drafts
 *.zip
 _drafts/
+html-css-js-portfolio-tutorial-2-main/
+
+# Resume build artifacts
+resume/builder/node_modules/
+*.docx
 
 # OS
 Thumbs.db
@@ -13,4 +18,3 @@ Thumbs.db
 # Editor
 .vscode/
 .idea/
-html-css-js-portfolio-tutorial-2-main/

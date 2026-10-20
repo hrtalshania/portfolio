@@ -1,0 +1,116 @@
+{
+  "name": "Harshit Talshania",
+  "contact": {
+    "location": "Rajkot, Gujarat, India",
+    "phone": "+91 9574943968",
+    "email": "hrtalshania@gmail.com",
+    "linkedin": "",
+    "github": "",
+    "portfolio": ""
+  },
+  "objective": "Software developer focused on the .NET ecosystem — ASP.NET Core Minimal APIs, Angular, and Blazor. I build complete systems end to end: relational data models, APIs, and the UIs that use them. Currently applying this on real client products while building my own deployed platforms.",
+  "education": [
+    {
+      "degree": "B.E. Computer Engineering",
+      "institute": "Government Engineering College (GEC), Rajkot",
+      "period": "2022 - 2026",
+      "details": "SPI: 8.09  |  CPI: 7.78  |  CGPA: 8.09"
+    },
+    {
+      "degree": "Diploma in Computer Engineering",
+      "institute": "A.V. Parekh Technical Institute",
+      "period": "2019 - 2022",
+      "details": "SPI: 10.00  |  CPI: 9.18  |  CGPA: 9.00"
+    },
+    {
+      "degree": "Secondary School (Class X), GSEB",
+      "institute": "St. Gargy Sankul, Rajkot",
+      "period": "2018 - 2019",
+      "details": "Percentage: 85%"
+    }
+  ],
+  "skills": [
+    {
+      "category": "Primary Stack (.NET)",
+      "items": ["C#", "ASP.NET Core (Minimal APIs)", "Blazor", "Entity Framework Core", "LINQ", "JWT / Google Auth"]
+    },
+    {
+      "category": "Frontend",
+      "items": ["Angular", "TypeScript", "Blazor", "JavaScript", "HTML5", "CSS3", "Leaflet (maps)"]
+    },
+    {
+      "category": "Databases",
+      "items": ["PostgreSQL", "SQL Server (T-SQL)", "EF Core migrations & query design"]
+    },
+    {
+      "category": "Cloud & Integrations",
+      "items": ["Azure Blob Storage", "Cloudflare R2", "Razorpay Payments", "Netlify / Render deployment", "WebSocket (real-time feeds)"]
+    },
+    {
+      "category": "Earlier Stack",
+      "items": ["Python", "FastAPI", "PHP", "Node.js / Express", "React", "MongoDB", "Capacitor"]
+    },
+    {
+      "category": "Tools",
+      "items": ["Git", "GitHub", "Postman", "Docker", "Visual Studio", "VS Code", "AI coding agents (OpenCode, agent workflows)"]
+    }
+  ],
+  "experience": [
+    {
+      "role": "Software Developer",
+      "company": "Sky9 IT Craft Private Limited, Rajkot",
+      "period": "TODO: join date - Present",
+      "description": "Development on DownWind Aviation, a Blazor-based client product: C#/.NET with domain-driven design, EF Core, SQL Server, Azure Blob Storage, and payment gateway flows. Full-stack contribution across backend services and Blazor UI."
+    },
+    {
+      "role": "Independent Developer",
+      "company": "Personal Products",
+      "period": "TODO: period",
+      "description": "Designed and built ArenaHub solo (sports-booking platform, deployed live) and a real-time trading dashboard (Python + broker WebSocket feeds)."
+    }
+  ],
+  "projects": [
+    {
+      "title": "ArenaHub - Sports Venue Booking Platform",
+      "period": "Personal project",
+      "description": "End-to-end booking platform: map-based venue discovery, Google authentication, Razorpay payments, and file uploads. Deployed with the API on Render and frontend on Netlify.",
+      "tech": ["ASP.NET Core Minimal API", "Angular", "PostgreSQL", "Razorpay", "Cloudflare R2", "Leaflet"],
+      "link": ""
+    },
+    {
+      "title": "Real-Time Trading Dashboard",
+      "period": "Personal project",
+      "description": "Live market-data dashboard consuming broker APIs over WebSocket, with a FastAPI service layer and an Angular UI showing positions, orders, and signal alerts in real time.",
+      "tech": ["Python", "FastAPI", "Angular", "WebSocket", "Broker APIs"],
+      "link": ""
+    },
+    {
+      "title": "BlazingAuth - Complete Auth System",
+      "period": "Personal project",
+      "description": "Authentication/authorization system built from scratch: registration, login, JWT access tokens with refresh-token rotation, and role-based access control.",
+      "tech": ["ASP.NET Core", "JWT", "Blazor", "SQL Server"],
+      "link": ""
+    },
+    {
+      "title": "Messaging Bridge (Slack / Discord / Telegram)",
+      "period": "Experimental",
+      "description": "Cross-platform bridge in Python syncing replies, reactions, threads, documents, and message management across all three platforms.",
+      "tech": ["Python"],
+      "link": ""
+    },
+    {
+      "title": "Ayurvedic E-Commerce Platform (Ayurbeat)",
+      "period": "Final Year Project / Work",
+      "description": "Multi-vendor e-commerce website where customers shop for Ayurvedic products and retailers list and sell their own products.",
+      "tech": ["PHP", "MySQL", "HTML5", "CSS3", "Bootstrap", "JavaScript"],
+      "link": ""
+    }
+  ],
+  "achievements": [
+    "Participated in Internal Hackathon 'Lakshya 1.0' for Smart India Hackathon - 2023",
+    "Ranked 4th in the Indian Society for Technical Education (ISTE) final year project showcase - 2022",
+    "All India Ramanujan Maths Club - 2015"
+  ],
+  "languages": "Gujarati, Hindi, English",
+  "hobbies": []
+}
