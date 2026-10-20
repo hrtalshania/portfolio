@@ -35,11 +35,6 @@ function renderNavbar() {
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
         <path d="M12 3l7 5.2v7.6L12 21l-7-5.2V8.2L12 3z"/>
       </svg>
-      <span class="accent-dots">
-        <span class="accent-dot"></span>
-        <span class="accent-dot is-active"></span>
-        <span class="accent-dot"></span>
-      </span>
     </button>
   `;
 
@@ -76,7 +71,7 @@ function renderHero() {
   const photoBlock = photoSrc
     ? `<div class="hero-photo"><img src="${photoSrc}" alt="Harshit Talshania" /></div>`
     : `<div class="hero-photo"><div class="photo-placeholder">
-         <span class="photo-monogram">HT</span>
+         <span class="photo-monogram">${portfolioData.hero.monogram || "HT"}</span>
          <small>Photo coming soon</small>
        </div></div>`;
 

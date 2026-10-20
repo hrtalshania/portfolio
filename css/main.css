@@ -345,13 +345,36 @@ p {
    POLISH — depth & hierarchy for all modes
    ============================================================ */
 
-/* Navbar: frosted glass pill (nav itself stays `fixed`, from layout.css) */
-
+/* Navbar: frosted glass pill (nav itself stays `fixed`, from layout.css).
+   The background is driven ONLY by CSS variables so it follows every
+   palette + theme switch instantly — no inline-style color hacks. */
 nav .logo {
   font-family: var(--font-mono);
   font-weight: 700;
   letter-spacing: 0.06em;
 }
+
+#desktop-nav, #hamburger-nav,
+html[data-theme="light"] #desktop-nav,
+html[data-theme="light"] #hamburger-nav {
+  background: var(--bg-primary);
+  transition: background-color 0.35s ease, border-color 0.35s ease;
+}
+
+@supports (background: color-mix(in srgb, red 50%, transparent)) {
+  #desktop-nav, #hamburger-nav,
+  html[data-theme="light"] #desktop-nav,
+  html[data-theme="light"] #hamburger-nav {
+    background: color-mix(in srgb, var(--bg-primary) 85%, transparent);
+  }
+}
+
+#desktop-nav.nav-scrolled, #hamburger-nav.nav-scrolled {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+}
+
+/* Nav link colors follow palette */
+#desktop-nav .nav-links a { color: var(--text-secondary); }
 
 .nav-links a {
   font-size: 0.9rem;
@@ -492,26 +515,26 @@ nav .logo {
   height: 40px;
   border: 1px solid var(--border);
   border-radius: 10px;
-  gap: 3px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.accent-toggle svg { width: 17px; height: 17px; }
+.accent-toggle svg { width: 18px; height: 18px; }
 
-.accent-dots { display: flex; gap: 3px; align-items: center; }
-
-.accent-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #666;
-  transition: background 0.4s ease, box-shadow 0.4s ease, height 0.3s ease;
-}
-
-/* active (middle) dot slightly taller */
-.accent-dot.is-active {
-  height: 14px;
-  border-radius: 4px;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.45);
+/* CSS-only palette indicator: bar recolors itself from the active palette's
+   variables — no JS-painted colors, always renders correctly. */
+.accent-toggle::after {
+  content: "";
+  position: absolute;
+  bottom: 6px;
+  left: 12px;
+  right: 12px;
+  height: 3px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  transition: background 0.35s ease;
 }
 
 /* ---- Palette: Violet Night ---- */

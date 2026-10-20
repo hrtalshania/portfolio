@@ -7,10 +7,10 @@
 const ACCENT_ORDER = ["mono", "violet", "emerald", "amber"];
 
 const ACCENT_INFO = {
-  mono:    { dots: ["#4a4a4a", "#a0a0a0", "#4a4a4a"],  label: "Monochrome" },
-  violet:  { dots: ["#a78bfa", "#f472b6", "#6d28d9"],  label: "Violet Night" },
-  emerald: { dots: ["#34d399", "#22d3ee", "#0a8c64"],  label: "Emerald Flow" },
-  amber:   { dots: ["#fbbf24", "#fb7185", "#b45309"],  label: "Amber Heat" }
+  mono:    { label: "Monochrome" },
+  violet:  { label: "Violet Night" },
+  emerald: { label: "Emerald Flow" },
+  amber:   { label: "Amber Heat" }
 };
 
 function getAccent() {
@@ -37,10 +37,7 @@ function applyAccent(accent) {
 function updateAccentIcons(accent) {
   const info = ACCENT_INFO[accent];
   document.querySelectorAll(".accent-toggle").forEach(btn => {
-    const dots = btn.querySelectorAll(".accent-dot");
-    dots.forEach((dot, i) => {
-      if (info.dots[i]) dot.style.background = info.dots[i];
-    });
+    // Color indicator is pure CSS (gradient bar using --accent / --accent-2).
     btn.title = "Color mode: " + info.label + " (click to change)";
   });
 }

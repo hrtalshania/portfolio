@@ -65,3 +65,14 @@
 - Resume link also added to the mobile hamburger menu.
 - **First push:** https://github.com/hrtalshania/portfolio (main branch). Repo is private.
 - Remaining: real links (GitHub/LinkedIn/demo), Sky9 dates, screenshots, decide on opening featured repos.
+
+---
+
+## 2026-10-21 (2) — UI fixes after user review
+
+- **Header stuck bug (real bug):** scroll effects painted navbar background inline Hardcover (only dark/light aware) so it stopped following palette/theme switches. Removed inline style injection; JS toggles `.nav-scrolled` only; background now comes purely from `var(--bg-primary)` + `color-mix` (85% alpha, blur retained), overriding layout.css's light-theme white via matching attribute selectors.
+- Accent button redesigned: JS-painted dot trio removed; CSS-only gradient bar (var(--accent) → var(--accent-2)) under the diamond icon — recolors itself in every palette automatically.
+- Brand updated HT → **HRT** everywhere (nav logo, hero photo placeholder monogram — both from `data.js`).
+- Animation proof: console log on load (`[portfolio] animations active — GSAP … · N scroll triggers · reduced-motion: …`), flag `window.__portfolioAnimationsActive`, `?motion=force` URL override for previewing when OS reduced-motion is on. Most likely cause of "no animations" seen: OS animation-effects off → prefers-reduced-motion.
+- Render order gotcha documented for future agents: `index.html` loads layout.css BEFORE main.css so the main.css polish layer wins ties; hero two-column overrides centered defaults from layout.css.
+- Verified via disposable jsdom smoke test (run locally once; removed from repo): all sections render, GSAP init OK, accent cycle monochrome→violet→emerald works, monogram = HRT.

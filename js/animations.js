@@ -5,9 +5,22 @@
 // ============================================================
 
 document.addEventListener("DOMContentLoaded", function () {
-  if (!window.gsap) return;
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const forceMotion = window.location.search.includes("motion=force");
 
+  if (!window.gsap) {
+    console.log("[portfolio] animations NOT loaded (gsap missing) — check js/vendor/");
+    return;
+  }
+
+  if (reduceMotion && !forceMotion) {
+    window.__portfolioAnimationsActive = false;
+    console.log("[portfolio] animations DISABLED — prefers-reduced-motion is ON in your OS/browser. " +
+                "Open the page with ?motion=force to preview them anyway.");
+    return;
+  }
+
+  window.__portfolioAnimationsActive = true;
   gsap.registerPlugin(ScrollTrigger);
 
   // ---- Hero entrance timeline ----
@@ -57,4 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
       scrollTrigger: { trigger: about, start: "top 82%" }
     });
   }
+
+  const triggers = ScrollTrigger.getAll().length;
+  console.log(`[portfolio] animations active — GSAP ${gsap.version} · ${triggers} scroll triggers · reduced-motion: ${reduceMotion}`);
 });

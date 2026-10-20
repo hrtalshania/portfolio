@@ -10,19 +10,15 @@ function initScrollEffects() {
 
 function handleNavbarScroll() {
   const navbar = document.querySelector('#desktop-nav') || document.querySelector('#hamburger-nav');
-  
+
+  // JS only toggles a class — the color itself comes from CSS variables
+  // (var(--bg-primary)), so the navbar follows palette + theme switches instantly.
   if (navbar) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        navbar.style.background = document.documentElement.getAttribute('data-theme') === 'light' 
-          ? 'rgba(255, 255, 255, 0.95)' 
-          : 'rgba(10, 10, 10, 0.95)';
-      } else {
-        navbar.style.background = document.documentElement.getAttribute('data-theme') === 'light' 
-          ? 'rgba(255, 255, 255, 0.85)' 
-          : 'rgba(10, 10, 10, 0.85)';
-      }
-    });
+    const onScroll = () => {
+      navbar.classList.toggle('nav-scrolled', window.scrollY > 50);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
   }
 }
 
