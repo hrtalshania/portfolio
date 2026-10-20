@@ -51,4 +51,17 @@
 - [ ] Decide: make ArenaHub / Trading Dashboard / BlazingAuth public (after secret scrub)
 - [ ] Push to GitHub (private), rename remote repo sensibly (e.g. `harshit-portfolio`)
 - [ ] Enable GitHub Pages only if the repo later becomes public
-- [ ] Review generated resume PDF next to the site for consistency
+- [x] Review generated resume PDF next to the site for consistency
+
+---
+
+## 2026-10-21 — Vibrant UI + first push
+
+- Commit history rewritten with the correct GitHub identity (`Harshit Talshania <hrtalshania@gmail.com>`) so commits link to the GitHub profile.
+- **Accent system added** (`js/accent.js` + palette CSS in `main.css`): the palette button (beside the theme toggle in the nav) cycles the whole site between 4 modes —
+  **Mono** (default black & white) → **Violet Night** → **Emerald Flow** → **Amber Heat**.
+  In a color mode: gradient hero text, gradient primary buttons, colored tech/interest tags, step numbers, section-title accent bar, glowing card hovers, colored resume-period badges and contact email. Palettes also have light-theme variants. Choice persists in localStorage and is applied before first paint (no flash).
+- **GSAP animations** added (CDN, `js/animations.js`): hero entrance timeline, section-header and card-grid reveals via ScrollTrigger. `prefers-reduced-motion` respected; if GSAP fails to load, the site falls back to the old IntersectionObserver fades (`scroll-effects.js` now skips when GSAP is present).
+- Resume link also added to the mobile hamburger menu.
+- **First push:** https://github.com/hrtalshania/portfolio (main branch). Repo is private.
+- Remaining: real links (GitHub/LinkedIn/demo), Sky9 dates, screenshots, decide on opening featured repos.
