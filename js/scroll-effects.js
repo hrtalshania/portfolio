@@ -42,6 +42,9 @@ function initSmoothScroll() {
 }
 
 function initRevealAnimations() {
+  // Let GSAP (animations.js) take over when available.
+  if (window.gsap) return;
+
   const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'

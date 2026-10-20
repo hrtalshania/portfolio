@@ -249,3 +249,267 @@ p {
   border-color: var(--text-primary);
   transform: translateY(-1px);
 }
+
+/* ============================================================
+   ACCENT MODE — cycles the entire site into vibrant themes
+   mono (default B&W) | violet | emerald | amber
+   ============================================================ */
+
+.acc-toggle-btn,
+.accent-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-primary);
+  transition: var(--transition);
+}
+
+.accent-toggle:hover {
+  border-color: var(--border-hover);
+}
+
+.accent-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #a0a0a0;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.35);
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* ---- Palette: Violet Night (dark) ---- */
+html[data-accent="violet"] {
+  --bg-primary: #0b0a14;
+  --bg-secondary: #120f1e;
+  --bg-tertiary: #191428;
+  --bg-card: #16122a;
+  --accent: #a78bfa;
+  --accent-2: #f472b6;
+  --accent-soft: rgba(167, 139, 250, 0.12);
+  --border: #2b2347;
+  --border-hover: #4a3d6e;
+  --text-secondary: #b0a5cf;
+}
+
+html[data-theme="light"][data-accent="violet"] {
+  --bg-primary: #faf8ff;
+  --bg-secondary: #f2edfe;
+  --bg-tertiary: #eae2fb;
+  --bg-card: #ffffff;
+  --accent: #7c3aed;
+  --accent-2: #db2777;
+  --accent-soft: rgba(124, 58, 237, 0.10);
+  --border: #e7dcfa;
+  --border-hover: #d0bdf5;
+  --text-secondary: #5f5580;
+}
+
+/* ---- Palette: Emerald Flow (dark) ---- */
+html[data-accent="emerald"] {
+  --bg-primary: #06120f;
+  --bg-secondary: #0a1a15;
+  --bg-tertiary: #0e241d;
+  --bg-card: #0b1e19;
+  --accent: #34d399;
+  --accent-2: #22d3ee;
+  --accent-soft: rgba(52, 211, 153, 0.12);
+  --border: #17362c;
+  --border-hover: #2a5a49;
+  --text-secondary: #97b8ac;
+}
+
+html[data-theme="light"][data-accent="emerald"] {
+  --bg-primary: #f6fcf9;
+  --bg-secondary: #ecf7f2;
+  --bg-tertiary: #e0f0ea;
+  --bg-card: #ffffff;
+  --accent: #0d9e70;
+  --accent-2: #0891b2;
+  --accent-soft: rgba(13, 158, 112, 0.10);
+  --border: #d8ede4;
+  --border-hover: #b7dccd;
+  --text-secondary: #4d6b60;
+}
+
+/* ---- Palette: Amber Heat (dark) ---- */
+html[data-accent="amber"] {
+  --bg-primary: #140e08;
+  --bg-secondary: #1c140c;
+  --bg-tertiary: #241a10;
+  --bg-card: #1c1509;
+  --accent: #fbbf24;
+  --accent-2: #fb7185;
+  --accent-soft: rgba(251, 191, 36, 0.12);
+  --border: #3a2b16;
+  --border-hover: #5f4a25;
+  --text-secondary: #c4b096;
+}
+
+html[data-theme="light"][data-accent="amber"] {
+  --bg-primary: #fdfaf4;
+  --bg-secondary: #faf3e6;
+  --bg-tertiary: #f5ead4;
+  --bg-card: #ffffff;
+  --accent: #d97706;
+  --accent-2: #e11d48;
+  --accent-soft: rgba(217, 119, 6, 0.10);
+  --border: #f0e2c4;
+  --border-hover: #e2cb9a;
+  --text-secondary: #7a6a4d;
+}
+
+/* ---- Colorful transformations (any palette except mono) ---- */
+html[data-accent]:not([data-accent="mono"]) body {
+  background:
+    radial-gradient(1200px 500px at 85% -10%, var(--accent-soft), transparent 65%),
+    radial-gradient(900px 500px at -10% 110%, var(--accent-soft), transparent 65%),
+    var(--bg-primary);
+  background-attachment: fixed;
+}
+
+html[data-accent]:not([data-accent="mono"]) .hero-title {
+  background: linear-gradient(95deg, var(--accent) 10%, var(--accent-2) 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+html[data-accent]:not([data-accent="mono"]) .hero-tagline {
+  color: var(--accent);
+}
+
+html[data-accent]:not([data-accent="mono"]) .btn-primary {
+  background: linear-gradient(95deg, var(--accent), var(--accent-2));
+  color: #0b0a14;
+  box-shadow: 0 8px 30px var(--accent-soft);
+}
+
+html[data-accent]:not([data-accent="mono"]) .btn-secondary {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+html[data-accent]:not([data-accent="mono"]) .section-title::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 3px;
+  margin: 16px auto 0;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+}
+
+html[data-accent]:not([data-accent="mono"]) .tech-tag,
+html[data-accent]:not([data-accent="mono"]) .interest-tag {
+  background: var(--accent-soft);
+  border-color: var(--border-hover);
+  color: var(--accent);
+}
+
+html[data-accent]:not([data-accent="mono"]) .step-number {
+  background: linear-gradient(160deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+html[data-accent]:not([data-accent="mono"]) .service-icon {
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: 10px;
+}
+
+html[data-accent]:not([data-accent="mono"]) .service-card:hover,
+html[data-accent]:not([data-accent="mono"]) .project-card:hover,
+html[data-accent]:not([data-accent="mono"]) .more-project-card:hover,
+html[data-accent]:not([data-accent="mono"]) .experience-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 12px 40px var(--accent-soft);
+}
+
+html[data-accent]:not([data-accent="mono"]) .project-card {
+  border-left: 3px solid transparent;
+  border-image: linear-gradient(180deg, var(--accent), var(--accent-2)) 1;
+  border-top-width: 0;
+  border-right-width: 0;
+  border-bottom-width: 0;
+}
+
+html[data-accent]:not([data-accent="mono"]) .philosophy-quote {
+  border-left: 3px solid var(--accent);
+  background: var(--accent-soft);
+  padding: 16px 20px;
+  border-radius: 0 10px 10px 0;
+  color: var(--text-primary);
+}
+
+html[data-accent]:not([data-accent="mono"]) .philosophy-principles li::before {
+  color: var(--accent);
+}
+
+html[data-accent]:not([data-accent="mono"]) .tech-category-title,
+html[data-accent]:not([data-accent="mono"]) .more-project-tech,
+html[data-accent]:not([data-accent="mono"]) .focus-areas h3 {
+  color: var(--accent);
+}
+
+html[data-accent]:not([data-accent="mono"]) .experience-period {
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+html[data-accent]:not([data-accent="mono"]) .contact-email {
+  background: linear-gradient(95deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+html[data-accent]:not([data-accent="mono"]) .contact-social {
+  border-color: var(--border-hover);
+}
+
+html[data-accent]:not([data-accent="mono"]) .contact-social:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+html[data-accent]:not([data-accent="mono"]) .footer-tagline {
+  color: var(--accent);
+}
+
+html[data-accent]:not([data-accent="mono"]) .nav-links a:hover {
+  color: var(--accent);
+}
+
+html[data-accent]:not([data-accent="mono"]) .education-card,
+html[data-accent]:not([data-accent="mono"]) .approach-step {
+  border-color: var(--border-hover);
+}
+
+html[data-accent]:not([data-accent="mono"]) .accent-toggle {
+  border-color: var(--border-hover);
+}
+
+html[data-accent]:not([data-accent="mono"]) .accent-dot {
+  box-shadow: 0 0 10px var(--accent);
+}
+
+/* Nav hover states adapt in color modes too */
+html[data-accent]:not([data-accent="mono"]) .btn-resume {
+  border-color: var(--border-hover);
+  color: var(--text-primary);
+}
+
+html[data-accent]:not([data-accent="mono"]) .btn-resume:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}

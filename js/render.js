@@ -30,11 +30,21 @@ function renderNavbar() {
     <a href="${portfolioData.nav.resume}" class="btn btn-resume" target="_blank" rel="noopener">Resume</a>
   `;
 
+  const accentBtnHTML = `
+    <button class="accent-toggle" onclick="toggleAccent()" aria-label="Switch color palette">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+        <circle cx="12" cy="12" r="10"/><circle cx="8.5" cy="10" r="1.4" fill="currentColor" stroke="none"/>
+        <circle cx="15.5" cy="9" r="1.4" fill="currentColor" stroke="none"/><circle cx="9" cy="15" r="1.4" fill="currentColor" stroke="none"/>
+      </svg>
+      <span class="accent-dot"></span>
+    </button>
+  `;
+
   let navHTML = `<div class="logo">${logo}</div><div><ul class="nav-links">`;
   links.forEach(link => {
     navHTML += `<li><a href="${link.href}">${link.label}</a></li>`;
   });
-  navHTML += `</ul></div><div class="nav-right">${resumeLink}<button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">${themeIcon}</button></div>`;
+  navHTML += `</ul></div><div class="nav-right">${resumeLink}${accentBtnHTML}<button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">${themeIcon}</button></div>`;
   
   nav.innerHTML = navHTML;
   
@@ -48,6 +58,7 @@ function renderNavbar() {
       </div>
       <div class="menu-links">
         ${links.map(link => `<li><a href="${link.href}" onclick="toggleMenu()">${link.label}</a></li>`).join('')}
+        <li><a href="${portfolioData.nav.resume}" target="_blank" rel="noopener">Resume</a></li>
       </div>
     </div>
   `;

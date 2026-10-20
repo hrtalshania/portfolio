@@ -7,6 +7,13 @@
     <title>Portfolio</title>
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/layout.css" />
+    <script>
+      // Apply the saved accent palette before first paint (no flash).
+      try {
+        var savedAccent = localStorage.getItem("accent");
+        if (savedAccent) document.documentElement.setAttribute("data-accent", savedAccent);
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <nav id="desktop-nav">
@@ -129,6 +136,10 @@
     <script src="js/data.js"></script>
     <script src="js/render.js"></script>
     <script src="js/theme-toggle.js"></script>
+    <script src="js/accent.js"></script>
     <script src="js/scroll-effects.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="js/animations.js"></script>
   </body>
 </html>
