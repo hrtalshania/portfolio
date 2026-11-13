@@ -27,7 +27,7 @@ const portfolioData = {
   hero: {
     title: "Software Engineer",
     name: "Harshit Talshania",
-    subtitle: "Backend Systems · APIs · Databases · Real-Time Apps",
+    subtitle: "Clean UI · Backend Systems · APIs · Databases · Real-Time Apps",
     description:
       "I build complete systems, from the database schema up to the screen. I like knowing how each piece works under the hood, and I hold myself to one rule: it is not done until it runs and I have seen it work. I also enjoy the UI side: building clean, responsive interfaces in Angular and Blazor that people actually like using.",
     tagline: "Working at Sky9 IT Craft Private Limited, Rajkot",
@@ -146,7 +146,7 @@ const portfolioData = {
       ],
       gallery: [],
       links: {
-        live: "https://staging-arenahub.netlify.app/profile",
+        live: "https://staging-arenahub.netlify.app/",
         liveNote:
           "Hosted on free plans, so the backend sleeps when idle. If it does not respond right away, give it 5 to 10 minutes to boot and try again.",
         hosting: [

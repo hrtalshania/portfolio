@@ -85,7 +85,7 @@
       "period": "Personal project",
       "description": "Designed and built end to end: map-based venue discovery, Google authentication, slot booking, Razorpay payment integration, and file uploads to Cloudflare R2. Deployed frontend on Netlify, API on Render (free tier).",
       "tech": ["ASP.NET Core Minimal API", "Angular", "PostgreSQL", "Razorpay", "Cloudflare R2", "Leaflet"],
-      "link": "https://staging-arenahub.netlify.app/profile"
+      "link": "https://staging-arenahub.netlify.app/"
     },
     {
       "title": "Algo Trade - Real-Time Trading Dashboard",

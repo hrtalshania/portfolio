@@ -39,7 +39,7 @@
 /* Narrow the container so the article fills the page without huge
    empty side margins (matches the home page's readable width). */
 .detail-page .container {
-  max-width: 960px;
+  max-width: 1260px;
 }
 
 .detail-back {

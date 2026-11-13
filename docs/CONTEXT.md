@@ -108,6 +108,18 @@
 
 ---
 
+## 2026-11-13 (6) — ArenaHub link change + hero 4:5 frame + resume advice decisions
+
+- **ArenaHub live link changed** to `https://staging-arenahub.netlify.app/` (was `/profile`) in BOTH `js/data.js` and `resume/builder/data.json`; both resume artifacts rebuilt so the hyperlinked title carries the new URL.
+- **Hero photo frame widened from square to 4:5** (280×350 desktop, 200×250 mobile): the tall portrait was over-cropped in the square frame, hiding most of the torso. `object-position: center 22%` retained. Verified via headless screenshot.
+- **Advice decisions (no changes needed, recorded so they don't get re-litigated):**
+  - Resume links: compact display text + real hyperlinks, **no icons** (ATS extracts text; icon glyphs corrupt parsing).
+  - Phone: stays on the resume, stays OFF the site (spam/scraping risk on public pages; serious recruiters get it from the resume download).
+  - Resume photo: **no photo, ever** — ATS/bias risk; the portfolio hero photo covers the face-to-name job.
+  - Kurta hero photo: kept. Technically good (lighting, focus, eye contact); authentic rather than corporate-formal. Do NOT AI-swap the outfit (looks fake). If the user wants formal later: real photo in a solid shirt, plain wall, daylight, then one-line swap in `data.js`.
+
+---
+
 ## TODO checklist (updated 2026-11-13)
 
 
