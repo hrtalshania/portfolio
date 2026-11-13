@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project | Harshit Talshania</title>
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/project.css" />
+    <script>
+      // Apply the saved theme + accent before first paint (no flash).
+      try {
+        var savedTheme = localStorage.getItem("theme");
+        if (savedTheme) document.documentElement.setAttribute("data-theme", savedTheme);
+        var savedAccent = localStorage.getItem("accent");
+        if (savedAccent) document.documentElement.setAttribute("data-accent", savedAccent);
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <nav id="desktop-nav" class="detail-nav">
+      <div><a href="../index.html" class="logo">HRT</a></div>
+      <div class="nav-right">
+        <a href="../index.html#projects" class="btn-resume">All projects</a>
+        <a href="../resume/Harshit_Talshania_Resume.pdf" class="btn-resume" target="_blank" rel="noopener">Resume</a>
+        <button class="accent-toggle" onclick="toggleAccent()" aria-label="Switch color palette" title="Color mode (click to change)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3l7 5.2v7.6L12 21l-7-5.2V8.2L12 3z"/>
+          </svg>
+        </button>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+      </div>
+    </nav>
+
+    <main class="detail-page">
+      <div class="container">
+        <a href="../index.html#projects" class="detail-back">← Back to all projects</a>
+        <article id="project-detail" class="project-detail"></article>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <p class="footer-copyright">© 2026 Harshit Talshania</p>
+          <p class="footer-tagline">Software Engineer · Rajkot, India</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../js/data.js"></script>
+    <script src="../js/theme-toggle.js"></script>
+    <script src="../js/accent.js"></script>
+    <script src="../js/project-detail.js"></script>
+  </body>
+</html>

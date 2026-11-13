@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
   renderHero();
   renderServices();
   renderApproach();
-  renderPhilosophy();
   renderProjects();
   renderMoreProjects();
   renderTechnologies();
@@ -83,10 +82,13 @@ function renderHero() {
 
   heroContent.innerHTML = `
     <div class="hero-text">
+      <p class="hero-greeting">Hi, I'm ${portfolioData.hero.name || "Harshit Talshania"}</p>
       <h1 class="hero-title">${portfolioData.hero.title}</h1>
       <p class="hero-subtitle">${portfolioData.hero.subtitle}</p>
       <p class="hero-description">${portfolioData.hero.description}</p>
-      <p class="hero-tagline">${portfolioData.hero.tagline}</p>
+      <p class="hero-tagline">${portfolioData.hero.taglineUrl
+        ? `<a href="${portfolioData.hero.taglineUrl}" target="_blank" rel="noopener" class="hero-tagline-link">${portfolioData.hero.tagline}</a>`
+        : portfolioData.hero.tagline}</p>
       <div class="hero-cta">
         <a href="#projects" class="btn btn-primary">${portfolioData.hero.ctaPrimary}</a>
         <a href="#contact" class="btn btn-secondary">${portfolioData.hero.ctaSecondary}</a>
@@ -120,7 +122,11 @@ function getIcon(type) {
     code: '<path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/>',
     database: '<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>',
     api: '<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/>',
-    architecture: '<path d="M2 20h20"/><path d="M5 20V10l7-7 7 7v10"/><path d="M9 20v-6h6v6"/>'
+    architecture: '<path d="M2 20h20"/><path d="M5 20V10l7-7 7 7v10"/><path d="M9 20v-6h6v6"/>',
+    cloud: '<path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/>',
+    robot: '<rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/>',
+    test: '<polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>',
+    compass: '<circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>'
   };
   return icons[type] || icons.code;
 }
@@ -140,56 +146,29 @@ function renderApproach() {
   container.innerHTML = steps;
 }
 
-function renderPhilosophy() {
-  const container = document.getElementById('philosophy-content');
-  const principles = portfolioData.philosophy.principles.map(p => `
-    <li>${p}</li>
-  `).join('');
-  
-  container.innerHTML = `
-    <blockquote class="philosophy-quote">"${portfolioData.philosophy.content}"</blockquote>
-    <ul class="philosophy-principles">
-      ${principles}
-    </ul>
-  `;
-}
-
 function renderProjects() {
   const container = document.getElementById('projects-grid');
-  const projects = portfolioData.projects.map(project => `
+  const projects = portfolioData.projects.map((project, index) => `
     <div class="project-card">
       <div class="project-header">
-        <div class="project-index">${String(portfolioData.projects.indexOf(project) + 1).padStart(2, '0')} · Personal build</div>
+        <div class="project-index">${String(index + 1).padStart(2, '0')} · Case study</div>
         <h3 class="project-title">${project.title}</h3>
       </div>
       <div class="project-body">
-        <div class="project-section">
-          <h4>Problem</h4>
-          <p>${project.problem}</p>
-        </div>
-        <div class="project-section">
-          <h4>Solution</h4>
-          <p>${project.solution}</p>
-        </div>
-        <div class="project-section">
-          <h4>Key Features</h4>
-          <ul>
-            ${project.features.map(f => `<li>${f}</li>`).join('')}
-          </ul>
-        </div>
+        <p class="project-summary">${project.summary}</p>
         <div class="project-tech">
           ${project.tech.map(t => `<span class="tech-tag">${t}</span>`).join('')}
         </div>
       </div>
       <div class="project-links">
-        <a href="${project.links.github}" class="project-link" target="_blank">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          ${project.links.githubLabel || 'Code'}
+        <a href="projects/index.html?id=${project.slug}" class="project-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          Read case study
         </a>
-        ${project.links.demo !== '#' ? `
-        <a href="${project.links.demo}" class="project-link" target="_blank">
+        ${project.links.live ? `
+        <a href="${project.links.live}" class="project-link" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
-          Demo
+          Live site
         </a>
         ` : ''}
       </div>
@@ -208,8 +187,8 @@ function renderMoreProjects() {
         <h3 class="more-project-title">${p.title}</h3>
         <span class="more-project-tech">${p.tech}</span>
       </div>
-      <p class="more-project-description">${p.description}</p>
-      ${p.github !== '#' ? `<a href="${p.github}" class="more-project-link" target="_blank">View on GitHub →</a>` : ''}
+      <p class="more-project-description">${p.summary}</p>
+      <a href="projects/index.html?id=${p.slug}" class="more-project-link">Read more →</a>
     </div>
   `).join('');
 
@@ -218,6 +197,10 @@ function renderMoreProjects() {
 
 function renderTechnologies() {
   const container = document.getElementById('tech-grid');
+  const note = document.getElementById('tech-note');
+  if (note && portfolioData.technologiesNote) {
+    note.textContent = portfolioData.technologiesNote;
+  }
   const tech = portfolioData.technologies;
 
   // Categories come straight from data.js keys (order preserved).
@@ -242,9 +225,25 @@ function renderExperience() {
         <span class="experience-period">${job.period}</span>
       </div>
       <p class="experience-company">${job.company}</p>
+      ${job.location ? `<p class="experience-location">${job.location}</p>` : ''}
+      ${job.responsibilities && job.responsibilities.length ? `
       <ul class="experience-responsibilities">
         ${job.responsibilities.map(r => `<li>${r}</li>`).join('')}
       </ul>
+      ` : ''}
+      ${job.clientProjects && job.clientProjects.length ? `
+      <div class="experience-clients">
+        <h4>Client work</h4>
+        ${job.clientProjects.map(p => `
+          <div class="experience-client">
+            <h5>${p.name}</h5>
+            <p>${p.description}</p>
+            <span class="experience-client-tech">${p.tech}</span>
+          </div>
+        `).join('')}
+      </div>
+      ` : ''}
+      ${job.note ? `<p class="experience-note">${job.note}</p>` : ''}
     </div>
   `).join('');
   
@@ -263,6 +262,7 @@ function renderEducation() {
     </div>
     <div class="education-card">
       <h3 class="education-title">${edu.diploma.title}</h3>
+      <p class="education-field">${edu.diploma.field}</p>
       <p class="education-details">${edu.diploma.details}</p>
     </div>
   `;
@@ -271,10 +271,19 @@ function renderEducation() {
 function renderAbout() {
   const container = document.getElementById('about-content');
   const about = portfolioData.about;
+  const principles = (about.principles || []).map(p => `<li>${p}</li>`).join('');
   
   container.innerHTML = `
     <div class="about-text">
       ${about.content.split('\n\n').map(p => `<p>${p}</p>`).join('')}
+      ${principles ? `
+      <div class="about-principles">
+        <h3>How I think</h3>
+        <ul>
+          ${principles}
+        </ul>
+      </div>
+      ` : ''}
     </div>
     <div class="about-interests">
       <h3>Focus Areas</h3>

@@ -1,6 +1,6 @@
 # Harshit Talshania — Portfolio
 
-Personal portfolio of **Harshit Talshania** — Software Developer focused on the .NET ecosystem (ASP.NET Core Minimal APIs, Angular, Blazor), with real-time systems, database design, and AI-assisted development experience.
+Personal portfolio of **Harshit Talshania** — Software Engineer building complete systems (APIs, databases, real-time apps, and the UIs that use them), with .NET, Angular, and Blazor among the tools used daily. Includes self-hosting (Oracle VM), test automation (Playwright), and AI-assisted development experience.
 
 **Live site (GitHub Pages):** TODO — open Pages after making the repo public.
 
@@ -15,15 +15,17 @@ Each field has a `// TODO:` comment where something is still a placeholder. Sear
 |---|---|
 | Nav logo (HRT) & links | `nav.logo`, `nav.links[]` |
 | Resume PDF link | `nav.resume` (put the PDF in `resume/` first) |
-| Headline, subtitle, description, tagline, CTAs | `hero.*` |
+| Headline, subtitle, description, tagline, CTAs | `hero.*` (add `name` for the "Hi, I'm ..." line) |
 | **Your profile photo** | copy your file to `assets/profile.jpg`, then set `hero.image: "assets/profile.jpg"` (until then the HRT monogram card shows) |
-| "What I Do" cards | `services[]` (title, description, icon: `code` / `api` / `database` / `architecture`) |
+| "What I Do" cards | `services[]` (title, description, icon: `code` / `api` / `database` / `architecture` / `cloud` / `robot` / `test` / `compass`) |
 | "How I Work" steps | `approach.steps[]` |
-| Philosophy quote & principles | `philosophy.content`, `philosophy.principles[]` |
-| **Featured projects** (big cards) | `projects[]` — title, problem, solution, features, tech, links, `githubLabel` |
-| **More Projects row** (compact cards) | `moreProjects[]` — title, description, tech, github |
-| Tech experience columns | `technologies` — each key becomes a column heading, each value a list. Add/rename keys freely |
-| Work experience | `experience[]` |
+| About principles ("How I think" list) | `about.principles[]` |
+| **Featured projects** (summary cards) | `projects[]` — `slug` (used in the case-study URL), `summary` (card text), plus the full case study: problem, solution, features, tech, `links` (live URL, `liveNote`, `hosting[]`, `githubLabel`), `learnings` |
+| **More Projects row** (compact cards) | `moreProjects[]` — same shape; `tech` is the one-liner label, `techList` the tag list on the detail page |
+| **Case-study pages** | `projects/index.html?id=<slug>` — one template reads every project from `data.js`; nothing to edit per project |
+| **Screenshots gallery** | drop images into `assets/projects/<slug>/`, then list filenames in that project's `gallery: []` (see `assets/projects/README.md`). Layout: 2 large + 3 small tiles, rest behind a "+N more" tile |
+| Tech experience columns | `technologies` — each key becomes a column heading, each value a list. Add/rename keys freely. `technologiesNote` is the line above the grid |
+| Work experience | `experience[]` (optional `location` and `note` per entry) |
 | Education | `education.degree` / `education.diploma` |
 | About me text & focus tags | `about.content` (two paragraphs separated by `\n\n`), `about.interests[]` |
 | Email & social links | `contact.email`, `contact.socials[]` |
@@ -57,14 +59,15 @@ GSAP entrance/scroll animations come from `js/animations.js` (bundled at `js/ven
 
 The PDF linked in the nav is `resume/Harshit_Talshania_Resume.pdf`.
 
-It is *generated*: edit **`resume/builder/data.json`**, then run:
+Both artifacts are *generated* from `resume/builder/data.json`:
 
 ```bash
 cd resume/builder
-node build.js
+node build.js       # -> resume/Harshit_Talshania_Resume.docx (Word format)
+node build-pdf.js   # -> resume/Harshit_Talshania_Resume.pdf (prints the HTML resume via headless Edge/Chrome)
 ```
 
-This rewrites `resume/Harshit_Talshania_Resume.docx` — convert/export to PDF and replace the PDF in `resume/` to update the site's download link.
+The docx is the editable Word version; the PDF is the site's download link. Edit `data.json`, run both, done. (If you prefer Word's own PDF export, open the docx and save as PDF instead — content is identical.)
 
 ---
 
@@ -72,9 +75,11 @@ This rewrites `resume/Harshit_Talshania_Resume.docx` — convert/export to PDF a
 
 ```
 index.html          page skeleton (sections) — rarely needs edits
-css/                layout.css (component layout) + main.css (theme/polish/palettes)
+projects/index.html case-study template (reads ?id=<slug> from js/data.js)
+css/                layout.css (component layout) + main.css (theme/polish/palettes) + project.css (case-study page)
 js/data.js          ← ALL site content (edit this)
-js/render.js        draws data.js into the page
+js/render.js        draws data.js into the home page
+js/project-detail.js draws one project's case study into projects/index.html
 js/animations.js    GSAP timelines & scroll triggers
 js/accent.js        palette cycler; js/theme-toggle.js dark/light; js/scroll-effects.js
 js/vendor/          gsap + ScrollTrigger (bundled, offline-safe)
@@ -99,8 +104,10 @@ The remote is `https://github.com/hrtalshania/portfolio.git` (branch `main`).
 | Project | What it is | Stack |
 |---|---|---|
 | ArenaHub | Sports turf booking platform | ASP.NET Core Minimal API · Angular · PostgreSQL · Razorpay · Cloudflare R2 |
-| Trading Dashboard | Real-time market data dashboard | Python/FastAPI · Angular · WebSocket · Broker APIs |
+| Algo Trade Dashboard | Real-time market data dashboard | Python/FastAPI · Angular · WebSocket · Broker APIs |
 | BlazingAuth | Complete auth system from scratch | ASP.NET Core · JWT · Blazor · SQL Server |
-| Bridge Messaging | Slack ↔ Discord ↔ Telegram bridge | Python |
+| Cab Booking Platform | Self-hosted booking platform on an Oracle free-tier VM | ASP.NET Core · Angular · Oracle Cloud · DuckDNS |
+| Bridge Messaging | Slack ↔ Discord ↔ Telegram bridge, now growing into a Slack client in .NET MAUI | Python · AI agents |
+| Ayurbeat | Ayurvedic multi-vendor e-commerce | PHP · MySQL |
 
 DownWind Aviation is company work at [Sky9 IT Craft Pvt. Ltd.](https://sky9itcraft.com/) (Blazor · EF Core · SQL Server · Azure Blob) — shown in the Experience section as professional work, not a personal project.

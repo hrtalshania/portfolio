@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Harshit Talshania - Resume</title>
+<style>
+  @page { size: A4; margin: 14mm 15mm; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    font-size: 10pt; color: #1a1a1a; line-height: 1.35;
+  }
+  h1 {
+    text-align: center; color: #1F3B63; font-size: 20pt;
+    letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4pt;
+  }
+  .contact { text-align: center; color: #595959; font-size: 9pt; margin-bottom: 10pt; }
+  .contact span + span::before { content: "  |  "; color: #b0b0b0; }
+  h2 {
+    color: #1F3B63; font-size: 10.5pt; letter-spacing: 1.2px;
+    text-transform: uppercase; border-bottom: 1px solid #BFBFBF;
+    padding-bottom: 2pt; margin: 10pt 0 5pt;
+  }
+  p { margin-bottom: 4pt; }
+  /* ATS / print hardening: never strand a heading, never split a row or entry */
+  h2 { break-after: avoid; page-break-after: avoid; break-inside: avoid; }
+  .row, .proj, .skills p { break-inside: avoid; page-break-inside: avoid; }
+  ul { break-inside: avoid; }
+  a { color: #0563C1; text-decoration: none; }
+  .row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1pt; }
+  .row .title { font-weight: bold; font-size: 10pt; }
+  .row .title a { color: #0563C1; }
+  .row .when { color: #595959; font-size: 9pt; white-space: nowrap; margin-left: 12pt; }
+  .sub { color: #595959; font-size: 9.5pt; margin-bottom: 4pt; }
+  ul { list-style: none; margin: 0 0 4pt; padding: 0; }
+  ul li { padding-left: 12pt; position: relative; margin-bottom: 2.5pt; }
+  ul li::before { content: "\2022"; position: absolute; left: 2pt; color: #595959; }
+  .skills p { margin-bottom: 3pt; }
+  .skills b { font-weight: bold; }
+  .proj { margin-bottom: 6pt; }
+  .proj .meta { color: #595959; font-size: 9pt; margin: 1pt 0 2pt; }
+</style>
+</head>
+<body>
+  <h1>Harshit Talshania</h1>
+  <p class="contact"><span>Rajkot, Gujarat, India</span><span>+91 9574943968</span><span><a href="mailto:hrtalshania@gmail.com">hrtalshania@gmail.com</a></span><span><a href="https://www.linkedin.com/in/harshit-talshania/">www.linkedin.com/in/harshit-talshania</a></span><span><a href="https://github.com/hrtalshania">github.com/hrtalshania</a></span><span><a href="https://hrtalshania.github.io/portfolio/">hrtalshania.github.io/portfolio</a></span></p>
+
+  <h2>Summary</h2><p>Software engineer with 2+ years of experience building and deploying full-stack web applications with C#/.NET, Blazor, and Angular across three client products and multiple self-hosted personal platforms. Works across the full development lifecycle: data modeling, APIs, authentication, payments, cloud deployment, and test automation with Playwright. Uses AI coding agents daily for leverage while keeping engineering judgment and code review on my side.</p>
+
+  <h2>Education</h2>
+    <div class="row"><span class="title">Bachelor of Engineering, Computer Engineering</span><span class="when">2022 - 2025</span></div>
+    <p class="sub">Gujarat Technological University (GTU)  -  SPI: 8.09  |  CPI: 7.78  |  CGPA: 8.09</p>
+  
+    <div class="row"><span class="title">Diploma in Computer Engineering</span><span class="when">2019 - 2022</span></div>
+    <p class="sub">A.V. Parekh Technical Institute, Rajkot  -  Grade: A  |  SPI: 10.00  |  CPI: 9.18</p>
+  
+
+  <h2>Technical Skills</h2><div class="skills"><p><b>Primary Stack (.NET):</b> C#, ASP.NET Core (Minimal APIs), Blazor, Entity Framework Core, LINQ, JWT / Google Auth / MFA</p><p><b>Frontend:</b> Angular, TypeScript, Blazor, JavaScript, HTML5, CSS3, Leaflet (maps), Radzen, Ant Design Blazor</p><p><b>Databases:</b> PostgreSQL, SQL Server (T-SQL), EF Core migrations &amp; query design</p><p><b>Cloud, Hosting &amp; Integrations:</b> Azure Blob Storage, Cloudflare R2, Razorpay, GoCardless, Netlify / Render deployment, Oracle Cloud free tier VM (self hosting), DuckDNS, WebSocket (real-time feeds)</p><p><b>Testing:</b> Playwright (browser test automation with screenshot capture), Unit testing, API testing (Postman)</p><p><b>Documents &amp; Reporting:</b> RDLC report/PDF generation, Invoicing &amp; reconciliation flows, Charting and admin dashboards</p><p><b>Earlier Stack:</b> Python, FastAPI, PHP, Node.js / Express, React, MongoDB, Capacitor</p><p><b>Tools:</b> Git, GitHub, Docker, Visual Studio, VS Code, Jira, AI coding agents (OpenCode, agent workflows)</p></div>
+
+  <h2>Experience</h2>
+    <div class="row"><span class="title">Software Engineer (Full Stack .NET) - Sky9 IT Craft Private Limited, Rajkot</span><span class="when">Aug 2024 - Present</span></div>
+    <ul><li>Work across the full development lifecycle: development, debugging, APIs, databases, cloud, and deployment. Started with a 6-month internship on a live project, contributing to backend development and Blazor UI. Client projects:</li></ul>
+    <ul><li><b>DownWind Aviation:</b> Complete solution for aircraft ownership and flight record management. Aircraft booking, pilot techlog logging, document uploads, expense tracking, and multi-factor authentication (MFA); GoCardless payment integration. (Blazor, SQL Server, Azure Storage, Radzen)</li></ul><ul><li><b>Presort EMS:</b> Enterprise mailing platform used by major US mailing service organizations. Legacy RDLC PDF generation and payment, invoice, and reconciliation management flows. (Blazor, RDLC, SQL Server, FileZilla, Radzen, Ant Design Blazor)</li></ul><ul><li><b>Country Style:</b> UK waste management company. Dedicated admin panel: secure authentication, multi-tab interface for bookings, invoices, reports, and analysis; interactive site map (latitude/longitude); chart and graph views across garbage collection, sorting, material waste, and disposables on multiple SQL servers with Azure functionality. (Blazor, SQL Server, Radzen)</li></ul>
+  
+
+  <h2>Projects</h2>
+    <div class="proj">
+      <div class="row"><span class="title"><a href="https://staging-arenahub.netlify.app/profile">ArenaHub - Sports Venue Booking Platform</a></span><span class="when">Personal project</span></div>
+      <p>Designed and built end to end: map-based venue discovery, Google authentication, slot booking, Razorpay payment integration, and file uploads to Cloudflare R2. Deployed frontend on Netlify, API on Render (free tier).</p>
+      <p class="meta"><b>Tech:</b> ASP.NET Core Minimal API, Angular, PostgreSQL, Razorpay, Cloudflare R2, Leaflet</p>
+    </div>
+  
+    <div class="proj">
+      <div class="row"><span class="title"><a href="https://algo-trade-by-hrt.netlify.app/login">Algo Trade - Real-Time Trading Dashboard</a></span><span class="when">Personal project</span></div>
+      <p>Python/FastAPI service consuming broker APIs and WebSocket market feeds, streamed to an Angular UI with live positions, orders, market depth, and signal alerts. Deployed on Netlify (frontend) and Render (API).</p>
+      <p class="meta"><b>Tech:</b> Python, FastAPI, Angular, WebSocket, Broker APIs</p>
+    </div>
+  
+    <div class="proj">
+      <div class="row"><span class="title"><a href="https://ruhicabs.duckdns.org/">Cab Booking Platform (Self Hosted)</a></span><span class="when">Personal project</span></div>
+      <p>Cab booking platform with .NET APIs and an Angular frontend, self-hosted end to end on an Oracle Cloud free tier VM: VM setup, DNS via DuckDNS, and deployment.</p>
+      <p class="meta"><b>Tech:</b> ASP.NET Core, Angular, Oracle Cloud VM, DuckDNS, Linux</p>
+    </div>
+  
+    <div class="proj">
+      <div class="row"><span class="title">BlazingAuth - Complete Auth System</span><span class="when">Personal project</span></div>
+      <p>Authentication and authorization built from scratch: registration and login with password hashing, JWT access tokens with refresh-token rotation, role-based access control, and protected routes on API and frontend.</p>
+      <p class="meta"><b>Tech:</b> ASP.NET Core, JWT, Blazor, SQL Server</p>
+    </div>
+  
+    <div class="proj">
+      <div class="row"><span class="title">Bridge Messaging (Slack / Discord / Telegram)</span><span class="when">Experimental</span></div>
+      <p>Cross-platform messaging bridge in Python (replies, reactions, threads, document sync) built with AI-agent-assisted development; extending into a Slack client in .NET MAUI.</p>
+      <p class="meta"><b>Tech:</b> Python, Slack API, Discord API, Telegram API, .NET MAUI</p>
+    </div>
+  
+    <div class="proj">
+      <div class="row"><span class="title">Ayurvedic E-Commerce Platform (Ayurbeat)</span><span class="when">Final Year Project / Work</span></div>
+      <p>Multi-vendor e-commerce website in PHP: storefront, product catalog, cart and order flow, and an admin dashboard where retailers manage their own listings.</p>
+      <p class="meta"><b>Tech:</b> PHP, MySQL, Bootstrap, JavaScript</p>
+    </div>
+  
+
+  <h2>Achievements</h2><ul><li>Participated in Internal Hackathon 'Lakshya 1.0' for Smart India Hackathon - 2023</li><li>Ranked 4th in the Indian Society for Technical Education (ISTE) final year project showcase - 2022</li><li>All India Ramanujan Maths Club - 2015</li></ul>
+</body>
+</html>

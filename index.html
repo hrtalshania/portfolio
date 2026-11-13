@@ -4,12 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
+    <title>Harshit Talshania | Software Engineer</title>
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/main.css" />
     <script>
-      // Apply the saved accent palette before first paint (no flash).
+      // Apply the saved theme + accent before first paint (no flash).
+      // Must match projects/index.html exactly so both pages open in the
+      // same theme and palette.
       try {
+        var savedTheme = localStorage.getItem("theme");
+        if (savedTheme) document.documentElement.setAttribute("data-theme", savedTheme);
         var savedAccent = localStorage.getItem("accent");
         if (savedAccent) document.documentElement.setAttribute("data-accent", savedAccent);
       } catch (e) {}
@@ -37,26 +41,6 @@
       </div>
     </section>
 
-    <section id="approach" class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Engineering Approach</h2>
-          <p class="section-subtitle">How I build software that lasts</p>
-        </div>
-        <div id="approach-content" class="approach-steps"></div>
-      </div>
-    </section>
-
-    <section id="philosophy" class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Philosophy</h2>
-          <p class="section-subtitle">Principles that guide my work</p>
-        </div>
-        <div id="philosophy-content" class="philosophy-content"></div>
-      </div>
-    </section>
-
     <section id="projects" class="section">
       <div class="container">
         <div class="section-header">
@@ -71,19 +55,9 @@
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">More Projects</h2>
-          <p class="section-subtitle">Earlier and experimental work — breadth beyond the .NET stack</p>
+          <p class="section-subtitle">Earlier and experimental work. Each one has a story worth reading.</p>
         </div>
         <div id="more-projects-grid" class="more-projects-grid"></div>
-      </div>
-    </section>
-
-    <section id="technology" class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Technology Experience</h2>
-          <p class="section-subtitle">Tools and technologies I work with</p>
-        </div>
-        <div id="tech-grid" class="tech-grid"></div>
       </div>
     </section>
 
@@ -94,6 +68,27 @@
           <p class="section-subtitle">Where I've worked and what I've built</p>
         </div>
         <div id="experience-list" class="experience-list"></div>
+      </div>
+    </section>
+
+    <section id="technology" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Technology Experience</h2>
+          <p class="section-subtitle">Tools and technologies I work with</p>
+          <p id="tech-note" class="tech-note"></p>
+        </div>
+        <div id="tech-grid" class="tech-grid"></div>
+      </div>
+    </section>
+
+    <section id="approach" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Engineering Approach</h2>
+          <p class="section-subtitle">How I build software that lasts</p>
+        </div>
+        <div id="approach-content" class="approach-steps"></div>
       </div>
     </section>
 
@@ -121,7 +116,7 @@
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">Get In Touch</h2>
-          <p class="section-subtitle">Looking for a backend developer? Let's talk.</p>
+          <p class="section-subtitle">Looking for a software engineer? Let's talk.</p>
         </div>
         <div class="contact-content"></div>
       </div>

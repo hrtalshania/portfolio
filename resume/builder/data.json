@@ -4,47 +4,49 @@
     "location": "Rajkot, Gujarat, India",
     "phone": "+91 9574943968",
     "email": "hrtalshania@gmail.com",
-    "linkedin": "",
-    "github": "",
-    "portfolio": ""
+    "linkedin": "https://www.linkedin.com/in/harshit-talshania/",
+    "github": "https://github.com/hrtalshania",
+    "portfolio": "https://hrtalshania.github.io/portfolio/"
   },
-  "objective": "Software developer focused on the .NET ecosystem — ASP.NET Core Minimal APIs, Angular, and Blazor. I build complete systems end to end: relational data models, APIs, and the UIs that use them. Currently applying this on real client products while building my own deployed platforms.",
+  "objective": "Software engineer with 2+ years of experience building and deploying full-stack web applications with C#/.NET, Blazor, and Angular across three client products and multiple self-hosted personal platforms. Works across the full development lifecycle: data modeling, APIs, authentication, payments, cloud deployment, and test automation with Playwright. Uses AI coding agents daily for leverage while keeping engineering judgment and code review on my side.",
   "education": [
     {
-      "degree": "B.E. Computer Engineering",
-      "institute": "Government Engineering College (GEC), Rajkot",
-      "period": "2022 - 2026",
+      "degree": "Bachelor of Engineering, Computer Engineering",
+      "institute": "Gujarat Technological University (GTU)",
+      "period": "2022 - 2025",
       "details": "SPI: 8.09  |  CPI: 7.78  |  CGPA: 8.09"
     },
     {
       "degree": "Diploma in Computer Engineering",
-      "institute": "A.V. Parekh Technical Institute",
+      "institute": "A.V. Parekh Technical Institute, Rajkot",
       "period": "2019 - 2022",
-      "details": "SPI: 10.00  |  CPI: 9.18  |  CGPA: 9.00"
-    },
-    {
-      "degree": "Secondary School (Class X), GSEB",
-      "institute": "St. Gargy Sankul, Rajkot",
-      "period": "2018 - 2019",
-      "details": "Percentage: 85%"
+      "details": "Grade: A  |  SPI: 10.00  |  CPI: 9.18"
     }
   ],
   "skills": [
     {
       "category": "Primary Stack (.NET)",
-      "items": ["C#", "ASP.NET Core (Minimal APIs)", "Blazor", "Entity Framework Core", "LINQ", "JWT / Google Auth"]
+      "items": ["C#", "ASP.NET Core (Minimal APIs)", "Blazor", "Entity Framework Core", "LINQ", "JWT / Google Auth / MFA"]
     },
     {
       "category": "Frontend",
-      "items": ["Angular", "TypeScript", "Blazor", "JavaScript", "HTML5", "CSS3", "Leaflet (maps)"]
+      "items": ["Angular", "TypeScript", "Blazor", "JavaScript", "HTML5", "CSS3", "Leaflet (maps)", "Radzen", "Ant Design Blazor"]
     },
     {
       "category": "Databases",
       "items": ["PostgreSQL", "SQL Server (T-SQL)", "EF Core migrations & query design"]
     },
     {
-      "category": "Cloud & Integrations",
-      "items": ["Azure Blob Storage", "Cloudflare R2", "Razorpay Payments", "Netlify / Render deployment", "WebSocket (real-time feeds)"]
+      "category": "Cloud, Hosting & Integrations",
+      "items": ["Azure Blob Storage", "Cloudflare R2", "Razorpay", "GoCardless", "Netlify / Render deployment", "Oracle Cloud free tier VM (self hosting)", "DuckDNS", "WebSocket (real-time feeds)"]
+    },
+    {
+      "category": "Testing",
+      "items": ["Playwright (browser test automation with screenshot capture)", "Unit testing", "API testing (Postman)"]
+    },
+    {
+      "category": "Documents & Reporting",
+      "items": ["RDLC report/PDF generation", "Invoicing & reconciliation flows", "Charting and admin dashboards"]
     },
     {
       "category": "Earlier Stack",
@@ -52,57 +54,72 @@
     },
     {
       "category": "Tools",
-      "items": ["Git", "GitHub", "Postman", "Docker", "Visual Studio", "VS Code", "AI coding agents (OpenCode, agent workflows)"]
+      "items": ["Git", "GitHub", "Docker", "Visual Studio", "VS Code", "Jira", "AI coding agents (OpenCode, agent workflows)"]
     }
   ],
   "experience": [
     {
-      "role": "Software Developer",
+      "role": "Software Engineer (Full Stack .NET)",
       "company": "Sky9 IT Craft Private Limited, Rajkot",
-      "period": "TODO: join date - Present",
-      "description": "Development on DownWind Aviation, a Blazor-based client product: C#/.NET with domain-driven design, EF Core, SQL Server, Azure Blob Storage, and payment gateway flows. Full-stack contribution across backend services and Blazor UI."
-    },
-    {
-      "role": "Independent Developer",
-      "company": "Personal Products",
-      "period": "TODO: period",
-      "description": "Designed and built ArenaHub solo (sports-booking platform, deployed live) and a real-time trading dashboard (Python + broker WebSocket feeds)."
+      "period": "Aug 2024 - Present",
+      "description": "Work across the full development lifecycle: development, debugging, APIs, databases, cloud, and deployment. Started with a 6-month internship on a live project, contributing to backend development and Blazor UI. Client projects:",
+      "subItems": [
+        {
+          "name": "DownWind Aviation",
+          "text": "Complete solution for aircraft ownership and flight record management. Aircraft booking, pilot techlog logging, document uploads, expense tracking, and multi-factor authentication (MFA); GoCardless payment integration. (Blazor, SQL Server, Azure Storage, Radzen)"
+        },
+        {
+          "name": "Presort EMS",
+          "text": "Enterprise mailing platform used by major US mailing service organizations. Legacy RDLC PDF generation and payment, invoice, and reconciliation management flows. (Blazor, RDLC, SQL Server, FileZilla, Radzen, Ant Design Blazor)"
+        },
+        {
+          "name": "Country Style",
+          "text": "UK waste management company. Dedicated admin panel: secure authentication, multi-tab interface for bookings, invoices, reports, and analysis; interactive site map (latitude/longitude); chart and graph views across garbage collection, sorting, material waste, and disposables on multiple SQL servers with Azure functionality. (Blazor, SQL Server, Radzen)"
+        }
+      ]
     }
   ],
   "projects": [
     {
       "title": "ArenaHub - Sports Venue Booking Platform",
       "period": "Personal project",
-      "description": "End-to-end booking platform: map-based venue discovery, Google authentication, Razorpay payments, and file uploads. Deployed with the API on Render and frontend on Netlify.",
+      "description": "Designed and built end to end: map-based venue discovery, Google authentication, slot booking, Razorpay payment integration, and file uploads to Cloudflare R2. Deployed frontend on Netlify, API on Render (free tier).",
       "tech": ["ASP.NET Core Minimal API", "Angular", "PostgreSQL", "Razorpay", "Cloudflare R2", "Leaflet"],
-      "link": ""
+      "link": "https://staging-arenahub.netlify.app/profile"
     },
     {
-      "title": "Real-Time Trading Dashboard",
+      "title": "Algo Trade - Real-Time Trading Dashboard",
       "period": "Personal project",
-      "description": "Live market-data dashboard consuming broker APIs over WebSocket, with a FastAPI service layer and an Angular UI showing positions, orders, and signal alerts in real time.",
+      "description": "Python/FastAPI service consuming broker APIs and WebSocket market feeds, streamed to an Angular UI with live positions, orders, market depth, and signal alerts. Deployed on Netlify (frontend) and Render (API).",
       "tech": ["Python", "FastAPI", "Angular", "WebSocket", "Broker APIs"],
-      "link": ""
+      "link": "https://algo-trade-by-hrt.netlify.app/login"
+    },
+    {
+      "title": "Cab Booking Platform (Self Hosted)",
+      "period": "Personal project",
+      "description": "Cab booking platform with .NET APIs and an Angular frontend, self-hosted end to end on an Oracle Cloud free tier VM: VM setup, DNS via DuckDNS, and deployment.",
+      "tech": ["ASP.NET Core", "Angular", "Oracle Cloud VM", "DuckDNS", "Linux"],
+      "link": "https://ruhicabs.duckdns.org/"
     },
     {
       "title": "BlazingAuth - Complete Auth System",
       "period": "Personal project",
-      "description": "Authentication/authorization system built from scratch: registration, login, JWT access tokens with refresh-token rotation, and role-based access control.",
+      "description": "Authentication and authorization built from scratch: registration and login with password hashing, JWT access tokens with refresh-token rotation, role-based access control, and protected routes on API and frontend.",
       "tech": ["ASP.NET Core", "JWT", "Blazor", "SQL Server"],
       "link": ""
     },
     {
-      "title": "Messaging Bridge (Slack / Discord / Telegram)",
+      "title": "Bridge Messaging (Slack / Discord / Telegram)",
       "period": "Experimental",
-      "description": "Cross-platform bridge in Python syncing replies, reactions, threads, documents, and message management across all three platforms.",
-      "tech": ["Python"],
+      "description": "Cross-platform messaging bridge in Python (replies, reactions, threads, document sync) built with AI-agent-assisted development; extending into a Slack client in .NET MAUI.",
+      "tech": ["Python", "Slack API", "Discord API", "Telegram API", ".NET MAUI"],
       "link": ""
     },
     {
       "title": "Ayurvedic E-Commerce Platform (Ayurbeat)",
       "period": "Final Year Project / Work",
-      "description": "Multi-vendor e-commerce website where customers shop for Ayurvedic products and retailers list and sell their own products.",
-      "tech": ["PHP", "MySQL", "HTML5", "CSS3", "Bootstrap", "JavaScript"],
+      "description": "Multi-vendor e-commerce website in PHP: storefront, product catalog, cart and order flow, and an admin dashboard where retailers manage their own listings.",
+      "tech": ["PHP", "MySQL", "Bootstrap", "JavaScript"],
       "link": ""
     }
   ],
@@ -110,7 +127,5 @@
     "Participated in Internal Hackathon 'Lakshya 1.0' for Smart India Hackathon - 2023",
     "Ranked 4th in the Indian Society for Technical Education (ISTE) final year project showcase - 2022",
     "All India Ramanujan Maths Club - 2015"
-  ],
-  "languages": "Gujarati, Hindi, English",
-  "hobbies": []
+  ]
 }

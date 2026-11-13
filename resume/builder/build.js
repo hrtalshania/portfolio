@@ -25,6 +25,7 @@ const CONTENT_WIDTH = 10160; // A4 width (11906) minus 0.6" margins, in twips
 function heading(text) {
   return new Paragraph({
     spacing: { before: 180, after: 60 },
+    keepNext: true, // heading never stranded at the bottom of a page
     border: {
       bottom: { color: "BFBFBF", space: 1, style: BorderStyle.SINGLE, size: 6 },
     },
@@ -58,7 +59,23 @@ function twoCol(leftRuns, rightText) {
   return new Paragraph({
     tabStops: [{ type: TabStopType.RIGHT, position: CONTENT_WIDTH }],
     spacing: { after: 20 },
+    keepNext: true, // keep the row with the content that follows it
     children,
+  });
+}
+
+// Compact display text for URLs in the contact line
+// (https://www.linkedin.com/in/x/ -> linkedin.com/in/x)
+function compact(url) {
+  return String(url).replace(/^https?:\/\//, "").replace(/\/$/, "");
+}
+
+function hyperlink(text, url, opts = {}) {
+  return new ExternalHyperlink({
+    children: [
+      new TextRun({ text, size: 18, color: "0563C1", ...opts }),
+    ],
+    link: url,
   });
 }
 
@@ -67,13 +84,32 @@ function small(text, opts = {}) {
 }
 
 // ---------- Header ----------
-const contactParts = [];
-if (data.contact.location) contactParts.push(data.contact.location);
-if (data.contact.phone) contactParts.push(data.contact.phone);
-if (data.contact.email) contactParts.push(data.contact.email);
-contactParts.push(data.contact.linkedin || "[LinkedIn]");
-contactParts.push(data.contact.github || "[GitHub]");
-if (data.contact.portfolio) contactParts.push(data.contact.portfolio);
+// Every contact item that has a real URL becomes a clickable hyperlink.
+const contactRuns = [];
+function pushContact(run, url) {
+  if (contactRuns.length) {
+    contactRuns.push(new TextRun({ text: "  |  ", size: 18, color: "BFBFBF" }));
+  }
+  contactRuns.push(run);
+}
+if (data.contact.location) {
+  pushContact(new TextRun({ text: data.contact.location, size: 18, color: GREY }));
+}
+if (data.contact.phone) {
+  pushContact(new TextRun({ text: data.contact.phone, size: 18, color: GREY }));
+}
+if (data.contact.email) {
+  pushContact(hyperlink(data.contact.email, "mailto:" + data.contact.email));
+}
+if (data.contact.linkedin) {
+  pushContact(hyperlink(compact(data.contact.linkedin), data.contact.linkedin));
+}
+if (data.contact.github) {
+  pushContact(hyperlink(compact(data.contact.github), data.contact.github));
+}
+if (data.contact.portfolio) {
+  pushContact(hyperlink(compact(data.contact.portfolio), data.contact.portfolio));
+}
 
 const header = [
   new Paragraph({
@@ -92,17 +128,15 @@ const header = [
   new Paragraph({
     alignment: AlignmentType.CENTER,
     spacing: { after: 20 },
-    children: [
-      new TextRun({ text: contactParts.join("  |  "), size: 18, color: GREY }),
-    ],
+    children: contactRuns,
   }),
 ];
 
 const children = [...header];
 
-// ---------- Objective ----------
+// ---------- Summary ----------
 if (data.objective) {
-  children.push(heading("Objective"));
+  children.push(heading("Summary"));
   children.push(
     new Paragraph({
       spacing: { after: 20 },
@@ -157,6 +191,16 @@ if (data.experience && data.experience.length) {
         bullet([new TextRun({ text: x.description, size: 20 })])
       );
     }
+    if (x.subItems && x.subItems.length) {
+      for (const s of x.subItems) {
+        children.push(
+          bullet([
+            new TextRun({ text: s.name + ": ", bold: true, size: 20 }),
+            new TextRun({ text: s.text, size: 20 }),
+          ])
+        );
+      }
+    }
   }
 }
 
@@ -164,42 +208,31 @@ if (data.experience && data.experience.length) {
 if (data.projects && data.projects.length) {
   children.push(heading("Projects"));
   for (const p of data.projects) {
-    children.push(
-      twoCol([new TextRun({ text: p.title, bold: true, size: 20 })], p.period)
-    );
+    // The project title itself carries the link; no raw URL in the meta line.
+    const titleRuns = p.link
+      ? [hyperlink(p.title, p.link, { bold: true, size: 20 })]
+      : [new TextRun({ text: p.title, bold: true, size: 20 })];
+    children.push(twoCol(titleRuns, p.period));
     if (p.description) {
       children.push(
         new Paragraph({
           spacing: { after: 20 },
+          keepLines: true,
           children: [new TextRun({ text: p.description, size: 20 })],
         })
       );
     }
-    const meta = [];
     if (p.tech && p.tech.length) {
-      meta.push(new TextRun({ text: "Tech: ", bold: true, size: 19, color: GREY }));
-      meta.push(new TextRun({ text: p.tech.join(", "), size: 19, color: GREY }));
-    }
-    if (p.link) {
-      meta.push(small("  |  "));
-      meta.push(
-        new ExternalHyperlink({
+      children.push(
+        new Paragraph({
+          spacing: { after: 100 },
+          keepLines: true,
           children: [
-            new TextRun({
-              text: p.link,
-              size: 19,
-              color: "0563C1",
-              underline: {},
-            }),
+            new TextRun({ text: "Tech: ", bold: true, size: 19, color: GREY }),
+            new TextRun({ text: p.tech.join(", "), size: 19, color: GREY }),
           ],
-          link: p.link,
         })
       );
-    }
-    if (meta.length) {
-      children.push(new Paragraph({ spacing: { after: 100 }, children: meta }));
-    } else {
-      children.push(new Paragraph({ spacing: { after: 100 }, children: [] }));
     }
   }
 }
@@ -210,17 +243,6 @@ if (data.achievements && data.achievements.length) {
   for (const a of data.achievements) {
     children.push(bullet([new TextRun({ text: a, size: 20 })]));
   }
-}
-
-// ---------- Languages ----------
-if (data.languages) {
-  children.push(heading("Languages"));
-  children.push(
-    new Paragraph({
-      spacing: { after: 20 },
-      children: [new TextRun({ text: data.languages, size: 20 })],
-    })
-  );
 }
 
 // ---------- Hobbies ----------

@@ -231,7 +231,156 @@ p {
   font-size: 0.85rem;
   color: var(--text-primary);
   text-decoration: none;
-  border-bottom: 1px solid var(--text-primary);
+  transition: var(--transition);
+}
+
+.more-project-link:hover {
+  color: var(--text-secondary);
+}
+
+/* ===== Featured project cards: summary style ===== */
+.project-links { flex-wrap: wrap; align-items: center; }
+
+/* Hero tagline company link */
+.hero-tagline-link {
+  color: inherit;
+}
+
+.hero-tagline-link:hover {
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--text-muted);
+}
+
+/* Hero greeting line (full name above the headline) */
+.hero-greeting {
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+
+html[data-accent]:not([data-accent="mono"]) .hero-greeting {
+  color: var(--accent);
+}
+
+/* Subtle hover lift on the hero photo */
+.hero-photo {
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.hero-photo:hover {
+  transform: translateY(-6px) scale(1.02);
+}
+
+/* About principles (folded in from the old Philosophy section) */
+.about-principles {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
+
+.about-principles h3 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.about-principles li {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  padding-left: 16px;
+  position: relative;
+  margin-bottom: 8px;
+  line-height: 1.55;
+}
+
+.about-principles li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--text-muted);
+}
+
+html[data-accent]:not([data-accent="mono"]) .about-principles li::before {
+  color: var(--accent);
+}
+
+.project-summary {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin: 0 0 4px 0;
+}
+
+/* ===== Technology note line ===== */
+.tech-note {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  max-width: 720px;
+  margin: 18px auto 0;
+  line-height: 1.65;
+}
+
+/* ===== Experience extras ===== */
+.experience-location {
+  font-size: 0.8rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  margin-top: -2px;
+}
+
+.experience-note {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ===== Client work block (multiple products under one employer) ===== */
+.experience-clients {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+.experience-clients h4 {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.experience-client + .experience-client {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--border);
+}
+
+.experience-client h5 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.experience-client p {
+  font-size: 0.87rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+
+.experience-client-tech {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
 }
 
 /* ===== Nav Resume button ===== */
@@ -302,6 +451,8 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  /* Portrait headshot: keep the face in frame when cropped to the square */
+  object-position: center 22%;
 }
 
 .hero-photo .photo-placeholder {
@@ -453,18 +604,7 @@ html[data-theme="light"] #hamburger-nav {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--text-secondary);
-  display: flex;
-  align-items: center;
-  gap: 8px;
   margin: 0 0 6px 0;
-}
-
-.project-section h4::before {
-  content: "";
-  width: 14px;
-  height: 2px;
-  border-radius: 2px;
-  background: var(--text-muted);
 }
 
 .project-section + .project-section {
@@ -627,12 +767,10 @@ html[data-theme="light"][data-accent="amber"] {
 }
 
 /* Detail markers: readable on dark, and accent-colored in palette modes */
-.project-section li::before,
-.tech-list li::before,
-.experience-responsibilities li::before,
-.philosophy-principles li::before {
-  color: var(--text-secondary);
-  font-weight: 600;
+.project-section li::marker,
+.tech-list li::marker,
+.experience-responsibilities li::marker {
+  color: var(--text-muted);
 }
 
 .education-details,
@@ -641,9 +779,9 @@ html[data-theme="light"][data-accent="amber"] {
   color: var(--text-secondary);
 }
 
-html[data-accent]:not([data-accent="mono"]) .project-section li::before,
-html[data-accent]:not([data-accent="mono"]) .tech-list li::before,
-html[data-accent]:not([data-accent="mono"]) .experience-responsibilities li::before,
+html[data-accent]:not([data-accent="mono"]) .project-section li::marker,
+html[data-accent]:not([data-accent="mono"]) .tech-list li::marker,
+html[data-accent]:not([data-accent="mono"]) .experience-responsibilities li::marker,
 html[data-accent]:not([data-accent="mono"]) .philosophy-principles li::before {
   color: var(--accent);
 }
@@ -735,10 +873,6 @@ html[data-accent]:not([data-accent="mono"]) .education-card:hover {
   box-shadow: 0 16px 44px var(--accent-glow);
 }
 
-html[data-accent]:not([data-accent="mono"]) .project-section h4::before {
-  background: var(--accent);
-}
-
 html[data-accent]:not([data-accent="mono"]) .project-index {
   color: var(--accent);
 }
@@ -754,6 +888,10 @@ html[data-accent]:not([data-accent="mono"]) .philosophy-quote {
 html[data-accent]:not([data-accent="mono"]) .tech-category-title,
 html[data-accent]:not([data-accent="mono"]) .more-project-tech,
 html[data-accent]:not([data-accent="mono"]) .experience-period {
+  color: var(--accent);
+}
+
+html[data-accent]:not([data-accent="mono"]) .experience-client-tech {
   color: var(--accent);
 }
 
