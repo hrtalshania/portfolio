@@ -129,6 +129,15 @@
 
 ---
 
+## 2026-11-13 (8) — Gallery redesigned: 40/40/20 magazine row
+
+- **New gallery layout** (user spec): one row, three columns **40% | 40% | 20%**. Big tiles show images 1-2 at full column height (4:3 sets row height); the narrow column stacks up to 3 small cells (images 3-5) as equal flex slices, and when N > 0 the last cell carries a **"+N more" overlay** (cab-booking's 7 images: "+2 more"). Clicking any tile still opens the lightbox browsing ALL images (unchanged).
+- Edge cases: 1-2 images → two equal big tiles (`gallery-two` modifier, no narrow column); 3-4 images → narrow column with fewer cells, no overlay; 6+ → full layout as drawn.
+- Mobile: big tiles side by side on row 1, narrow column becomes a full-width 3-across strip.
+- Tests updated (53 checks): 2 big + 3 small in column, "+2 more" overlay, lightbox opens at image 5 of 7. Verified visually on the cab-booking detail page.
+
+---
+
 ## TODO checklist (updated 2026-11-13)
 
 

@@ -91,7 +91,7 @@
       ${project.gallery && project.gallery.length ? `
       <section class="detail-section">
         <h4>Screenshots</h4>
-        <div class="gallery-grid">
+        <div class="gallery-grid${project.gallery.length > 2 ? '' : ' gallery-two'}">
           ${buildGalleryMarkup(project)}
         </div>
       </section>
@@ -125,9 +125,11 @@
   });
 
   // ---- Image gallery ----
-  // Layout: 2 large tiles, then ONE small tile showing the next image with a
-  // "+N more" overlay (N = remaining count). The lightbox browses ALL images
-  // from project.gallery, not just the ones rendered in the grid.
+  // Layout: one row of three columns — 40% | 40% | 20%. The two big tiles
+  // show images 1 and 2 at full column height; the narrow column stacks up
+  // to 3 small cells (images 3-5), the last one carrying a "+N more" overlay
+  // (N = remaining count). The lightbox browses ALL images from
+  // project.gallery, not just the ones rendered in the grid.
   function galleryImg(project, file, index) {
     return `<img src="../assets/projects/${project.slug}/${file}" alt="${project.title} screenshot ${index + 1}" loading="lazy" />`;
   }
@@ -140,13 +142,19 @@
       html += `<figure class="gallery-item gallery-big" data-index="${i}">${galleryImg(project, g[i], i)}</figure>`;
     }
     if (g.length > bigCount) {
-      const next = bigCount;
-      const extra = g.length - bigCount;
-      html += `
-        <figure class="gallery-item gallery-small gallery-more" data-index="${next}">
-          ${galleryImg(project, g[next], next)}
-          <span class="gallery-overlay">+${extra} more</span>
-        </figure>`;
+      const smallCount = Math.min(3, g.length - bigCount);
+      const extra = g.length - bigCount - smallCount;
+      let col = '';
+      for (let i = bigCount; i < bigCount + smallCount; i++) {
+        const isLast = i === bigCount + smallCount - 1;
+        const showMore = isLast && extra > 0;
+        col += `
+          <figure class="gallery-item gallery-small${showMore ? ' gallery-more' : ''}" data-index="${i}">
+            ${galleryImg(project, g[i], i)}
+            ${showMore ? `<span class="gallery-overlay">+${extra} more</span>` : ''}
+          </figure>`;
+      }
+      html += `<div class="gallery-col">${col}</div>`;
     }
     return html;
   }
