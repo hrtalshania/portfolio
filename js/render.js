@@ -11,7 +11,25 @@ document.addEventListener('DOMContentLoaded', function() {
   renderAbout();
   renderContact();
   renderFooter();
+  initHashScroll();
 });
+
+// Anchor navigation from other pages (e.g. projects/index.html#contact)
+// jumps BEFORE this script renders the sections, when the page is still
+// short — so the browser lands near the hero and the rendered content
+// pushes the target away. Re-scroll to the hash target after rendering,
+// and once more on window.load (fonts/images/GSAP can still shift layout).
+function initHashScroll() {
+  function scrollToHash() {
+    if (!window.location.hash) return;
+    const target = document.getElementById(window.location.hash.slice(1));
+    if (target) {
+      target.scrollIntoView({ behavior: 'auto', block: 'start' });
+    }
+  }
+  scrollToHash();
+  window.addEventListener('load', scrollToHash, { once: true });
+}
 
 function renderNavbar() {
   const nav = document.getElementById('desktop-nav');

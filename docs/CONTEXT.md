@@ -120,6 +120,15 @@
 
 ---
 
+## 2026-11-13 (7) — Cross-page anchor jumps fixed (hero-strand bug)
+
+- **Bug:** links from detail pages back to home sections (`index.html#projects`, `#contact` — "Back to all projects", "All projects" button, "reach out" link) landed near the hero instead of the target section. Cause: the browser performs its native anchor jump **before** `render.js` (DOMContentLoaded) fills the empty section skeletons, so it scrolls to where the target sat on the short pre-render page; the rendered content then pushes the target away and the viewport is stranded at the top. `scroll-behavior: smooth` made the initial wrong jump animated, amplifying it.
+- **Fix:** `initHashScroll()` in render.js — after all render calls, if `location.hash` matches an existing element, `scrollIntoView` it (instant `behavior: 'auto'`), plus one repeat on `window.load` (fonts/hero image/GSAP entrance can still shift layout late). Detail page links were already correct; the bug was entirely home-page-side.
+- **CSS:** `.section { scroll-margin-top: 90px }` so the fixed navbar never overlaps the section heading after a jump (also improves same-page nav clicks).
+- Tests extended to 51 checks (hash scroll targets contact after render, instant jump, and no forced scroll when no hash).
+
+---
+
 ## TODO checklist (updated 2026-11-13)
 
 

@@ -83,6 +83,8 @@ button {
 
 .section {
   padding: var(--section-padding);
+  /* Keep section headings clear of the fixed navbar after anchor jumps */
+  scroll-margin-top: 90px;
 }
 
 .section-header {
@@ -441,6 +443,7 @@ html[data-accent]:not([data-accent="mono"]) .about-principles li::before {
   border-radius: 26px;
   padding: 3px;
   background: linear-gradient(135deg, var(--border-hover), transparent);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -452,7 +455,7 @@ html[data-accent]:not([data-accent="mono"]) .about-principles li::before {
   height: 100%;
   object-fit: cover;
   /* Portrait headshot: keep the face near the top of the 4:5 frame */
-  object-position: center 22%;
+  object-position: center 5%;
 }
 
 .hero-photo .photo-placeholder {
