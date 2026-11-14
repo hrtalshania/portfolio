@@ -69,15 +69,28 @@ function initRevealAnimations() {
   }, 100);
 }
 
-window.toggleMenu = function() {
+window.toggleMenu = function(force) {
   const menu = document.querySelector('.menu-links');
   const icon = document.querySelector('.hamburger-icon');
-  
-  if (menu && icon) {
-    menu.classList.toggle('active');
-    icon.classList.toggle('active');
-  }
+
+  if (!menu || !icon) return;
+  const open = typeof force === 'boolean' ? force : !menu.classList.contains('active');
+  menu.classList.toggle('active', open);
+  icon.classList.toggle('active', open);
+  icon.setAttribute('aria-expanded', String(open));
 };
+
+// Close the mobile menu when clicking outside of it, or with Escape.
+document.addEventListener('click', function(e) {
+  const menu = document.querySelector('.menu-links');
+  if (!menu || !menu.classList.contains('active')) return;
+  if (e.target.closest('.hamburger-menu')) return; // inside: clicks are handled by their own handlers
+  window.toggleMenu(false);
+});
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') window.toggleMenu(false);
+});
 
 window.addEventListener('scroll', () => {
   const scrolled = window.scrollY;

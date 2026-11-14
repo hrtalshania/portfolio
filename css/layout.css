@@ -109,6 +109,19 @@
   transition: var(--transition);
 }
 
+/* Bars morph into a cross when the menu is open */
+.hamburger-icon.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-icon.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-icon.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
 .menu-links {
   position: absolute;
   top: 100%;
@@ -116,7 +129,7 @@
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 24px;
+  padding: 10px;
   min-width: 200px;
   opacity: 0;
   visibility: hidden;
@@ -131,16 +144,29 @@
 }
 
 .menu-links li {
-  margin-bottom: 16px;
+  /* <li> outside a real <ul> still renders a disc marker and default
+     spacing unless reset explicitly */
+  list-style: none;
+  display: block;
+  margin-bottom: 0;
 }
 
 .menu-links a {
-  font-size: 0.9rem;
+  display: block;
+  font-size: 1rem;
   color: var(--text-secondary);
+  padding: 10px 14px;
+  border-radius: 8px;
 }
 
 .menu-links a:hover {
   color: var(--text-primary);
+  background: var(--bg-secondary);
+}
+
+.menu-links .menu-resume a {
+  color: var(--text-primary);
+  font-weight: 600;
 }
 
 /* Hero Section */

@@ -68,17 +68,26 @@ function renderNavbar() {
   const hamburgerHTML = `
     ${logoHTML}
     <div class="hamburger-right">
-      ${accentBtnHTML}
-      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">${themeIcon}</button>
       <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
+        <div class="hamburger-icon" onclick="toggleMenu()" role="button" tabindex="0" aria-expanded="false" aria-label="Menu">
           <span></span>
           <span></span>
           <span></span>
         </div>
         <div class="menu-links">
           ${links.map(link => `<li><a href="${link.href}" onclick="toggleMenu()">${link.label}</a></li>`).join('')}
-          <li class="menu-resume"><a href="${portfolioData.nav.resume}" target="_blank" rel="noopener" onclick="toggleMenu()">📄 Resume</a></li>
+          <li class="menu-controls">
+            <button class="theme-toggle menu-control" onclick="toggleTheme()" aria-label="Toggle theme">
+              ${themeIcon}<span>Theme</span>
+            </button>
+            <button class="accent-toggle menu-control" onclick="toggleAccent()" aria-label="Switch color palette" title="Color mode (click to change)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3l7 5.2v7.6L12 21l-7-5.2V8.2L12 3z"/>
+              </svg><span>Colour</span>
+            </button>
+          </li>
+          <li class="menu-resume"><a href="${portfolioData.nav.resume}" target="_blank" rel="noopener" onclick="toggleMenu()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>Resume</a></li>
         </div>
       </div>
     </div>
@@ -206,7 +215,10 @@ function renderMoreProjects() {
         <span class="more-project-tech">${p.tech}</span>
       </div>
       <p class="more-project-description">${p.summary}</p>
-      <a href="projects/index.html?id=${p.slug}" class="more-project-link">Read more →</a>
+      <a href="projects/index.html?id=${p.slug}" class="more-project-link">
+        Read more
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
     </div>
   `).join('');
 

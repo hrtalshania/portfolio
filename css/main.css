@@ -228,7 +228,9 @@ p {
 }
 
 .more-project-link {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   margin-top: 10px;
   font-size: 0.85rem;
   color: var(--text-primary);
@@ -236,8 +238,36 @@ p {
   transition: var(--transition);
 }
 
+.more-project-link svg {
+  width: 15px;
+  height: 15px;
+}
+
 .more-project-link:hover {
   color: var(--text-secondary);
+}
+
+/* Services section closing CTA */
+.services-cta {
+  margin-top: 28px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.services-cta a {
+  color: var(--text-primary);
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-hover);
+  transition: var(--transition);
+}
+
+.services-cta a:hover {
+  color: var(--text-secondary);
+}
+
+html[data-accent]:not([data-accent="mono"]) .services-cta a {
+  color: var(--accent);
 }
 
 /* ===== Featured project cards: summary style ===== */
@@ -972,13 +1002,6 @@ html[data-accent]:not([data-accent="mono"]) .hero-photo {
     gap: 10px;
   }
 
-  .hamburger-right .accent-toggle,
-  .hamburger-right .theme-toggle {
-    width: 36px;
-    height: 36px;
-    border-radius: 9px;
-  }
-
   .hamburger-menu {
     position: relative;
   }
@@ -1007,10 +1030,74 @@ html[data-accent]:not([data-accent="mono"]) .hero-photo {
     background: var(--bg-tertiary);
   }
 
+  /* Theme + colour palette controls live INSIDE the menu on mobile.
+     li.menu-controls beats the generic `.menu-links li` display rule. */
+  .menu-links li.menu-controls {
+    display: flex;
+    gap: 8px;
+    margin: 10px 0 0 0;
+    border-top: 1px solid var(--border);
+    padding-top: 10px;
+  }
+
+  .menu-controls .menu-control {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.2s ease;
+  }
+
+  /* Override the square icon-button sizing for the in-menu control buttons */
+  .menu-controls .theme-toggle,
+  .menu-controls .accent-toggle {
+    width: auto;
+    height: auto;
+  }
+
+  .menu-controls .accent-toggle::after {
+    bottom: 5px;
+    left: 14px;
+    right: 14px;
+    height: 2px;
+  }
+
+  .menu-controls .menu-control:hover {
+    background: var(--bg-secondary);
+  }
+
+  .menu-controls .menu-control svg {
+    width: 18px;
+    height: 18px;
+    stroke-width: 2;
+    display: block;
+  }
+
   .menu-links li.menu-resume {
     margin: 10px 0 0 0;
     border-top: 1px solid var(--border);
     padding-top: 10px;
+  }
+
+  .menu-links li.menu-resume a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .menu-links li.menu-resume a svg {
+    width: 16px;
+    height: 16px;
   }
 }
 

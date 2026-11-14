@@ -41,22 +41,12 @@
       </header>
 
       ${links.live ? `
-      <div class="detail-live-box">
+      <div class="detail-live">
         <a href="${links.live}" class="project-link detail-live-link" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
           Live site
         </a>
         ${links.liveNote ? `<p class="detail-live-note">${links.liveNote}</p>` : ''}
-        ${links.hosting && links.hosting.length ? `
-          <div class="detail-hosting">
-            ${links.hosting.map(h => `
-              <div class="detail-hosting-row">
-                <span class="detail-hosting-name">${h.name}</span>
-                <span class="detail-hosting-value">${h.detail}</span>
-              </div>
-            `).join('')}
-          </div>
-        ` : ''}
       </div>
       ` : ''}
 

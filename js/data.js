@@ -32,7 +32,7 @@ const portfolioData = {
       "I build complete systems, from the database schema up to the screen. I like knowing how each piece works under the hood, and I hold myself to one rule: it is not done until it runs and I have seen it work. I also enjoy the UI side: building clean, responsive interfaces in Angular and Blazor that people actually like using.",
     tagline: "Working at Sky9 IT Craft Private Limited, Rajkot",
     taglineUrl: "https://sky9itcraft.com/",
-    image: "assets/HRT_image2.jpg",
+    image: "assets/HRT_image4.jpg",
     monogram: "HRT",
     ctaPrimary: "View Projects",
     ctaSecondary: "Contact Me",
@@ -40,39 +40,39 @@ const portfolioData = {
 
   services: [
     {
-      title: "Full-Stack Development",
+      title: "Ship a feature end to end",
       description:
-        "I take features end to end: the API, the database layer, and the frontend that uses them, whether that is Angular or Blazor. One person, one working feature.",
+        "I take features from idea to done: the API, the database layer, and the frontend that uses them, whether that is Angular or Blazor. One person, one working feature.",
       icon: "code",
     },
     {
-      title: "API & Backend Systems",
+      title: "APIs that behave predictably",
       description:
-        "Designing clean APIs with proper authentication, predictable error handling, and data flow you can trace with your eyes closed.",
+        "Clean backend systems with proper authentication, predictable error handling, and data flow you can trace with your eyes closed.",
       icon: "api",
     },
     {
-      title: "Database Design",
+      title: "A data model that survives growth",
       description:
         "Relational schemas in PostgreSQL and SQL Server, designed before a single line of code. Most hard problems turn out to be data modeling problems.",
       icon: "database",
     },
     {
-      title: "Cloud Setup & Deployment",
+      title: "Get it live, keep it live",
       description:
-        "Getting things live and keeping them live. I have deployed on Netlify and Render, self hosted a full platform on an Oracle free tier VM, and worked with Azure storage in production.",
+        "Deployment and hosting that holds up: I have shipped on Netlify and Render, self hosted a full platform on an Oracle free tier VM, and worked with Azure storage in production.",
       icon: "cloud",
     },
     {
-      title: "AI Solutions & Integrations",
+      title: "AI features that actually ship",
       description:
         "Chat applications, AI agents, and messaging bridges. I build practical AI powered features and treat the agents as tools I direct, review, and hold to a standard.",
       icon: "robot",
     },
     {
-      title: "Test Automation",
+      title: "Tests that run without me",
       description:
-        "I set up Playwright to run real flows on its own and capture screenshots automatically, plus unit tests where they matter. If it is not tested, I do not call it done.",
+        "Playwright flows that run on their own and capture screenshots automatically, plus unit tests where they matter. If it is not tested, I do not call it done.",
       icon: "test",
     },
     {
@@ -127,7 +127,7 @@ const portfolioData = {
       problem:
         "Booking a sports turf where I live still happens over phone calls and Instagram DMs. Nobody can see which slots are free, there is no booking history, and payments are a mess of UPI screenshots.",
       solution:
-        "I designed and built the whole platform myself. Venue owners list their grounds, players find them on a map, pick an open slot, and pay online. It covers the full journey: PostgreSQL schema, API, authentication, payments, and the Angular UI.",
+        "I designed and built the whole platform myself. Venue owners list their grounds, players find them on a map, pick an open slot, and pay online. It covers the full journey: PostgreSQL schema, API, authentication, payments, and the Angular UI. It runs as an Angular frontend on Netlify with the ASP.NET Core API and PostgreSQL database on Render.",
       features: [
         "Map based venue discovery with Leaflet and location search",
         "Google sign in, verified on the server before a session is issued",
@@ -149,11 +149,6 @@ const portfolioData = {
         live: "https://staging-arenahub.netlify.app/",
         liveNote:
           "Hosted on free plans, so the backend sleeps when idle. If it does not respond right away, give it 5 to 10 minutes to boot and try again.",
-        hosting: [
-          { name: "Frontend", detail: "Netlify" },
-          { name: "Backend API", detail: "Render (free tier)" },
-          { name: "Database", detail: "PostgreSQL" },
-        ],
         github: "#",
         githubLabel: "Code on request",
       },
@@ -169,7 +164,7 @@ const portfolioData = {
       problem:
         "Manual trading means juggling multiple broker screens while signals last for seconds. There is no single view of positions, orders, and market depth, and reacting by hand is simply too slow.",
       solution:
-        "I built a dashboard where a Python backend connects to broker APIs and market data feeds over WebSocket and streams everything to an Angular UI. Positions, orders, depth, and signal alerts update live in one place.",
+        "I built a dashboard where a Python backend connects to broker APIs and market data feeds over WebSocket and streams everything to an Angular UI. Positions, orders, depth, and signal alerts update live in one place. The Angular frontend is on Netlify and the Python API on Render, both on free tiers.",
       features: [
         "Live WebSocket connection to broker market feeds",
         "Positions, orders, and market depth in a single view",
@@ -179,13 +174,9 @@ const portfolioData = {
       tech: ["Python", "FastAPI", "Angular", "WebSocket", "Broker APIs"],
       gallery: [],
       links: {
-        live: "https://algo-trade-by-hrt.netlify.app/login",
+        live: "https://algo-trade-by-hrt.netlify.app",
         liveNote:
           "Hosted on free plans, so the backend sleeps when idle. If it does not respond right away, give it 5 to 10 minutes to boot and try again.",
-        hosting: [
-          { name: "Frontend", detail: "Netlify" },
-          { name: "Backend API", detail: "Render (free tier)" },
-        ],
         github: "#",
         githubLabel: "Code on request",
       },
@@ -240,14 +231,6 @@ const portfolioData = {
         live: "https://ruhicabs.duckdns.org/",
         liveNote:
           "This runs on my own free tier VM, so it is usually up and running. If it is briefly unreachable, give it a minute and reload.",
-        hosting: [
-          { name: "Server", detail: "Oracle Cloud free tier VM" },
-          { name: "Domain", detail: "DuckDNS (free DNS)" },
-          {
-            name: "Hosting",
-            detail: "Self hosted, frontend and backend on one VM",
-          },
-        ],
         github: "#",
         githubLabel: "Code on request",
       },
