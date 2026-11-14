@@ -8,13 +8,13 @@
     "github": "https://github.com/hrtalshania",
     "portfolio": "https://hrtalshania.github.io/portfolio/"
   },
-  "objective": "Software engineer with 2+ years of experience building and deploying full-stack web applications with C#/.NET, Blazor, and Angular across three client products and multiple self-hosted personal platforms. Works across the full development lifecycle: data modeling, APIs, authentication, payments, cloud deployment, and test automation with Playwright. Uses AI coding agents daily for leverage while keeping engineering judgment and code review on my side.",
+  "objective": "Software engineer building and deploying full-stack web applications with C#/.NET, Blazor, and Angular across three client products and multiple self-hosted personal platforms. Works across the full development lifecycle: data modeling, APIs, authentication, payments, cloud deployment, and test automation. Uses AI coding agents daily for leverage while keeping engineering judgment and code review on my side.",
   "education": [
     {
       "degree": "Bachelor of Engineering, Computer Engineering",
       "institute": "Gujarat Technological University (GTU)",
       "period": "2022 - 2025",
-      "details": "SPI: 8.09  |  CPI: 7.78  |  CGPA: 8.09"
+      "details": "SPI: 9.00  |  CPI: 8.05  |  CGPA: 8.30"
     },
     {
       "degree": "Diploma in Computer Engineering",
@@ -25,36 +25,28 @@
   ],
   "skills": [
     {
-      "category": "Primary Stack (.NET)",
-      "items": ["C#", "ASP.NET Core (Minimal APIs)", "Blazor", "Entity Framework Core", "LINQ", "JWT / Google Auth / MFA"]
+      "category": "Languages",
+      "items": ["C#", "TypeScript", "JavaScript", "SQL", "Python", "PHP"]
+    },
+    {
+      "category": "Backend",
+      "items": [".NET", "ASP.NET Core Web API", "Minimal APIs", "Blazor", "Entity Framework Core", "LINQ"]
     },
     {
       "category": "Frontend",
-      "items": ["Angular", "TypeScript", "Blazor", "JavaScript", "HTML5", "CSS3", "Leaflet (maps)", "Radzen", "Ant Design Blazor"]
+      "items": ["Angular", "Blazor", "HTML5", "CSS3", "Leaflet", "Radzen", "Ant Design Blazor"]
     },
     {
       "category": "Databases",
-      "items": ["PostgreSQL", "SQL Server (T-SQL)", "EF Core migrations & query design"]
+      "items": ["PostgreSQL (Neon)", "SQL Server (T-SQL)"]
     },
     {
-      "category": "Cloud, Hosting & Integrations",
-      "items": ["Azure Blob Storage", "Cloudflare R2", "Razorpay", "GoCardless", "Netlify / Render deployment", "Oracle Cloud free tier VM (self hosting)", "DuckDNS", "WebSocket (real-time feeds)"]
+      "category": "Cloud & Integrations",
+      "items": ["Azure Blob Storage", "Cloudflare R2", "Neon", "Razorpay", "GoCardless", "Netlify", "Render", "Oracle Cloud", "DuckDNS", "WebSocket", "Mailjet"]
     },
     {
-      "category": "Testing",
-      "items": ["Playwright (browser test automation with screenshot capture)", "Unit testing", "API testing (Postman)"]
-    },
-    {
-      "category": "Documents & Reporting",
-      "items": ["RDLC report/PDF generation", "Invoicing & reconciliation flows", "Charting and admin dashboards"]
-    },
-    {
-      "category": "Earlier Stack",
-      "items": ["Python", "FastAPI", "PHP", "Node.js / Express", "React", "MongoDB", "Capacitor"]
-    },
-    {
-      "category": "Tools",
-      "items": ["Git", "GitHub", "Docker", "Visual Studio", "VS Code", "Jira", "AI coding agents (OpenCode, agent workflows)"]
+      "category": "Testing & Tools",
+      "items": ["Playwright", "Postman", "Unit testing", "Git", "GitHub", "Docker", "Visual Studio", "VS Code", "Jira"]
     }
   ],
   "experience": [
@@ -83,8 +75,8 @@
     {
       "title": "ArenaHub - Sports Venue Booking Platform",
       "period": "Personal project",
-      "description": "Designed and built end to end: map-based venue discovery, Google authentication, slot booking, Razorpay payment integration, and file uploads to Cloudflare R2. Deployed frontend on Netlify, API on Render (free tier).",
-      "tech": ["ASP.NET Core Minimal API", "Angular", "PostgreSQL", "Razorpay", "Cloudflare R2", "Leaflet"],
+      "description": "Designed and built end to end: map-based venue discovery, Google authentication, slot booking, Razorpay payment integration, and file uploads to Cloudflare R2. Angular frontend on Netlify, API on Render (free tier), PostgreSQL on Neon.",
+      "tech": ["ASP.NET Core Minimal API", "Angular", "PostgreSQL (Neon)", "Razorpay", "Cloudflare R2", "Leaflet"],
       "link": "https://staging-arenahub.netlify.app/"
     },
     {
@@ -92,20 +84,20 @@
       "period": "Personal project",
       "description": "Python/FastAPI service consuming broker APIs and WebSocket market feeds, streamed to an Angular UI with live positions, orders, market depth, and signal alerts. Deployed on Netlify (frontend) and Render (API).",
       "tech": ["Python", "FastAPI", "Angular", "WebSocket", "Broker APIs"],
-      "link": "https://algo-trade-by-hrt.netlify.app/login"
+      "link": "https://algo-trade-by-hrt.netlify.app/"
     },
     {
       "title": "Cab Booking Platform (Self Hosted)",
       "period": "Personal project",
-      "description": "Cab booking platform with .NET APIs and an Angular frontend, self-hosted end to end on an Oracle Cloud free tier VM: VM setup, DNS via DuckDNS, and deployment.",
-      "tech": ["ASP.NET Core", "Angular", "Oracle Cloud VM", "DuckDNS", "Linux"],
+      "description": "Cab booking platform with .NET APIs and an Angular frontend, self-hosted end to end on an Oracle Cloud free tier VM: VM setup, DNS via DuckDNS, and deployment, with the database on Neon.",
+      "tech": ["ASP.NET Core", "Angular", "Oracle Cloud VM", "Neon (PostgreSQL)", "DuckDNS", "Linux"],
       "link": "https://ruhicabs.duckdns.org/"
     },
     {
       "title": "BlazingAuth - Complete Auth System",
       "period": "Personal project",
-      "description": "Authentication and authorization built from scratch: registration and login with password hashing, JWT access tokens with refresh-token rotation, role-based access control, and protected routes on API and frontend.",
-      "tech": ["ASP.NET Core", "JWT", "Blazor", "SQL Server"],
+      "description": "Authentication and authorization built from scratch: registration and login with password hashing, JWT access tokens with refresh-token rotation, role-based access control, and protected routes on the Angular frontend and the controller-based ASP.NET Core Web API. Forgot/reset password flow sends email through Mailjet.",
+      "tech": ["ASP.NET Core Web API (Controllers)", "Angular", "JWT", "Mailjet", "SQL Server"],
       "link": ""
     },
     {
@@ -122,10 +114,5 @@
       "tech": ["PHP", "MySQL", "Bootstrap", "JavaScript"],
       "link": ""
     }
-  ],
-  "achievements": [
-    "Participated in Internal Hackathon 'Lakshya 1.0' for Smart India Hackathon - 2023",
-    "Ranked 4th in the Indian Society for Technical Education (ISTE) final year project showcase - 2022",
-    "All India Ramanujan Maths Club - 2015"
   ]
 }

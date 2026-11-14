@@ -127,7 +127,7 @@ const portfolioData = {
       problem:
         "Booking a sports turf where I live still happens over phone calls and Instagram DMs. Nobody can see which slots are free, there is no booking history, and payments are a mess of UPI screenshots.",
       solution:
-        "I designed and built the whole platform myself. Venue owners list their grounds, players find them on a map, pick an open slot, and pay online. It covers the full journey: PostgreSQL schema, API, authentication, payments, and the Angular UI. It runs as an Angular frontend on Netlify with the ASP.NET Core API and PostgreSQL database on Render.",
+        "I designed and built the whole platform myself. Venue owners list their grounds, players find them on a map, pick an open slot, and pay online. It covers the full journey: PostgreSQL schema, API, authentication, payments, and the Angular UI. It runs as an Angular frontend on Netlify with the ASP.NET Core API on Render and the PostgreSQL database on Neon.",
       features: [
         "Map based venue discovery with Leaflet and location search",
         "Google sign in, verified on the server before a session is issued",
@@ -188,18 +188,19 @@ const portfolioData = {
       title: "BlazingAuth",
       featured: true,
       summary:
-        "A complete authentication system built from scratch: tokens, refresh rotation, roles, and protected routes.",
+        "A complete authentication system built from scratch: tokens, refresh rotation, roles, protected routes, and email driven password reset.",
       problem:
-        "Most auth demos stop at a login page. There is no token lifecycle, no refresh handling, and no role separation, which is exactly where real applications get burned.",
+        "Most auth demos stop at a login page. There is no token lifecycle, no refresh handling, no role separation, and no real password reset flow, which is exactly where real applications get burned.",
       solution:
-        "I built the full thing myself: registration and login with proper password hashing, JWT access tokens with refresh token rotation, role based policies, and protected routes on both the API and the frontend. Nothing borrowed, so I understand every moving part.",
+        "I built the full thing myself: registration and login with proper password hashing, JWT access tokens with refresh token rotation, role based policies, and protected routes on the Angular frontend and the controller based ASP.NET Core Web API. Forgot and reset password flows send email through Mailjet. Nothing borrowed, so I understand every moving part.",
       features: [
         "Login and signup with proper password hashing",
         "JWT access tokens paired with refresh token rotation",
         "Role based authorization policies",
-        "Protected frontend routes and API endpoints",
+        "Forgot / reset password flow with Mailjet email delivery",
+        "Protected Angular routes and API endpoints",
       ],
-      tech: ["ASP.NET Core", "JWT", "Blazor", "SQL Server"],
+      tech: ["ASP.NET Core Web API (Controllers)", "Angular", "JWT", "Mailjet", "SQL Server"],
       gallery: [],
       links: {
         github: "#",
@@ -217,7 +218,7 @@ const portfolioData = {
       problem:
         "Local cab booking runs on phone calls and memory. Bookings, driver assignments, and customer history all live in someone's head or a notebook, and nothing scales that way.",
       solution:
-        "I built a booking platform with .NET APIs and an Angular frontend, then went a step further and self hosted the whole thing. It runs on an Oracle Cloud free tier VM that I set up and maintain myself, with DNS handled through a free DuckDNS domain. That gave me end to end ownership, from the code to the server it runs on.",
+        "I built a booking platform with .NET APIs and an Angular frontend, then went a step further and self hosted the whole thing. It runs on an Oracle Cloud free tier VM that I set up and maintain myself, with DNS handled through a free DuckDNS domain and the PostgreSQL database on Neon. That gave me end to end ownership, from the code to the server it runs on.",
       features: [
         "Booking flow with ride details and driver assignment",
         "WhatsApp oriented CRM flows for customer communication",
@@ -346,6 +347,7 @@ const portfolioData = {
       "LINQ",
       "SQL Server",
       "PostgreSQL",
+      "Neon",
     ],
     Frontend: [
       "Angular",
