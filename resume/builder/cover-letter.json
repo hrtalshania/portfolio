@@ -1,0 +1,27 @@
+{
+  "date": "auto",
+
+  "recipient": {
+    "name": "Hiring Manager",
+    "title": "",
+    "company": "[Company]"
+  },
+
+  "role": "[Role Title]",
+  "source": "LinkedIn",
+
+  "opening":
+    "I'm applying for the {role} role at {company}. I'm a software engineer at Sky9 IT Craft in Rajkot, where I build and ship .NET and Angular products for clients in aviation, mailing, and waste management.",
+
+  "body": [
+    "What I bring is end to end ownership. I designed and built ArenaHub, a sports venue booking platform, from the database up: an ASP.NET Core Minimal API, an Angular frontend, PostgreSQL on Neon, Razorpay payments, map-based discovery with Leaflet, and file uploads to Cloudflare R2. On client work I've shipped multi-factor authentication and GoCardless payments for an aircraft management platform, RDLC-based invoicing and reconciliation for a US mailing service, and multi-tenant admin dashboards with Azure storage for a UK waste management company. I also work with AI coding agents daily, but review and hold every line to the same standard I would write myself."
+  ],
+
+  "whyThem":
+    "[Why-this-company paragraph here. One researched detail about their product, stack, market, or engineering blog, connected to your work.]",
+
+  "closing":
+    "I'd welcome the chance to talk about how I can help {company} ship work like this, and I'm available for a conversation at your convenience. Thank you for your time and consideration.",
+
+  "swapNotes": "Per application, change exactly these three things, then run: node build-cover-letter.js\n1. recipient.company  (appears in the recipient block, the greeting, and every {company} token)\n2. role  (appears in the opening line via {role})\n3. whyThem  (replace the placeholder with one researched detail: their product, stack, market, or a blog post, connected to your work)\nIf you find the hiring manager's name, set recipient.name to it and the greeting becomes 'Dear {name},'. Otherwise leave 'Hiring Manager' and the greeting reads 'Dear {company} Hiring Team,'.\ndate stays 'auto' and always prints the day you build.\nBefore sending, rename the tailored PDF: Harshit_Talshania_Cover_Letter_[Company].pdf"
+}
