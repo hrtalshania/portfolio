@@ -1,0 +1,434 @@
+{
+  "_about": "Single source of truth for every public profile. Edit facts here, edit each platform's copy here, run `node build.mjs`, then paste profile/out/<platform>.md into that platform. Bump `version` and add a changelog entry whenever a fact changes.",
+  "version": 1,
+  "updated": "2026-11-21",
+
+  "identity": {
+    "name": "Harshit Talshania",
+    "role": "Software Engineer",
+    "location": "Rajkot, Gujarat, India",
+    "timezone": "IST (UTC+5:30)",
+    "email": "hrtalshania@gmail.com"
+  },
+
+  "links": {
+    "portfolio": "https://hrtalshania.github.io/portfolio/",
+    "github": "https://github.com/hrtalshania",
+    "linkedin": "https://www.linkedin.com/in/harshit-talshania/",
+    "upwork": "",
+    "resume": "https://hrtalshania.github.io/portfolio/resume/Harshit_Talshania_Resume.pdf"
+  },
+
+  "positioning": {
+    "primary": "Full-stack .NET engineer who ships complete systems, not layers.",
+    "secondary": "AI-assisted development with review and judgment kept human.",
+    "audience": "Recruiters and hiring managers first, freelance clients second.",
+    "wants": "Full-time roles plus selective freelance work."
+  },
+
+  "facts": {
+    "experience": [
+      {
+        "company": "Sky9 IT Craft Private Limited",
+        "role": "Software Engineer (Full-Stack .NET)",
+        "type": "Full-time",
+        "location": "Rajkot, Gujarat, India · On-site",
+        "start": "Aug 2024",
+        "end": "Present",
+        "clientProjects": ["DownWind Aviation", "Presort EMS", "Country Style"],
+        "stack": ["C#", "ASP.NET Core", "Blazor", "Entity Framework Core", "SQL Server", "Azure Blob Storage", "Radzen", "RDLC", "GoCardless"]
+      },
+      {
+        "company": "Freelance & Personal Projects",
+        "role": "Developer",
+        "type": "Self-employed",
+        "location": "",
+        "start": "2024",
+        "end": "Present",
+        "clientProjects": [],
+        "stack": ["ASP.NET Core", "Angular", "PostgreSQL", "Python", "Oracle Cloud", "Docker"]
+      }
+    ],
+    "projects": [
+      {
+        "key": "arenahub",
+        "name": "ArenaHub",
+        "kind": "personal",
+        "url": "https://staging-arenahub.netlify.app/",
+        "caseStudy": "https://hrtalshania.github.io/portfolio/projects/index.html?id=arenahub",
+        "code": "on request",
+        "stack": ["ASP.NET Core Minimal API", "Angular", "PostgreSQL", "Razorpay", "Cloudflare R2", "Leaflet"]
+      },
+      {
+        "key": "algo-trade",
+        "name": "Algo Trade Dashboard",
+        "kind": "personal",
+        "url": "https://algo-trade-by-hrt.netlify.app/",
+        "caseStudy": "https://hrtalshania.github.io/portfolio/projects/index.html?id=algo-trade",
+        "code": "on request",
+        "stack": ["Python", "FastAPI", "Angular", "WebSocket", "Broker APIs"]
+      },
+      {
+        "key": "cab-booking",
+        "name": "Cab Booking Platform",
+        "kind": "personal",
+        "url": "https://ruhicabs.duckdns.org/",
+        "caseStudy": "https://hrtalshania.github.io/portfolio/projects/index.html?id=cab-booking",
+        "code": "on request",
+        "stack": ["ASP.NET Core", "Angular", "Oracle Cloud VM", "Neon PostgreSQL", "DuckDNS", "Linux"]
+      },
+      {
+        "key": "blazingauth",
+        "name": "BlazingAuth",
+        "kind": "personal",
+        "url": "",
+        "caseStudy": "https://hrtalshania.github.io/portfolio/projects/index.html?id=blazingauth",
+        "code": "on request",
+        "stack": ["ASP.NET Core Web API", "Angular", "JWT", "SQL Server", "Mailjet"]
+      },
+      {
+        "key": "bridge-messaging",
+        "name": "Bridge Messaging",
+        "kind": "experimental",
+        "url": "",
+        "caseStudy": "https://hrtalshania.github.io/portfolio/projects/index.html?id=bridge-messaging",
+        "code": "on request",
+        "stack": ["Python", "Slack API", "Discord API", "Telegram API", ".NET MAUI"]
+      },
+      {
+        "key": "ayurbeat",
+        "name": "Ayurbeat",
+        "kind": "earlier",
+        "url": "",
+        "caseStudy": "https://hrtalshania.github.io/portfolio/projects/index.html?id=ayurbeat",
+        "code": "on request",
+        "stack": ["PHP", "MySQL", "Bootstrap"]
+      }
+    ],
+    "education": [
+      {
+        "school": "Gujarat Technological University (GTU)",
+        "degree": "Bachelor of Engineering, Computer Engineering",
+        "start": "2022",
+        "end": "2025",
+        "grade": "CGPA 8.30"
+      },
+      {
+        "school": "A.V. Parekh Technical Institute, Rajkot",
+        "degree": "Diploma in Computer Engineering",
+        "start": "2019",
+        "end": "2022",
+        "grade": "Grade A"
+      }
+    ],
+    "skills": {
+      "primary": ["C#", "ASP.NET Core", "Blazor", "Entity Framework Core", "SQL Server", "PostgreSQL"],
+      "frontend": ["Angular", "TypeScript", "JavaScript", "HTML/CSS", "Leaflet"],
+      "integrations": ["REST APIs", "JWT", "Razorpay", "GoCardless", "Azure Blob Storage", "Cloudflare R2", "WebSocket", "Google Auth"],
+      "cloud": ["Azure", "Docker", "Netlify", "Render", "Oracle Cloud", "Linux"],
+      "testing": ["Playwright", "xUnit", "Postman"],
+      "earlier": ["Python", "FastAPI", "PHP", "Node.js", "React", "MongoDB", "Capacitor"],
+      "tools": ["Git", "GitHub", "Visual Studio", "VS Code", "Jira"]
+    }
+  },
+
+  "platforms": {
+    "linkedin": {
+      "enabled": true,
+      "syncedVersion": 0,
+      "lastSynced": "",
+      "profile": {
+        "headline": "Software Engineer (.NET, C#, Angular, Blazor) | I build and ship complete systems, from database schema to UI | APIs, auth, payments, deployment | 3 client products in production",
+        "about": "I'm a software engineer from Rajkot, India, and I build complete systems rather than isolated pieces. Most days that means C# and .NET on the backend, Angular or Blazor on the front end, and the database design that holds both together.\n\nMy professional work has been on client products at Sky9 IT Craft. An aircraft ownership and flight-record platform. An enterprise mailing system used by US mailing organizations. A waste-management admin platform for a UK company. That work taught me what production actually asks for: authentication that holds, payments that reconcile, reports that match the numbers, and deployments that do not fall over on a Monday morning.\n\nOutside work I build the same way, end to end. ArenaHub is a turf booking platform I designed and shipped alone: PostgreSQL schema, .NET API, Google sign-in, Razorpay payments, Angular UI, deployed on Netlify and Render. Algo Trade streams broker market data over WebSocket into a live Angular dashboard. A cab booking platform runs on an Oracle Cloud VM I set up and maintain myself. BlazingAuth is a full authentication system built from scratch: JWT access tokens, refresh rotation, role-based access, email password reset.\n\nHow I work. I model the data before writing code, because what looks like an architecture problem is usually a schema problem. I build in working vertical slices, so there is always something runnable. And I verify instead of assuming: if I have not run it, hit the failure paths, and seen the output, it is not done.\n\nI use AI coding agents daily and they make me genuinely faster. The judgment stays with me. Scope, review, and engineering decisions are mine to own, because AI is leverage, not a substitute for understanding.\n\nI am open to full-time roles and freelance work, especially backend-heavy full-stack products where reliability matters. Email is the fastest way to reach me, and there is more detail on my portfolio: https://hrtalshania.github.io/portfolio/",
+        "location": "Rajkot, Gujarat, India",
+        "industry": "Software Development",
+        "website": "https://hrtalshania.github.io/portfolio/",
+        "contactEmail": "hrtalshania@gmail.com",
+        "customUrl": "linkedin.com/in/harshit-talshania"
+      },
+      "banner": {
+        "size": "1584 x 396 px",
+        "spec": "Dark background matching the portfolio monochrome theme. Left-aligned text with a 112 px safe margin: 'Harshit Talshania' on one line, 'Software Engineer · .NET / Angular / Blazor' on the next. No stock imagery, no gradient mesh, no logos wall.",
+        "status": "you create this"
+      },
+      "experience": [
+        {
+          "title": "Software Engineer (Full-Stack .NET)",
+          "company": "Sky9 IT Craft Private Limited",
+          "employmentType": "Full-time",
+          "location": "Rajkot, Gujarat, India · On-site",
+          "start": "Aug 2024",
+          "end": "Present",
+          "description": "Full-stack .NET engineer on three client products, from backend development and Blazor UI through APIs, databases, cloud, and deployment. Started with a six-month internship on a live project.\n\nClient work:\n\nDownWind Aviation — aircraft ownership and flight-record management. Aircraft booking, pilot techlog logging, document uploads, expense tracking, multi-factor authentication, and GoCardless payment integration. (Blazor, SQL Server, Azure Storage, Radzen)\n\nPresort EMS — enterprise mailing platform used by major US mailing organizations. Legacy RDLC PDF generation plus payment, invoice, and reconciliation flows. (Blazor, RDLC, SQL Server, Ant Design Blazor)\n\nCountry Style — UK waste-management admin platform. Secure authentication, multi-tab interface for bookings, invoices, reports and analysis, an interactive site map, and chart views across collection, sorting, material waste and disposables on multiple SQL servers with Azure. (Blazor, SQL Server, Radzen)\n\nClient products are confidential, so I describe my role and the technology rather than the codebase.",
+          "skills": ["C#", "ASP.NET Core", "Blazor", "Entity Framework Core", "SQL Server", "Azure"]
+        },
+        {
+          "title": "Developer",
+          "company": "Freelance & Personal Projects",
+          "employmentType": "Self-employed",
+          "location": "",
+          "start": "2024",
+          "end": "Present",
+          "description": "Independent product work, built and shipped end to end: ArenaHub (turf booking platform, live), Algo Trade (real-time market dashboard), a self-hosted cab booking platform on an Oracle Cloud VM, and BlazingAuth (authentication built from scratch). Earlier work includes PHP e-commerce, MERN applications, and a Capacitor mobile app.",
+          "skills": ["ASP.NET Core", "Angular", "PostgreSQL", "Python", "Docker"]
+        }
+      ],
+      "education": [
+        {
+          "school": "Gujarat Technological University (GTU)",
+          "degree": "Bachelor of Engineering, Computer Engineering",
+          "start": "2022",
+          "end": "2025",
+          "grade": "CGPA 8.30",
+          "description": "Computer engineering fundamentals: data structures, databases, operating systems, computer networks, and software engineering."
+        },
+        {
+          "school": "A.V. Parekh Technical Institute, Rajkot",
+          "degree": "Diploma in Computer Engineering",
+          "start": "2019",
+          "end": "2022",
+          "grade": "A",
+          "description": ""
+        }
+      ],
+      "projects": [
+        {
+          "title": "ArenaHub — Sports Venue Booking Platform",
+          "description": "Built solo, end to end: map-based venue discovery, Google sign-in, slot booking with live availability, Razorpay payments, and image uploads to Cloudflare R2. PostgreSQL with spatial queries. Angular on Netlify, ASP.NET Core API on Render, database on Neon.",
+          "url": "https://staging-arenahub.netlify.app/"
+        },
+        {
+          "title": "Algo Trade Dashboard — Real-Time Market Data",
+          "description": "A Python/FastAPI service consumes broker APIs and WebSocket market feeds and streams positions, orders, market depth, and signal alerts into an Angular UI. The hard part was treating the feed as unreliable: reconnects, out-of-order ticks, and stale data.",
+          "url": "https://algo-trade-by-hrt.netlify.app/"
+        },
+        {
+          "title": "Cab Booking Platform — Self-Hosted",
+          "description": "A booking platform with .NET APIs and an Angular front end, self-hosted on an Oracle Cloud free-tier VM I configured myself: SSH hardening, firewall, DuckDNS domain, HTTPS, and a Neon PostgreSQL database. End-to-end ownership from code to server.",
+          "url": "https://ruhicabs.duckdns.org/"
+        },
+        {
+          "title": "BlazingAuth — Authentication Built From Scratch",
+          "description": "Registration and login with password hashing, JWT access tokens with refresh-token rotation, role-based policies, protected Angular routes and API endpoints, and a forgot/reset password flow delivered through Mailjet.",
+          "url": ""
+        }
+      ],
+      "featured": [
+        {
+          "title": "ArenaHub — turf booking platform, live",
+          "url": "https://staging-arenahub.netlify.app/",
+          "note": "Free-tier hosting: the backend sleeps, allow 5-10 min on first load."
+        },
+        {
+          "title": "Algo Trade — real-time market dashboard, live",
+          "url": "https://algo-trade-by-hrt.netlify.app/",
+          "note": "Free-tier hosting: the backend sleeps, allow 5-10 min on first load."
+        },
+        {
+          "title": "Cab Booking Platform — self-hosted on my own VM",
+          "url": "https://ruhicabs.duckdns.org/",
+          "note": "Runs on an Oracle Cloud free-tier VM I maintain."
+        },
+        {
+          "title": "Portfolio — case studies and how I work",
+          "url": "https://hrtalshania.github.io/portfolio/",
+          "note": "Problem, approach, and lessons for each project."
+        }
+      ],
+      "skills": {
+        "pinned": ["C#", "ASP.NET Core", ".NET"],
+        "rest": ["Angular", "Blazor", "Entity Framework Core", "SQL Server", "PostgreSQL", "TypeScript", "REST APIs", "JWT", "Docker", "Playwright", "Python", "Git", "Azure Blob Storage", "Razorpay", "WebSocket", "Unit Testing"]
+      },
+      "openToWork": {
+        "titles": ["Software Engineer", "Full Stack Developer", ".NET Developer", "Backend Developer"],
+        "locations": ["Rajkot, Gujarat, India", "Ahmedabad, Gujarat, India", "Remote"],
+        "types": ["Full-time", "Contract"],
+        "note": "Set visibility to recruiters only while employed at Sky9."
+      },
+      "services": {
+        "enabled": true,
+        "title": "Full-stack .NET development",
+        "description": "I build business web applications end to end: database design, APIs, authentication, payments, and the Angular or Blazor interface. Fixed-scope features or ongoing work.",
+        "services": [
+          "Web application development",
+          "API development and integration",
+          "Database design and optimization",
+          "Authentication and authorization",
+          "Deployment and hosting setup",
+          "Test automation"
+        ]
+      }
+    },
+
+    "upwork": {
+      "enabled": true,
+      "syncedVersion": 0,
+      "lastSynced": "",
+      "profile": {
+        "title": "Full-Stack .NET Developer | ASP.NET Core, Angular, Blazor, SQL",
+        "hourlyRate": 20,
+        "rateFloor": 15,
+        "rateNote": "Upwork shows one rate. $20 listed, $15 is the private floor for negotiation.",
+        "availability": "20-30 hrs/week",
+        "availabilityNote": "Honest band next to a full-time role. Change only if you can genuinely commit more.",
+        "responseTime": "Within 24 hours",
+        "overview": "Full-stack .NET developer. I build web applications end to end: the database, the API, and the interface people actually use.\n\nWHAT I BUILD\n\n- Business web applications in ASP.NET Core with Blazor or Angular\n- REST APIs with authentication, validation, and predictable error handling\n- Databases in SQL Server and PostgreSQL: schema design, EF Core, query performance\n- Payments and integrations: Razorpay, GoCardless, Azure Blob Storage, Cloudflare R2\n- Authentication done properly: JWT access tokens, refresh rotation, role-based access, email password reset\n- Deployment: Netlify, Render, Azure, and self-hosted Linux VMs\n- Automated testing with Playwright, including screenshot capture for UI checks\n\nHOW I WORK\n\n1. I clarify what the feature should do before writing code.\n2. I design the data model and API contracts first, because most architecture problems are schema problems.\n3. I build in working vertical slices, so there is something runnable early.\n4. I verify instead of assuming: run it, hit the failure paths, check the real output.\n5. You get a working feature, not a half-finished layer.\n\nRECENT WORK\n\nArenaHub - a sports venue booking platform I built and shipped alone. Map-based venue discovery, Google sign-in, slot booking, Razorpay payments, file uploads to Cloudflare R2, PostgreSQL with spatial queries. Live: https://staging-arenahub.netlify.app/\n\nAlgo Trade - a real-time trading dashboard. Python/FastAPI service consuming broker APIs and WebSocket market feeds, streamed into an Angular UI with live positions, orders, market depth and signal alerts. Live: https://algo-trade-by-hrt.netlify.app/\n\nCab Booking Platform - a booking platform with .NET APIs and an Angular front end that I self-host on an Oracle Cloud VM, including server setup, DNS, HTTPS and deployment. Live: https://ruhicabs.duckdns.org/\n\nBACKGROUND\n\nSoftware Engineer at Sky9 IT Craft (Rajkot, India) since 2024, across three client products: an aircraft ownership and flight-record platform, an enterprise mailing system used by US mailing organizations, and a UK waste-management admin platform. Blazor, SQL Server, Azure, RDLC reporting, GoCardless payments.\n\nAVAILABILITY\n\nFive days a week, 20-30 hours, replies within 24 hours. I work in IST (UTC+5:30) with overlap into EU and US mornings.\n\nIf you have a feature or a system that needs building properly, send me the scope and I will tell you honestly whether I am the right fit.\n\nPortfolio and case studies: https://hrtalshania.github.io/portfolio/",
+        "videoIntro": "Optional. 30-60 seconds: who you are, what you build, one project shown on screen, how to reach you. Record it only if it looks deliberate."
+      },
+      "category": {
+        "main": "Web, Mobile & Software Dev",
+        "sub": ["Web Development", "Full Stack Development", "Backend Development"],
+        "note": "Pick the closest matches the UI offers. Specialized Profiles were retired in May 2026, so this single profile carries both .NET and AI/automation work."
+      },
+      "skills": [
+        "C#", ".NET Core", "ASP.NET Core", "ASP.NET MVC", "Blazor", "Angular",
+        "TypeScript", "JavaScript", "Entity Framework Core", "SQL Server",
+        "PostgreSQL", "REST API", "JWT", "Razorpay", "Azure Blob Storage",
+        "Docker", "Playwright", "Git", "Python", "FastAPI"
+      ],
+      "employment": [
+        {
+          "title": "Software Engineer (Full-Stack .NET)",
+          "company": "Sky9 IT Craft Private Limited",
+          "location": "Rajkot, India",
+          "start": "Aug 2024",
+          "end": "Present",
+          "description": "Full-stack development across three client products. DownWind Aviation: aircraft ownership and flight-record management with booking, pilot techlog, document uploads, expense tracking, MFA and GoCardless payments. Presort EMS: enterprise mailing platform, legacy RDLC PDF generation, payment/invoice/reconciliation flows. Country Style: UK waste-management admin platform with bookings, invoices, reports, interactive site map and charting across multiple SQL servers. Blazor, ASP.NET Core, SQL Server, Azure."
+        },
+        {
+          "title": "Developer",
+          "company": "Freelance & Personal Projects",
+          "location": "Remote",
+          "start": "2024",
+          "end": "Present",
+          "description": "Built and deployed full-stack products end to end: ArenaHub (venue booking, live), Algo Trade (real-time market dashboard), a self-hosted cab booking platform on an Oracle Cloud VM, and BlazingAuth (authentication from scratch)."
+        }
+      ],
+      "education": [
+        {
+          "school": "Gujarat Technological University (GTU)",
+          "degree": "Bachelor of Engineering, Computer Engineering",
+          "start": "2022",
+          "end": "2025",
+          "description": "CGPA 8.30"
+        },
+        {
+          "school": "A.V. Parekh Technical Institute, Rajkot",
+          "degree": "Diploma in Computer Engineering",
+          "start": "2019",
+          "end": "2022",
+          "description": "Grade A"
+        }
+      ],
+      "languages": [
+        { "language": "English", "level": "Fluent" },
+        { "language": "Hindi", "level": "Native or bilingual" },
+        { "language": "Gujarati", "level": "Native or bilingual" }
+      ],
+      "linkedAccounts": [
+        { "name": "Portfolio", "url": "https://hrtalshania.github.io/portfolio/" },
+        { "name": "GitHub", "url": "https://github.com/hrtalshania" },
+        { "name": "LinkedIn", "url": "https://www.linkedin.com/in/harshit-talshania/" }
+      ],
+      "portfolio": [
+        {
+          "title": "ArenaHub - Sports Venue Booking Platform",
+          "description": "Complete booking platform built solo: map-based venue discovery, Google sign-in, live slot availability, Razorpay payments, image uploads to Cloudflare R2, and PostgreSQL with spatial queries. Angular front end on Netlify, ASP.NET Core Minimal API on Render, database on Neon.",
+          "skills": ["ASP.NET Core", "Angular", "PostgreSQL", "Razorpay", "REST API"],
+          "url": "https://staging-arenahub.netlify.app/"
+        },
+        {
+          "title": "Algo Trade - Real-Time Trading Dashboard",
+          "description": "Python/FastAPI service consuming broker APIs and WebSocket market feeds, streamed to an Angular UI with live positions, orders, market depth and signal alerts. Handles reconnects, out-of-order ticks and stale data.",
+          "skills": ["Python", "FastAPI", "Angular", "WebSocket", "REST API"],
+          "url": "https://algo-trade-by-hrt.netlify.app/"
+        },
+        {
+          "title": "Cab Booking Platform - Self-Hosted on Oracle Cloud",
+          "description": "Booking platform with .NET APIs and an Angular front end, self-hosted end to end: Oracle Cloud free-tier VM setup, SSH hardening, firewall, DuckDNS domain, HTTPS, and a Neon PostgreSQL database.",
+          "skills": ["ASP.NET Core", "Angular", "Linux", "Docker", "PostgreSQL"],
+          "url": "https://ruhicabs.duckdns.org/"
+        },
+        {
+          "title": "BlazingAuth - Authentication System From Scratch",
+          "description": "Registration and login with password hashing, JWT access tokens and refresh-token rotation, role-based policies, protected Angular routes, and a Mailjet password reset flow. Code available on request.",
+          "skills": ["ASP.NET Core", "JWT", "Angular", "SQL Server", "REST API"],
+          "url": ""
+        }
+      ],
+      "projectCatalog": {
+        "enabled": false,
+        "note": "Fixed-price packages are a later step. Start with hourly and 2-3 completed jobs, then add packages priced from real delivery time."
+      },
+      "consultations": { "enabled": false }
+    },
+
+    "github": {
+      "enabled": true,
+      "syncedVersion": 0,
+      "lastSynced": "",
+      "bio": "Software engineer building full-stack systems with .NET, Angular and Blazor. APIs, databases, auth, deployment. hrtalshania.github.io/portfolio/",
+      "website": "https://hrtalshania.github.io/portfolio/",
+      "readme": "# Harshit Talshania\n\nSoftware engineer building complete systems: the database, the API, and the interface that uses them. Mostly C#, .NET, Angular, and Blazor.\n\n![C#](https://img.shields.io/badge/C%23-239120?logo=csharp&logoColor=white)\n![.NET](https://img.shields.io/badge/.NET-512BD4?logo=dotnet&logoColor=white)\n![Angular](https://img.shields.io/badge/Angular-DD0031?logo=angular&logoColor=white)\n![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)\n![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)\n![SQL Server](https://img.shields.io/badge/SQL%20Server-CC2927?logo=microsoftsqlserver&logoColor=white)\n\n---\n\n## What I work on\n\n- Full-stack web applications with ASP.NET Core and Angular or Blazor\n- REST APIs with real authentication: JWT, refresh rotation, roles\n- Database design in SQL Server and PostgreSQL\n- Deployment and hosting: Netlify, Render, Azure, self-hosted Linux VMs\n\n## Selected work\n\n| Project | What it is | Stack |\n|---|---|---|\n| [ArenaHub](https://staging-arenahub.netlify.app/) | Sports venue booking platform, built and shipped solo | ASP.NET Core, Angular, PostgreSQL, Razorpay |\n| [Algo Trade](https://algo-trade-by-hrt.netlify.app/) | Real-time market data dashboard | Python, FastAPI, WebSocket, Angular |\n| [Cab Booking](https://ruhicabs.duckdns.org/) | Booking platform self-hosted on an Oracle VM | ASP.NET Core, Angular, Oracle Cloud |\n| BlazingAuth | Authentication from scratch (code on request) | ASP.NET Core, JWT, SQL Server |\n\nCase studies for each project: [portfolio](https://hrtalshania.github.io/portfolio/)\n\n## How I work\n\n- Model the data before writing code.\n- Build in working vertical slices, never half-finished layers.\n- Verify instead of assuming: if it has not been run and checked, it is not done.\n- Use AI coding agents as leverage, with review and judgment kept on my side.\n\n## Contact\n\n- Portfolio: https://hrtalshania.github.io/portfolio/\n- LinkedIn: https://www.linkedin.com/in/harshit-talshania/\n- Email: hrtalshania@gmail.com\n",
+      "pinned": [],
+      "pinCandidates": [
+        { "repo": "arenahub", "reason": "Only pin once public. Pinned private repos still show as 'Private' to visitors." },
+        { "repo": "algo-trade", "reason": "Only once public." },
+        { "repo": "blazingauth", "reason": "Only once public." },
+        { "repo": "portfolio", "reason": "Pin after making the repo public, since the live site is on Pages." }
+      ],
+      "pinNote": "Everything is private today, so the profile README carries the whole page. Revisit pinning after the secret scrub.",
+      "repoMeta": [
+        {
+          "repo": "hrtalshania",
+          "description": "Profile README",
+          "topics": ["profile", "readme"]
+        }
+      ]
+    },
+
+    "x": {
+      "enabled": false,
+      "syncedVersion": 0,
+      "lastSynced": "",
+      "handle": "",
+      "name": "Harshit Talshania",
+      "bio": "Software engineer. I build full-stack systems with .NET, Angular and Blazor, and write about what breaks along the way. Portfolio ↓",
+      "location": "Rajkot, India",
+      "website": "https://hrtalshania.github.io/portfolio/",
+      "pinnedPost": "I'm Harshit. I build web applications end to end: database, API, interface, deployment.\n\nRecent work:\n- ArenaHub: turf booking platform, solo build, live\n- Algo Trade: real-time market dashboard\n- BlazingAuth: authentication from scratch\n\nPortfolio: https://hrtalshania.github.io/portfolio/",
+      "note": "Bio is 160 chars max. Posting needs a paid API, so use the app; do not wire up the API for a bio."
+    },
+
+    "instagram": {
+      "enabled": false,
+      "syncedVersion": 0,
+      "lastSynced": "",
+      "handle": "",
+      "name": "Harshit Talshania",
+      "bio": "Software engineer · .NET, Angular, Blazor\nI build complete systems and show the parts that break\n↓ portfolio",
+      "website": "https://hrtalshania.github.io/portfolio/",
+      "category": "Software Developer",
+      "highlights": ["Projects", "Stack", "Process", "Work", "Contact"],
+      "note": "Switch to a Creator account if you want insights. Bio is 150 chars max; name field is searchable, keep it as the real name."
+    },
+
+    "facebook": {
+      "enabled": false,
+      "syncedVersion": 0,
+      "lastSynced": "",
+      "bio": "Software engineer in Rajkot. I build full-stack web apps with .NET, Angular and Blazor.",
+      "website": "https://hrtalshania.github.io/portfolio/",
+      "note": "Bio field is 101 chars max. Keep this a mirror of Instagram, no separate content strategy."
+    }
+  },
+
+  "changelog": [
+    {
+      "version": 1,
+      "date": "2026-11-21",
+      "keys": ["initial"],
+      "note": "Initial profile build: facts extracted from js/data.js and resume data, LinkedIn + Upwork + GitHub copy, social drafts disabled."
+    }
+  ]
+}

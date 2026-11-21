@@ -2,7 +2,7 @@
 
 Personal portfolio of **Harshit Talshania** — Software Engineer building complete systems (APIs, databases, real-time apps, and the UIs that use them), with .NET, Angular, and Blazor among the tools used daily. Includes self-hosting (Oracle VM), test automation (Playwright), and AI-assisted development experience.
 
-**Live site (GitHub Pages):** TODO — open Pages after making the repo public.
+**Live site (GitHub Pages):** https://hrtalshania.github.io/portfolio/
 
 ---
 
@@ -71,6 +71,19 @@ The docx is the editable Word version; the PDF is the site's download link. Edit
 
 ---
 
+## 🌐 Public profiles (LinkedIn, Upwork, GitHub)
+
+The same facts, written differently for each platform, live in **one file: [`profile/master.json`](profile/master.json)**.
+
+```bash
+cd profile
+node build.mjs      # validates limits, writes out/*.md + STATUS.md
+```
+
+Each platform gets a paste sheet in `profile/out/` (field by field, with character counts), and `profile/STATUS.md` says which platform is behind the current version. Nothing is posted automatically — LinkedIn, Upwork, Instagram, and Facebook do not allow profile edits by API. Full workflow: [`profile/README.md`](profile/README.md).
+
+---
+
 ## 📁 Structure
 
 ```
@@ -84,6 +97,7 @@ js/animations.js    GSAP timelines & scroll triggers
 js/accent.js        palette cycler; js/theme-toggle.js dark/light; js/scroll-effects.js
 js/vendor/          gsap + ScrollTrigger (bundled, offline-safe)
 resume/             generated PDF + docx builder (data.json)
+profile/            master.json → paste sheets for LinkedIn, Upwork, GitHub
 assets/             images (screenshots, profile photo)
 docs/CONTEXT.md     decision log & working notes — read this first
 _drafts/            old drafts (ignored by git)

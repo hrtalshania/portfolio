@@ -148,8 +148,8 @@
 - [ ] Add real screenshots (gallery is wired — drop files per `assets/projects/README.md`, then list them in `gallery[]`)
 - [ ] Decide: make ArenaHub / Trading Dashboard / BlazingAuth public (after secret scrub)
 - [ ] Regenerate `resume/Harshit_Talshania_Resume.pdf` from the updated docx (manual: Word or Google Docs export)
-- [ ] Host the site (Netlify currently suspected; if GitHub Pages is used, `projects/index.html?id=` query-param routing works fine)
-- [ ] Next phase: GitHub profile README + LinkedIn featured section with the same projects
+- [x] Host the site — live on GitHub Pages: https://hrtalshania.github.io/portfolio/
+- [ ] Paste the generated profile sheets into LinkedIn, Upwork, and GitHub (see `profile/STATUS.md`)
 
 ---
 
@@ -174,3 +174,33 @@
 - Animation proof: console log on load (`[portfolio] animations active — GSAP … · N scroll triggers · reduced-motion: …`), flag `window.__portfolioAnimationsActive`, `?motion=force` URL override for previewing when OS reduced-motion is on. Most likely cause of "no animations" seen: OS animation-effects off → prefers-reduced-motion.
 - Render order gotcha documented for future agents: `index.html` loads layout.css BEFORE main.css so the main.css polish layer wins ties; hero two-column overrides centered defaults from layout.css.
 - Verified via disposable jsdom smoke test (run locally once; removed from repo): all sections render, GSAP init OK, accent cycle monochrome→violet→emerald works, monogram = HRT.
+
+---
+
+## 2026-11-21 — Cross-platform profile system (`profile/`)
+
+### Decision: generate paste sheets, do not automate the platforms
+
+- **Why not automate:** LinkedIn's Profile Edit API is partner-only; Upwork's MCP server covers jobs/proposals/messages but not profile fields; Instagram/Facebook APIs publish content for professional accounts and cannot edit bios; X bio editing sits in legacy v1.1 and the API is now pay-per-use. Browser automation against LinkedIn/Upwork risks the account, so it was ruled out.
+- **What is automated:** GitHub only, and even then just as a generated README the user pastes. Everything else is a field-by-field paste sheet.
+
+### Structure
+
+- `profile/master.json` — facts once, then each platform's finished copy. Platform blocks mirror each platform's own sections (`linkedin.experience`, `upwork.portfolio`, `github.readme`, …), because the section list differs per platform.
+- `profile/build.mjs` — no dependencies. Checks character limits (LinkedIn 220/2,600/2,000, Upwork title/overview, GitHub bio, X/IG/FB bios), item counts (Upwork 20 skills), repeated sentences across platforms, unknown URLs, and facts-vs-copy date drift. Writes `out/*.md` and `STATUS.md`, exits non-zero on limit errors.
+- `profile/out/` — paste sheets. `profile/STATUS.md` — per-platform `syncedVersion` vs master `version`, so a missed platform is visible.
+- Prose is written by hand per platform, not templated from facts. The script validates and renders; it does not rewrite sentences.
+
+### Decisions taken
+
+- Positioning: both goals, LinkedIn first. Rate **$20/hr** with a private $15 floor; availability **20–30 hrs/week** (honest next to a full-time role), 24-hour response.
+- GitHub: minimal README, six stack badges, no stats widgets. Pinning is deferred because every repo is private and pinned private repos still show as "Private".
+- Social (X / Instagram / Facebook): drafts exist but are `enabled: false` until the user decides. No scheduler chosen.
+- Email only on public profiles; phone stays on the resume.
+
+### Known gaps recorded in `profile/STATUS.md`
+
+- No Open Graph tags on the portfolio or case-study pages, so LinkedIn/Upwork link previews are plain. Adding static `og:*` tags is the highest-value follow-up to this work.
+- `ruhicabs.duckdns.org` has the browser title "Ruhi Cabs – Admin", which would look wrong on a featured card.
+- Screenshots still missing, so no media cards yet.
+- `README.md` live-site line corrected to the GitHub Pages URL; the old TODO was stale.
