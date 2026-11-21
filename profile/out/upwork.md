@@ -196,3 +196,7 @@ URL: none — say code on request.
 ## 11. Project catalog (later)
 
 Fixed-price packages are a later step. Start with hourly and 2-3 completed jobs, then add packages priced from real delivery time.
+
+## 12. Intro video
+
+Script: `out/upwork-video-script.md` — not recorded yet.

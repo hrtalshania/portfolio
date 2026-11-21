@@ -361,6 +361,9 @@ function renderUpwork() {
 
   out.push(`## 11. Project catalog (later)\n`);
   out.push(`${projectCatalog.note}\n`);
+  out.push("");
+  out.push(`## 12. Intro video\n`);
+  out.push(`Script: \`out/upwork-video-script.md\` — ${P.upwork.video?.recorded ? "recorded" : "not recorded yet"}.\n`);
   return clean(out.join("\n"));
 }
 
@@ -441,6 +444,66 @@ function renderFacebook() {
   return clean(out.join("\n"));
 }
 
+// --- Upwork video ------------------------------------------------------------
+function renderVideo() {
+  const v = P.upwork.video;
+  if (!v) return null;
+
+  const words = (segs) => segs.reduce((n, s) => n + s.text.trim().split(/\s+/).length, 0);
+  const script = (segs) => segs.map((s) => `**${s.time} · ${s.beat}**\n\n${s.text}`).join("\n\n");
+
+  const out = [];
+  out.push(`# Upwork intro video — script`);
+  out.push("");
+  out.push(
+    `Generated from \`profile/master.json\` v${master.version} on ${TODAY}. Read from this file while recording.`
+  );
+  out.push("");
+  out.push(`**Status:** ${v.recorded ? "recorded" : "not recorded yet"}`);
+  out.push("");
+  out.push(`Cue words for the sticky note beside the lens: **${v.cues.join(" · ")}**`);
+  out.push("");
+
+  out.push(`## Format and compliance`);
+  out.push("");
+  out.push(bullets(v.spec));
+  out.push("");
+
+  out.push(`## 75-second script (~${words(v.script75)} words)`);
+  out.push("");
+  out.push(`Read slightly slower than normal. The timings are guidance, not a stopwatch.`);
+  out.push("");
+  out.push(script(v.script75));
+  out.push("");
+
+  out.push(`## 45-second cut (~${words(v.script45)} words)`);
+  out.push("");
+  out.push(`Use this if the long take feels slow on playback. Record the 75s first and cut.`);
+  out.push("");
+  out.push(script(v.script45));
+  out.push("");
+
+  out.push(`## Alternate lines`);
+  out.push("");
+  out.push(`**Hooks**\n\n${bullets(v.alternates.hooks)}`);
+  out.push("");
+  out.push(`**Chess lines**\n\n${bullets(v.alternates.chess)}`);
+  out.push("");
+  out.push(`**Call to action**\n\n${bullets(v.alternates.ctas)}`);
+  out.push("");
+
+  out.push(`## Do not say`);
+  out.push("");
+  out.push(bullets(v.dontSay, (s) => `- "${s}"`));
+  out.push("");
+
+  out.push(`## Delivery checklist`);
+  out.push("");
+  out.push(bullets(v.delivery));
+  out.push("");
+  return clean(out.join("\n"));
+}
+
 // --- status -----------------------------------------------------------------
 function pendingKeys(syncedVersion) {
   return master.changelog
@@ -492,6 +555,12 @@ function renderStatus() {
     for (const w of warnings) out.push(`- warn ${w}`);
   }
   out.push("");
+  out.push(`## Extra assets`);
+  out.push("");
+  out.push(
+    `- Upwork intro video — ${P.upwork.video?.recorded ? "recorded" : "not recorded"}. Script: \`out/upwork-video-script.md\``
+  );
+  out.push("");
   out.push(`## Known gaps (not blocking)`);
   out.push("");
   out.push(
@@ -519,6 +588,9 @@ const files = {
   "instagram.md": renderInstagram(),
   "facebook.md": renderFacebook(),
 };
+
+const video = renderVideo();
+if (video) files["upwork-video-script.md"] = video;
 
 for (const [name, content] of Object.entries(files)) {
   writeFileSync(join(OUT, name), content, "utf8");

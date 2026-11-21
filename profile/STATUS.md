@@ -21,6 +21,10 @@ Master version **v1** · updated 2026-11-21 · generated 2026-11-21
 
 - All limits pass. No duplicate sentences across platforms. All URLs known.
 
+## Extra assets
+
+- Upwork intro video — not recorded. Script: `out/upwork-video-script.md`
+
 ## Known gaps (not blocking)
 
 - The portfolio and case-study pages have no Open Graph tags, so link previews on LinkedIn and Upwork look plain. Adding static `og:title`, `og:description`, and an image would improve every card.
