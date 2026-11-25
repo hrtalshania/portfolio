@@ -144,7 +144,7 @@ const portfolioData = {
         "Cloudflare R2",
         "Leaflet",
       ],
-      gallery: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg","7.jpg","8.jpg"],
+      gallery: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg","7.jpg","8.jpg","9.jpg","10.jpg"],
       links: {
         live: "https://staging-arenahub.netlify.app/",
         liveNote:
