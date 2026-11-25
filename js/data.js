@@ -172,7 +172,7 @@ const portfolioData = {
         "A FastAPI service layer sitting between the broker and the frontend",
       ],
       tech: ["Python", "FastAPI", "Angular", "WebSocket", "Broker APIs"],
-      gallery: [],
+      gallery: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg"],
       links: {
         live: "https://algo-trade-by-hrt.netlify.app",
         liveNote:
