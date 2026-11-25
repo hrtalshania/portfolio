@@ -234,3 +234,22 @@ The single resume and the placeholder cover letter could not be sent as-is: `cov
 ### Open item
 
 The site, LinkedIn copy, and `profile/master.json` still say "Software Engineer (Full Stack .NET)". They need the same title change or the resume contradicts the portfolio.
+
+---
+
+## 2026-11-25 - Mobile UX pass
+
+### What changed
+
+- **Horizontal snap strips (<=768px)** for `#services-grid` (7 cards), `#projects-grid` (4), `#more-projects-grid` (4) and `#tech-grid` (5 category cards). Flex row, `scroll-snap-type: x mandatory`, card widths 76/84/78/78vw so the next card peeks, scrollbar hidden, `overscroll-behavior-x: contain`. The negative inline margin bleeds the track to the screen edges while the matching padding keeps the first card aligned with the rest of the page. Desktop grids untouched.
+- **Hero photo -> About portrait.** The hero is text-only on phones: `hero-photo-wrap` is hidden <=768px and the full portrait opens the About section (`about.image` in `data.js`, rendered in `renderAbout`). A 44px avatar inside the greeting was tried and removed - at that size the photo reads as a smudge. Desktop still shows the large hero portrait and a text-only About.
+- **Gallery lightbox.** Added horizontal swipe (40px threshold, ignores vertical drags, skips touches starting within 24px of the left edge so iOS keeps its back gesture) and neighbour preloading. On phones the arrows moved to the bottom corners over a 0.6-black background with the counter centred, because the old 8%-white edge buttons were effectively invisible and sat under the back-gesture zone.
+- Section padding reduced to 64px and section headers to 36px on mobile. `@media (hover: none)` gives cards a border/background response on tap, since hover does not exist on touch.
+
+### Verification
+
+Headless Edge at 390x844 with touch emulation: hero (text only), services, projects, more projects, technology, about, gallery and open lightbox all render correctly, and `document.documentElement.scrollWidth === clientWidth` on every page, so the bleed adds no horizontal page overflow.
+
+### Note
+
+The screenshot harness (CDP script + local http.server + `__preview.html`) was temporary and is not in the repo.

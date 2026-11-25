@@ -1107,3 +1107,108 @@ html[data-accent]:not([data-accent="mono"]) .hero-photo {
   display: block;
 }
 
+/* ============================================================
+   MOBILE — swipeable strips, hero avatar, about portrait
+   Desktop is untouched: everything here is inside max-width 768px.
+   ============================================================ */
+
+/* Hidden on desktop. The mobile block surfaces the portrait in About while
+   the hero itself stays text-only. */
+.about-photo {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 64px 0;
+  }
+
+  .section-header {
+    margin-bottom: 36px;
+  }
+
+  /* ---- Horizontal snap strips ----
+     Cards keep their content, but the row becomes a swipeable track with a
+     visible peek of the next card. The negative inline margin bleeds the
+     track to the screen edges; the matching padding keeps the first card
+     aligned with the rest of the page. */
+  .services-grid,
+  .projects-grid,
+  .more-projects-grid,
+  .tech-grid {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 24px;
+    padding: 0 24px 10px;
+    margin-inline: -24px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .services-grid::-webkit-scrollbar,
+  .projects-grid::-webkit-scrollbar,
+  .more-projects-grid::-webkit-scrollbar,
+  .tech-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .services-grid > *,
+  .projects-grid > *,
+  .more-projects-grid > *,
+  .tech-grid > * {
+    scroll-snap-align: start;
+    flex: 0 0 auto;
+  }
+
+  .services-grid .service-card { width: 76vw; }
+  .projects-grid .project-card { width: 84vw; }
+  .more-projects-grid .more-project-card { width: 78vw; }
+  .tech-grid .tech-category { width: 78vw; }
+
+  /* The compact cards run out of width at 78vw, so stack the title and the
+     tech list instead of letting them collide. */
+  .more-projects-grid .more-project-header {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  /* ---- Hero: no photo on phones ----
+     The portrait lives in the About section instead, so the first screen is
+     text only. */
+  .hero-photo-wrap {
+    display: none;
+  }
+
+  /* ---- About: portrait above the text ---- */
+  .about-photo {
+    display: block;
+    width: 164px;
+    margin: 0 auto 28px;
+  }
+
+  .about-photo img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center 10%;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+  }
+}
+
+/* Touch devices have no hover. Give taps a visible response. */
+@media (hover: none) {
+  .service-card:active,
+  .project-card:active,
+  .more-project-card:active,
+  .gallery-item:active {
+    border-color: var(--text-primary);
+    background: var(--bg-tertiary);
+  }
+}
+

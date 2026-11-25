@@ -304,6 +304,7 @@ function renderAbout() {
   const principles = (about.principles || []).map(p => `<li>${p}</li>`).join('');
   
   container.innerHTML = `
+    ${about.image ? `<div class="about-photo"><img src="${about.image}" alt="Harshit Talshania" loading="lazy" /></div>` : ''}
     <div class="about-text">
       ${about.content.split('\n\n').map(p => `<p>${p}</p>`).join('')}
       ${principles ? `

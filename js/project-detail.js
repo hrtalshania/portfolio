@@ -176,6 +176,9 @@
       overlayImg.src = items[current];
       overlayImg.alt = `${project.title} screenshot ${current + 1}`;
       counter.textContent = (current + 1) + ' / ' + items.length;
+      // Warm the neighbours so a swipe does not flash white.
+      [items[(current + 1) % items.length], items[(current - 1 + items.length) % items.length]]
+        .forEach(src => { const img = new Image(); img.src = src; });
     }
 
     function open(index) {
@@ -202,5 +205,32 @@
       if (e.key === 'ArrowLeft') show(current - 1);
       if (e.key === 'ArrowRight') show(current + 1);
     });
+
+    // Touch swipe: horizontal drag moves to the next/previous image.
+    // Vertical drags are ignored so the gesture never fights page scrolling,
+    // and swipes starting near the left edge are skipped so iOS keeps its
+    // own back gesture.
+    let touchX = 0;
+    let touchY = 0;
+    let tracking = false;
+
+    overlay.addEventListener('touchstart', (e) => {
+      if (e.touches.length !== 1) { tracking = false; return; }
+      const t = e.touches[0];
+      if (t.clientX < 24) { tracking = false; return; }
+      touchX = t.clientX;
+      touchY = t.clientY;
+      tracking = true;
+    }, { passive: true });
+
+    overlay.addEventListener('touchend', (e) => {
+      if (!tracking) return;
+      tracking = false;
+      const t = e.changedTouches[0];
+      const dx = t.clientX - touchX;
+      const dy = t.clientY - touchY;
+      if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy) * 1.2) return;
+      show(dx < 0 ? current + 1 : current - 1);
+    }, { passive: true });
   }
 })();

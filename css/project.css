@@ -369,3 +369,44 @@ html[data-accent]:not([data-accent="mono"]) .detail-contact-link {
     aspect-ratio: 16 / 10;
   }
 }
+
+/* ---- Lightbox on phones ----
+   Swipe is the primary gesture (see initGallery). The arrows move to the
+   bottom corners so they never sit under the screenshot or the iOS
+   back-gesture edge. */
+@media (max-width: 768px) {
+  .lightbox {
+    padding: 16px;
+  }
+
+  .lightbox-img {
+    max-width: 100%;
+    max-height: 72vh;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  .lightbox button {
+    top: auto;
+    bottom: 16px;
+    transform: none;
+    width: 48px;
+    height: 48px;
+    background: rgba(0, 0, 0, 0.6);
+    border-color: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(6px);
+  }
+
+  .lightbox-prev { left: 16px; }
+  .lightbox-next { right: 16px; }
+
+  .lightbox button.lightbox-close {
+    top: 16px;
+    right: 16px;
+    bottom: auto;
+  }
+
+  .lightbox-counter {
+    bottom: 34px;
+  }
+}

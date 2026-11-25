@@ -454,6 +454,7 @@ const portfolioData = {
 
   about: {
     title: "About Me",
+    image: "assets/HRT_image4.jpg",
     content:
       "I'm a software engineer from Rajkot, Gujarat, currently working at Sky9 IT Craft on real client products. My day to day is mostly .NET services, Angular frontends, and Blazor UIs.\n\nI got into programming through web development, first with PHP and then the MERN stack. That path is why I feel at home on both sides of an API. These days I like going deep: how the pieces work under the hood, not just how to wire them up.\n\nI work with AI coding agents every day and get real leverage from them, but I keep the judgment on my side. Scope, review, and decisions stay with me. And I stay curious: new topics, research, and problem solving are the parts of this job I genuinely enjoy.",
     interests: [
