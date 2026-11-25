@@ -1,6 +1,6 @@
 # Upwork intro video — script
 
-Generated from `profile/master.json` v1 on 2026-11-21. Read from this file while recording.
+Generated from `profile/master.json` v2 on 2026-11-25. Read from this file while recording.
 
 **Status:** not recorded yet
 

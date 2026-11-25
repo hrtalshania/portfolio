@@ -46,6 +46,23 @@ P.linkedin.experience.forEach((e, i) =>
 );
 checkLimit("upwork.title", P.upwork.profile.title, 70);
 checkLimit("upwork.overview", P.upwork.profile.overview, 5000);
+
+// Upwork strips external links and emails from the Overview field, so a URL
+// there silently disappears. Keep them in Portfolio and the linked accounts.
+{
+  const overview = P.upwork.profile.overview ?? "";
+  const bad =
+    overview.match(/https?:\/\/[^\s)]+|www\.[^\s)]+/i) ??
+    overview.match(/[\w.+-]+@[\w-]+\.[a-z]{2,}/i) ??
+    // Bare lowercase domain such as `ruhicabs.duckdns.org`. Case-sensitive on
+    // purpose so "ASP.NET" and ".NET Core" are not flagged as domains.
+    overview.match(/\b(?:[a-z0-9-]+\.)+(?:com|org|io|dev|app|me|co|net|in|uk|site|tech|xyz)\b/);
+  if (bad) {
+    errors.push(
+      `upwork.overview contains a link or email ("${bad[0]}") — Upwork removes external links from the overview, so move it to Portfolio or the linked accounts.`
+    );
+  }
+}
 checkLimit("github.bio", P.github.bio, 160);
 checkLimit("x.bio", P.x.bio, 160);
 checkLimit("instagram.bio", P.instagram.bio, 150);
@@ -505,11 +522,19 @@ function renderVideo() {
 }
 
 // --- status -----------------------------------------------------------------
-function pendingKeys(syncedVersion) {
-  return master.changelog
+// Changelog keys may be prefixed with a platform name (`upwork-overview`) to
+// mark copy that only that platform needs to re-paste. Unprefixed keys apply
+// everywhere.
+function pendingKeys(platform, syncedVersion) {
+  const keys = master.changelog
     .filter((c) => c.version > syncedVersion)
     .flatMap((c) => c.keys)
-    .filter((k) => k !== "initial");
+    .filter((k) => k !== "initial")
+    .filter((k) => {
+      const scope = k.match(/^([a-z]+)-/)?.[1];
+      return !scope || !P[scope] || scope === platform;
+    });
+  return [...new Set(keys)];
 }
 
 function renderStatus() {
@@ -538,7 +563,7 @@ function renderStatus() {
   for (const [key, p] of Object.entries(P)) {
     if (!p.enabled) continue;
     if (p.syncedVersion < master.version) {
-      const keys = pendingKeys(p.syncedVersion);
+      const keys = pendingKeys(key, p.syncedVersion);
       actions.push(
         `- **${key}** — paste from the sheet${keys.length ? ` (missed: ${keys.join(", ")})` : ""}, then set \`syncedVersion: ${master.version}\`.`
       );

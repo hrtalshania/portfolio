@@ -253,3 +253,24 @@ Headless Edge at 390x844 with touch emulation: hero (text only), services, proje
 ### Note
 
 The screenshot harness (CDP script + local http.server + `__preview.html`) was temporary and is not in the repo.
+
+---
+
+## 2026-11-25 - Upwork profile rewrite (master v2)
+
+### What changed
+
+- **Overview:** removed the three live links and the portfolio URL (Upwork strips external links from the overview and points to the Portfolio section), removed the AVAILABILITY paragraph (it is a profile setting, not prose), and rewrote the prose with "engineer" instead of "developer". New sections: DEPLOYMENT AND OPERATIONS (Oracle Cloud free-tier VM, Docker containers, GitHub Actions CI/CD, container-level port mapping, DuckDNS + HTTPS), Bridge Messaging, and AI IN THE WORKFLOW.
+- **AI wording:** Playwright automation with AI agents writing and maintaining the flows, UI work through Stitch AI over MCP, and hands-on work with opencode and local models via llama + LM Studio. Reviewed and owned by me, not delegated.
+- **Employment:** DownWind now names the Jira board, sprint planning and day-to-day team collaboration (no people-management claim). Presort names legacy RDLC report generation plus payment, invoice and reconciliation flows. Freelance entry carries the Docker/CI-CD/Oracle Cloud deployment story and is retitled "Software Engineer".
+- **Portfolio:** Cab Booking rewritten around deployment; Bridge Messaging added as item 4 (no URL, code on request).
+- **Skills (20 cap):** dropped ASP.NET MVC, JavaScript and FastAPI; added RabbitMQ, Jira and CI/CD.
+- **build.mjs:** fails when `upwork.overview` contains a URL, a bare domain or an email address. Bare-domain matching is case-sensitive so "ASP.NET" and ".NET Core" are not flagged. Changelog keys may now be platform-prefixed (`upwork-overview`), so an Upwork-only change no longer shows as "missed" on LinkedIn and GitHub.
+
+### Verification
+
+`node profile/build.mjs` -> all limits pass, no duplicate cross-platform sentences, all URLs known. Overview is 3,793 / 5,000 chars, title 61 / 70. `out/upwork.md` and `STATUS.md` regenerated from master v2.
+
+### Open item
+
+The site, LinkedIn and the Upwork employment entry still say "Software Engineer (Full-Stack .NET)", while `resume/builder/data.json` says "Senior Software Developer". Decide one title and apply it everywhere.

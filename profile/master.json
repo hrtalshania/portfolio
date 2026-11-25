@@ -1,7 +1,7 @@
 {
   "_about": "Single source of truth for every public profile. Edit facts here, edit each platform's copy here, run `node build.mjs`, then paste profile/out/<platform>.md into that platform. Bump `version` and add a changelog entry whenever a fact changes.",
-  "version": 1,
-  "updated": "2026-11-21",
+  "version": 2,
+  "updated": "2026-11-25",
 
   "identity": {
     "name": "Harshit Talshania",
@@ -40,7 +40,7 @@
       },
       {
         "company": "Freelance & Personal Projects",
-        "role": "Developer",
+        "role": "Software Engineer",
         "type": "Self-employed",
         "location": "",
         "start": "2024",
@@ -163,7 +163,7 @@
           "skills": ["C#", "ASP.NET Core", "Blazor", "Entity Framework Core", "SQL Server", "Azure"]
         },
         {
-          "title": "Developer",
+          "title": "Software Engineer",
           "company": "Freelance & Personal Projects",
           "employmentType": "Self-employed",
           "location": "",
@@ -265,14 +265,14 @@
       "syncedVersion": 0,
       "lastSynced": "",
       "profile": {
-        "title": "Full-Stack .NET Developer | ASP.NET Core, Angular, Blazor, SQL",
+        "title": "Full-Stack .NET Engineer | ASP.NET Core, Angular, Blazor, SQL",
         "hourlyRate": 20,
         "rateFloor": 15,
         "rateNote": "Upwork shows one rate. $20 listed, $15 is the private floor for negotiation.",
         "availability": "20-30 hrs/week",
         "availabilityNote": "Honest band next to a full-time role. Change only if you can genuinely commit more.",
         "responseTime": "Within 24 hours",
-        "overview": "Full-stack .NET developer. I build web applications end to end: the database, the API, and the interface people actually use.\n\nWHAT I BUILD\n\n- Business web applications in ASP.NET Core with Blazor or Angular\n- REST APIs with authentication, validation, and predictable error handling\n- Databases in SQL Server and PostgreSQL: schema design, EF Core, query performance\n- Payments and integrations: Razorpay, GoCardless, Azure Blob Storage, Cloudflare R2\n- Authentication done properly: JWT access tokens, refresh rotation, role-based access, email password reset\n- Deployment: Netlify, Render, Azure, and self-hosted Linux VMs\n- Automated testing with Playwright, including screenshot capture for UI checks\n\nHOW I WORK\n\n1. I clarify what the feature should do before writing code.\n2. I design the data model and API contracts first, because most architecture problems are schema problems.\n3. I build in working vertical slices, so there is something runnable early.\n4. I verify instead of assuming: run it, hit the failure paths, check the real output.\n5. You get a working feature, not a half-finished layer.\n\nRECENT WORK\n\nArenaHub - a sports venue booking platform I built and shipped alone. Map-based venue discovery, Google sign-in, slot booking, Razorpay payments, file uploads to Cloudflare R2, PostgreSQL with spatial queries. Live: https://staging-arenahub.netlify.app/\n\nAlgo Trade - a real-time trading dashboard. Python/FastAPI service consuming broker APIs and WebSocket market feeds, streamed into an Angular UI with live positions, orders, market depth and signal alerts. Live: https://algo-trade-by-hrt.netlify.app/\n\nCab Booking Platform - a booking platform with .NET APIs and an Angular front end that I self-host on an Oracle Cloud VM, including server setup, DNS, HTTPS and deployment. Live: https://ruhicabs.duckdns.org/\n\nBACKGROUND\n\nSoftware Engineer at Sky9 IT Craft (Rajkot, India) since 2024, across three client products: an aircraft ownership and flight-record platform, an enterprise mailing system used by US mailing organizations, and a UK waste-management admin platform. Blazor, SQL Server, Azure, RDLC reporting, GoCardless payments.\n\nAVAILABILITY\n\nFive days a week, 20-30 hours, replies within 24 hours. I work in IST (UTC+5:30) with overlap into EU and US mornings.\n\nIf you have a feature or a system that needs building properly, send me the scope and I will tell you honestly whether I am the right fit.\n\nPortfolio and case studies: https://hrtalshania.github.io/portfolio/",
+        "overview": "Full-stack .NET engineer. I build business web applications end to end: the database, the API, and the interface people actually use.\n\nWHAT I BUILD\n\n- Business applications in ASP.NET Core with Blazor or Angular\n- REST APIs with authentication, validation, and predictable error handling\n- Databases in SQL Server and PostgreSQL: schema design, EF Core, query performance\n- Payments and integrations: Razorpay, GoCardless, Azure Blob Storage, Cloudflare R2\n- Authentication done properly: JWT access tokens, refresh rotation, role-based access, email password reset\n- Deployment: Docker containers on an Oracle Cloud VM with a GitHub Actions CI/CD pipeline, plus Netlify, Render and Azure\n- Automated testing: Playwright flows that run on their own and capture screenshots for UI checks\n\nHOW I WORK\n\n1. I clarify what the feature should do before writing code.\n2. I design the data model and API contracts first, because most architecture problems are schema problems.\n3. I build in working vertical slices, so you see something running early.\n4. I verify instead of assuming: run it, hit the failure paths, check the real output.\n5. You get a working feature, not a half-finished layer.\n\nDEPLOYMENT AND OPERATIONS\n\nI run my own production environment instead of only pushing to a managed host. On an Oracle Cloud free-tier VM I set up the server, wrote a GitHub Actions pipeline that builds and ships Docker containers, handled container-level port mapping, and put the app behind a DuckDNS domain with HTTPS. When something breaks at night there is no platform team to call, which is the fastest way to learn what a deployment actually needs.\n\nRECENT WORK\n\nArenaHub - a sports venue booking platform built and shipped solo. Map-based discovery, Google sign-in, live slot availability, Razorpay payments, uploads to Cloudflare R2, and PostgreSQL with spatial queries. ASP.NET Core Minimal API on Render, Angular on Netlify, database on Neon.\n\nAlgo Trade - a real-time trading dashboard. A Python/FastAPI service pulls broker APIs and WebSocket market feeds, then streams positions, orders, market depth and signal alerts into an Angular UI. Built around an unreliable feed: reconnects, out-of-order ticks and stale data.\n\nCab Booking Platform - a .NET and Angular booking app deployed the way I described above: Docker, GitHub Actions, Oracle Cloud, DuckDNS, and a managed PostgreSQL database.\n\nBridge Messaging - a Slack, Discord and Telegram bridge written in Python. Replies, reactions, threads and document sync across three different chat APIs, with a .NET MAUI Slack client in progress. This one is pure curiosity: three APIs, three sets of quirks, and a lot of problem solving.\n\nBACKGROUND\n\nSoftware Engineer at Sky9 IT Craft in Rajkot, India, since 2024, across three client products: an aircraft ownership and flight-record platform, an enterprise mailing system used by US mailing organizations, and a UK waste-management admin platform. Work there includes Jira boards and sprint planning, legacy RDLC report generation, payment and reconciliation flows, and GoCardless and Azure integrations in Blazor, ASP.NET Core and SQL Server.\n\nAI IN THE WORKFLOW\n\nI use AI tooling daily, and I use it where it earns its place: Playwright test automation that captures screenshots, with AI agents writing and maintaining the flows; UI work through Stitch AI over MCP; and hands-on work with opencode and local models (llama, LM Studio) to understand what runs where and what it costs. The judgment is mine: I set the scope, review what comes back, and make the engineering calls. AI is leverage, not a replacement for understanding the code that ships.\n\nIf you have a feature or a system that needs building properly, send me the scope and I will tell you honestly whether I am the right fit.",
         "videoIntro": "Optional. 30-60 seconds: who you are, what you build, one project shown on screen, how to reach you. Record it only if it looks deliberate."
       },
       "category": {
@@ -281,10 +281,10 @@
         "note": "Pick the closest matches the UI offers. Specialized Profiles were retired in May 2026, so this single profile carries both .NET and AI/automation work."
       },
       "skills": [
-        "C#", ".NET Core", "ASP.NET Core", "ASP.NET MVC", "Blazor", "Angular",
-        "TypeScript", "JavaScript", "Entity Framework Core", "SQL Server",
+        "C#", ".NET Core", "ASP.NET Core", "Blazor", "Angular",
+        "TypeScript", "Entity Framework Core", "SQL Server",
         "PostgreSQL", "REST API", "JWT", "Razorpay", "Azure Blob Storage",
-        "Docker", "Playwright", "Git", "Python", "FastAPI"
+        "Docker", "CI/CD", "RabbitMQ", "Playwright", "Git", "Python", "Jira"
       ],
       "employment": [
         {
@@ -293,15 +293,15 @@
           "location": "Rajkot, India",
           "start": "Aug 2024",
           "end": "Present",
-          "description": "Full-stack development across three client products. DownWind Aviation: aircraft ownership and flight-record management with booking, pilot techlog, document uploads, expense tracking, MFA and GoCardless payments. Presort EMS: enterprise mailing platform, legacy RDLC PDF generation, payment/invoice/reconciliation flows. Country Style: UK waste-management admin platform with bookings, invoices, reports, interactive site map and charting across multiple SQL servers. Blazor, ASP.NET Core, SQL Server, Azure."
+          "description": "Full-stack development across three client products in Blazor, ASP.NET Core, SQL Server and Azure.\n\nDownWind Aviation: aircraft ownership and flight-record platform. Booking, pilot techlog, document uploads, expense tracking, MFA and GoCardless payments. Worked the Jira board, sprint planning and day-to-day collaboration with the team.\n\nPresort EMS: enterprise mailing software used by US mailing organizations. Legacy RDLC report generation, plus payment, invoice and reconciliation flows.\n\nCountry Style: UK waste-management admin platform with bookings, invoices, reports, interactive site map and charting across multiple SQL servers."
         },
         {
-          "title": "Developer",
+          "title": "Software Engineer",
           "company": "Freelance & Personal Projects",
           "location": "Remote",
           "start": "2024",
           "end": "Present",
-          "description": "Built and deployed full-stack products end to end: ArenaHub (venue booking, live), Algo Trade (real-time market dashboard), a self-hosted cab booking platform on an Oracle Cloud VM, and BlazingAuth (authentication from scratch)."
+          "description": "Built and deployed full-stack products end to end: ArenaHub (venue booking, live), Algo Trade (real-time market dashboard), a cab booking platform running in Docker containers on an Oracle Cloud VM behind a GitHub Actions CI/CD pipeline and DuckDNS domain, and BlazingAuth (authentication from scratch)."
         }
       ],
       "education": [
@@ -344,10 +344,16 @@
           "url": "https://algo-trade-by-hrt.netlify.app/"
         },
         {
-          "title": "Cab Booking Platform - Self-Hosted on Oracle Cloud",
-          "description": "Booking platform with .NET APIs and an Angular front end, self-hosted end to end: Oracle Cloud free-tier VM setup, SSH hardening, firewall, DuckDNS domain, HTTPS, and a Neon PostgreSQL database.",
-          "skills": ["ASP.NET Core", "Angular", "Linux", "Docker", "PostgreSQL"],
+          "title": "Cab Booking Platform - Docker, CI/CD and Oracle Cloud",
+          "description": "Booking platform with .NET APIs and an Angular front end, deployed end to end on an Oracle Cloud free-tier VM: Docker containers built and shipped by a GitHub Actions CI/CD pipeline, container-level port mapping, a DuckDNS domain with HTTPS, and a Neon PostgreSQL database. I set up the server, the firewall and the pipeline myself.",
+          "skills": ["ASP.NET Core", "Angular", "Docker", "CI/CD", "Linux", "PostgreSQL"],
           "url": "https://ruhicabs.duckdns.org/"
+        },
+        {
+          "title": "Bridge Messaging - Slack, Discord and Telegram Bridge",
+          "description": "A bridge written in Python that syncs messages, replies, reactions, threads and documents between Slack, Discord and Telegram, with a .NET MAUI Slack client in progress. Built to learn how three very different chat APIs handle the same concepts, and where each one breaks. Code available on request.",
+          "skills": ["Python", "Slack API", "Discord API", "Telegram API", ".NET MAUI"],
+          "url": ""
         },
         {
           "title": "BlazingAuth - Authentication System From Scratch",
@@ -527,6 +533,12 @@
       "date": "2026-11-21",
       "keys": ["initial"],
       "note": "Initial profile build: facts extracted from js/data.js and resume data, LinkedIn + Upwork + GitHub copy, social drafts disabled."
+    },
+    {
+      "version": 2,
+      "date": "2026-11-25",
+      "keys": ["upwork-overview", "upwork-employment", "upwork-portfolio", "upwork-skills", "freelance-title"],
+      "note": "Upwork: external links and availability removed from the Overview (Upwork strips links there), Docker + GitHub Actions + Oracle Cloud deployment story, bridge messaging, AI tooling (Playwright agents, Stitch AI over MCP, opencode, local llama/LM Studio models), Jira and RDLC detail in employment, Bridge Messaging portfolio item, skills rebalanced (RabbitMQ, Jira, CI/CD in; ASP.NET MVC, JavaScript, FastAPI out). Freelance role retitled 'Software Engineer'. build.mjs now rejects URLs or emails in the Upwork overview."
     }
   ]
 }

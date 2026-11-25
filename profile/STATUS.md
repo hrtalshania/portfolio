@@ -1,6 +1,6 @@
 # Profile sync status
 
-Master version **v1** · updated 2026-11-21 · generated 2026-11-21
+Master version **v2** · updated 2026-11-25 · generated 2026-11-25
 
 | Platform | Enabled | Synced version | State | Last synced | Sheet |
 |---|---|---|---|---|---|
@@ -13,9 +13,9 @@ Master version **v1** · updated 2026-11-21 · generated 2026-11-21
 
 ## What to do next
 
-- **linkedin** — paste from the sheet, then set `syncedVersion: 1`.
-- **upwork** — paste from the sheet, then set `syncedVersion: 1`.
-- **github** — paste from the sheet, then set `syncedVersion: 1`.
+- **linkedin** — paste from the sheet (missed: freelance-title), then set `syncedVersion: 2`.
+- **upwork** — paste from the sheet (missed: upwork-overview, upwork-employment, upwork-portfolio, upwork-skills, freelance-title), then set `syncedVersion: 2`.
+- **github** — paste from the sheet (missed: freelance-title), then set `syncedVersion: 2`.
 
 ## Checks
 
