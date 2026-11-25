@@ -67,6 +67,15 @@ node build.js       # -> resume/Harshit_Talshania_Resume.docx (Word format)
 node build-pdf.js   # -> resume/Harshit_Talshania_Resume.pdf (prints the HTML resume via headless Edge/Chrome)
 ```
 
+There is a second, backend-focused variant for backend roles. It uses the same builder with a different data file, and writes its own files, so the site's resume link is never overwritten:
+
+```bash
+node build.js data.backend.json       # -> resume/Harshit_Talshania_Resume_Backend.docx
+node build-pdf.js data.backend.json   # -> resume/Harshit_Talshania_Resume_Backend.pdf
+```
+
+The `outputBase` field in each data file controls the output file name. The cover letter works the same way: `node build-cover-letter.js` reads `cover-letter.json` and writes to the name in its `outputBase` field.
+
 The docx is the editable Word version; the PDF is the site's download link. Edit `data.json`, run both, done. (If you prefer Word's own PDF export, open the docx and save as PDF instead — content is identical.)
 
 ---

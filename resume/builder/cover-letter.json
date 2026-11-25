@@ -1,27 +1,29 @@
 {
   "date": "auto",
+  "outputBase": "Harshit_Talshania_Cover_Letter_Jibble",
 
   "recipient": {
     "name": "Hiring Manager",
-    "title": "",
-    "company": "[Company]"
+    "title": "Senior Back-End Developer",
+    "company": "Jibble Group"
   },
 
-  "role": "[Role Title]",
-  "source": "LinkedIn",
+  "role": "Senior Back-End Developer",
+  "source": "Jibble careers page",
 
   "opening":
-    "I'm applying for the {role} role at {company}. I'm a software engineer at Sky9 IT Craft in Rajkot, where I build and ship .NET and Angular products for clients in aviation, mailing, and waste management.",
+    "I'm applying for the {role} role at {company}. I'm a Senior Software Developer at Sky9 IT Craft in Rajkot, India, where I build and run .NET back ends for client products in aviation, mailing and waste management.",
 
   "body": [
-    "What I bring is end to end ownership. I designed and built ArenaHub, a sports venue booking platform, from the database up: an ASP.NET Core Minimal API, an Angular frontend, PostgreSQL on Neon, Razorpay payments, map-based discovery with Leaflet, and file uploads to Cloudflare R2. On client work I've shipped multi-factor authentication and GoCardless payments for an aircraft management platform, RDLC-based invoicing and reconciliation for a US mailing service, and multi-tenant admin dashboards with Azure storage for a UK waste management company. I also work with AI coding agents daily, but review and hold every line to the same standard I would write myself."
+    "The part of my work closest to yours is the integration layer. I've built GoCardless payment flows and multi-factor authentication for an aircraft records platform, invoice and reconciliation logic for an enterprise mailing system, and reporting across multiple SQL Server instances for a UK waste-management product. On my own time I built ArenaHub end to end: an ASP.NET Core Minimal API, a PostgreSQL schema on Neon with spatial queries, Razorpay checkout, Google sign-in, and image uploads to Cloudflare R2.",
+    "That work runs on C# and ASP.NET Core, EF Core against PostgreSQL and SQL Server, REST contracts other teams can consume, JWT authentication, and RabbitMQ where a request should not block on the work behind it. I deploy to Docker and Linux hosts, and I test the failure paths before calling a feature done: reconnects, retries, and stale reads."
   ],
 
   "whyThem":
-    "[Why-this-company paragraph here. One researched detail about their product, stack, market, or engineering blog, connected to your work.]",
+    "Jibble 2.0 runs on .NET Core, but what the product actually lives on is its integrations: Gusto, Intercom, Zenefits and Zapier. That is the surface I've spent the last two years on, and a time-tracking product is only as good as the systems it keeps in sync. I'd want to own that layer: the contracts, the retries, and the reconciliation when a third party changes something without warning. I also like that Jibble has been remote-first since 2017 and keeps teams small enough that one engineer can carry a feature from schema to deployment.",
 
   "closing":
-    "I'd welcome the chance to talk about how I can help {company} ship work like this, and I'm available for a conversation at your convenience. Thank you for your time and consideration.",
+    "I'm based in UTC+5:30, inside the UTC to UTC+8 window in your posting, and I can start after 30 days' notice. My portfolio and case studies are at https://hrtalshania.github.io/portfolio/. I'd welcome a conversation about the back end at {company}. Thank you for your time.",
 
-  "swapNotes": "Per application, change exactly these three things, then run: node build-cover-letter.js\n1. recipient.company  (appears in the recipient block, the greeting, and every {company} token)\n2. role  (appears in the opening line via {role})\n3. whyThem  (replace the placeholder with one researched detail: their product, stack, market, or a blog post, connected to your work)\nIf you find the hiring manager's name, set recipient.name to it and the greeting becomes 'Dear {name},'. Otherwise leave 'Hiring Manager' and the greeting reads 'Dear {company} Hiring Team,'.\ndate stays 'auto' and always prints the day you build.\nBefore sending, rename the tailored PDF: Harshit_Talshania_Cover_Letter_[Company].pdf"
+  "swapNotes": "This file is tailored to Jibble Group (Senior Back-End Developer).\nTo reuse it: change recipient.company, role, whyThem, outputBase, and the closing notice period, then run: node build-cover-letter.js\n{company}, {role}, {source} and {date} are replaced everywhere. date stays 'auto' so the letter prints the day you build it.\nOutput: resume/<outputBase>.docx, .pdf, .txt"
 }

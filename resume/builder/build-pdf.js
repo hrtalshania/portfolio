@@ -8,8 +8,11 @@ const fs = require("fs");
 const path = require("path");
 const { execFileSync } = require("child_process");
 
+// Variant support: `node build-pdf.js data.backend.json`
+// Each data file can set "outputBase" to control the file name it writes.
+const dataFile = process.argv[2] || "data.json";
 const data = JSON.parse(
-  fs.readFileSync(path.join(__dirname, "data.json"), "utf8")
+  fs.readFileSync(path.join(__dirname, dataFile), "utf8")
 );
 
 const esc = (s) =>
@@ -102,7 +105,9 @@ const html = `<!DOCTYPE html>
 </body>
 </html>`;
 
-const htmlPath = path.join(__dirname, "resume.html");
+const htmlName =
+  dataFile === "data.json" ? "resume.html" : dataFile.replace(/^data\./, "resume.").replace(/\.json$/, ".html");
+const htmlPath = path.join(__dirname, htmlName);
 fs.writeFileSync(htmlPath, html);
 console.log("Wrote:", htmlPath);
 
@@ -118,7 +123,8 @@ if (!browser) {
   process.exit(1);
 }
 
-const pdfPath = path.join(__dirname, "..", "Harshit_Talshania_Resume.pdf");
+const outBase = data.outputBase || "Harshit_Talshania_Resume";
+const pdfPath = path.join(__dirname, "..", outBase + ".pdf");
 execFileSync(browser, [
   "--headless",
   "--disable-gpu",

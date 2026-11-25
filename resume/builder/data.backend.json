@@ -1,0 +1,112 @@
+{
+  "name": "Harshit Talshania",
+  "outputBase": "Harshit_Talshania_Resume_Backend",
+  "contact": {
+    "location": "Rajkot, Gujarat, India",
+    "phone": "+91 9574943968",
+    "email": "hrtalshania@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/harshit-talshania/",
+    "github": "https://github.com/hrtalshania",
+    "portfolio": "https://hrtalshania.github.io/portfolio/"
+  },
+  "objective": "Senior Software Developer with 2+ years building and running .NET back ends in production. C# and ASP.NET Core Web APIs, PostgreSQL and SQL Server with EF Core, REST contracts, JWT authentication, and asynchronous messaging with RabbitMQ. Ships payment, storage, email and messaging integrations end to end, and deploys to Docker and Linux hosts.",
+  "education": [
+    {
+      "degree": "Bachelor of Engineering, Computer Engineering",
+      "institute": "Gujarat Technological University (GTU)",
+      "period": "2022 - 2025",
+      "details": "SPI: 9.00  |  CPI: 8.05  |  CGPA: 8.30"
+    },
+    {
+      "degree": "Diploma in Computer Engineering",
+      "institute": "A.V. Parekh Technical Institute, Rajkot",
+      "period": "2019 - 2022",
+      "details": "Grade: A  |  SPI: 10.00  |  CPI: 9.18"
+    }
+  ],
+  "skills": [
+    {
+      "category": "Languages",
+      "items": ["C#", "SQL", "TypeScript", "Python"]
+    },
+    {
+      "category": "Backend",
+      "items": ["ASP.NET Core Web API", "Minimal APIs", ".NET", "Entity Framework Core", "LINQ", "REST API design"]
+    },
+    {
+      "category": "Data",
+      "items": ["PostgreSQL (Neon)", "SQL Server (T-SQL)", "Schema design"]
+    },
+    {
+      "category": "Messaging & Auth",
+      "items": ["RabbitMQ", "WebSocket", "JWT", "Refresh-token rotation", "Role-based access"]
+    },
+    {
+      "category": "Integrations",
+      "items": ["GoCardless", "Razorpay", "Google Auth", "Mailjet", "Azure Blob Storage", "Cloudflare R2"]
+    },
+    {
+      "category": "Runtime & Tools",
+      "items": ["Docker", "Linux", "Azure", "Git", "Playwright", "Postman", "Jira"]
+    }
+  ],
+  "experience": [
+    {
+      "role": "Senior Software Developer",
+      "company": "Sky9 IT Craft Private Limited, Rajkot",
+      "period": "Aug 2024 - Present",
+      "description": "Back-end and full-stack work across the full lifecycle on three client products: API endpoints, EF Core data access, SQL schema and query work, authentication, payment integration, and deployment. Started with a six-month internship on a live project.",
+      "subItems": [
+        {
+          "name": "DownWind Aviation",
+          "text": "Aircraft ownership and flight-record platform. Server-side booking, pilot techlog and expense flows, document uploads to Azure Blob Storage, multi-factor authentication, and GoCardless payment integration. (ASP.NET Core, Blazor, EF Core, SQL Server, Azure Blob Storage, GoCardless)"
+        },
+        {
+          "name": "Presort EMS",
+          "text": "Enterprise mailing platform used by major US mailing organizations. Payment, invoice and reconciliation flows, plus legacy RDLC PDF generation, on SQL Server. (ASP.NET Core, Blazor, EF Core, SQL Server, RDLC)"
+        },
+        {
+          "name": "Country Style",
+          "text": "UK waste-management admin platform. Secure authentication, bookings, invoices, reports and analysis across multiple SQL servers, an interactive site map, and charting over collection, sorting, material-waste and disposables data. (ASP.NET Core, Blazor, EF Core, SQL Server, Azure)"
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "ArenaHub - Sports Venue Booking Platform",
+      "period": "Personal project",
+      "description": "Built the API and data layer end to end: ASP.NET Core Minimal API, PostgreSQL schema on Neon with spatial queries, Razorpay payment flow, Google sign-in, and image uploads to Cloudflare R2. Angular front end on Netlify.",
+      "tech": ["ASP.NET Core Minimal API", "PostgreSQL (Neon)", "Entity Framework Core", "Razorpay", "Cloudflare R2"],
+      "link": "https://staging-arenahub.netlify.app/"
+    },
+    {
+      "title": "Algo Trade - Real-Time Market Dashboard",
+      "period": "Personal project",
+      "description": "Python/FastAPI service consuming broker APIs and WebSocket market feeds, streamed to an Angular UI. Built around an unreliable feed: reconnects, out-of-order ticks and stale data.",
+      "tech": ["Python", "FastAPI", "WebSocket", "Angular", "Broker APIs"],
+      "link": "https://algo-trade-by-hrt.netlify.app/"
+    },
+    {
+      "title": "BlazingAuth - Authentication From Scratch",
+      "period": "Personal project",
+      "description": "Password hashing, JWT access tokens with refresh-token rotation, role-based policies, protected API endpoints and Angular routes, and a Mailjet password-reset flow. (ASP.NET Core Web API, Angular, JWT, SQL Server)",
+      "tech": ["ASP.NET Core Web API", "JWT", "Angular", "SQL Server", "Mailjet"],
+      "link": ""
+    },
+    {
+      "title": "Bridge Messaging - Slack / Discord / Telegram",
+      "period": "Experimental",
+      "description": "Cross-platform messaging bridge in Python handling replies, reactions, threads and document sync across the Slack, Discord and Telegram APIs, with the Slack client being extended in .NET MAUI.",
+      "tech": ["Python", "Slack API", "Discord API", "Telegram API", ".NET MAUI"],
+      "link": ""
+    },
+    {
+      "title": "Cab Booking Platform (Self-Hosted)",
+      "period": "Personal project",
+      "description": "Booking platform with .NET APIs and an Angular front end, self-hosted end to end on an Oracle Cloud free-tier VM: Linux setup, SSH hardening, firewall, DuckDNS domain, HTTPS, and a Neon PostgreSQL database.",
+      "tech": ["ASP.NET Core", "Angular", "Linux", "Oracle Cloud VM", "Neon (PostgreSQL)"],
+      "link": "https://ruhicabs.duckdns.org/"
+    }
+  ]
+}

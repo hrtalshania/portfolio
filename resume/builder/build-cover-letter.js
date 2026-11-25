@@ -19,8 +19,17 @@ const {
 const data = JSON.parse(
   fs.readFileSync(path.join(__dirname, "data.json"), "utf8")
 );
+// Usage: node build-cover-letter.js [cover-letter.json]
+// The letter file can set "outputBase" to control the output file name.
+const letterFile = process.argv[2] || "cover-letter.json";
 const letter = JSON.parse(
-  fs.readFileSync(path.join(__dirname, "cover-letter.json"), "utf8")
+  fs.readFileSync(path.join(__dirname, letterFile), "utf8")
+);
+
+const outBase = path.join(
+  __dirname,
+  "..",
+  letter.outputBase || "Harshit_Talshania_Cover_Letter"
 );
 
 const FONT = "Calibri";
@@ -184,8 +193,6 @@ const doc = new Document({
     },
   ],
 });
-
-const outBase = path.join(__dirname, "..", "Harshit_Talshania_Cover_Letter");
 
 Packer.toBuffer(doc).then((buf) => {
   fs.writeFileSync(outBase + ".docx", buf);

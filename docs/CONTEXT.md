@@ -204,3 +204,33 @@
 - `ruhicabs.duckdns.org` has the browser title "Ruhi Cabs – Admin", which would look wrong on a featured card.
 - Screenshots still missing, so no media cards yet.
 - `README.md` live-site line corrected to the GitHub Pages URL; the old TODO was stale.
+
+---
+
+## 2026-11-24 - Tailored application set (Jibble Group, Senior Back-End Developer)
+
+### Why
+
+The single resume and the placeholder cover letter could not be sent as-is: `cover-letter.json` still carried the `whyThem` placeholder, and the builders hardcoded one output name, so any variant would overwrite the resume linked from the site.
+
+### Changes
+
+- `resume/builder/build.js` and `build-pdf.js` now take an optional data file: `node build.js data.backend.json`. Output name comes from an `outputBase` field in the JSON, so the general resume at `Harshit_Talshania_Resume.pdf` is never touched.
+- `build-cover-letter.js` reads `outputBase` from the letter JSON and accepts an optional file argument.
+- New `resume/builder/data.backend.json`: backend-focused variant. Summary rewritten around APIs, EF Core, PostgreSQL/SQL Server, RabbitMQ, integrations, Docker/Linux. Skills reordered backend-first, Blazor/Angular demoted to one line, projects trimmed to the five relevant ones.
+- `data.json`: title corrected to **Senior Software Developer** (matches the application form), RabbitMQ added to Cloud & Integrations.
+- `cover-letter.json`: Jibble-specific `whyThem` (Jibble 2.0 on .NET Core, Gusto/Intercom/Zenefits/Zapier integrations), `date: "auto"`, `outputBase: Harshit_Talshania_Cover_Letter_Jibble`, closing states UTC+5:30 and 30 days' notice.
+
+### Deliberate omissions
+
+- No claim of AWS, microservices, or OpenAPI: not evidenced. RabbitMQ is included because the user confirmed real use.
+- Experience is written as "2+ years", not 3+, because Aug 2024 to Nov 2026 is 2 years 4 months including the internship.
+- No "years of experience" line on the resume. The dates carry it.
+
+### Outputs
+
+`resume/Harshit_Talshania_Resume.pdf` (general, 2 pages), `resume/Harshit_Talshania_Resume_Backend.pdf` (2 pages), `resume/Harshit_Talshania_Cover_Letter_Jibble.pdf` (1 page) plus docx/txt.
+
+### Open item
+
+The site, LinkedIn copy, and `profile/master.json` still say "Software Engineer (Full Stack .NET)". They need the same title change or the resume contradicts the portfolio.

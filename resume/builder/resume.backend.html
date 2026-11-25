@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Harshit Talshania - Resume</title>
+<style>
+  @page { size: A4; margin: 14mm 15mm; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    font-size: 10pt; color: #1a1a1a; line-height: 1.35;
+  }
+  h1 {
+    text-align: center; color: #1F3B63; font-size: 20pt;
+    letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4pt;
+  }
+  .contact { text-align: center; color: #595959; font-size: 9pt; margin-bottom: 10pt; }
+  .contact span + span::before { content: "  |  "; color: #b0b0b0; }
+  h2 {
+    color: #1F3B63; font-size: 10.5pt; letter-spacing: 1.2px;
+    text-transform: uppercase; border-bottom: 1px solid #BFBFBF;
+    padding-bottom: 2pt; margin: 10pt 0 5pt;
+  }
+  p { margin-bottom: 4pt; }
+  /* ATS / print hardening: never strand a heading, never split a row or entry */
+  h2 { break-after: avoid; page-break-after: avoid; break-inside: avoid; }
+  .row, .proj, .skills p { break-inside: avoid; page-break-inside: avoid; }
+  ul { break-inside: avoid; }
+  a { color: #0563C1; text-decoration: none; }
+  .row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1pt; }
+  .row .title { font-weight: bold; font-size: 10pt; }
+  .row .title a { color: #0563C1; }
+  .row .when { color: #595959; font-size: 9pt; white-space: nowrap; margin-left: 12pt; }
+  .sub { color: #595959; font-size: 9.5pt; margin-bottom: 4pt; }
+  ul { list-style: none; margin: 0 0 4pt; padding: 0; }
+  ul li { padding-left: 12pt; position: relative; margin-bottom: 2.5pt; }
+  ul li::before { content: "\2022"; position: absolute; left: 2pt; color: #595959; }
+  .skills p { margin-bottom: 3pt; }
+  .skills b { font-weight: bold; }
+  .proj { margin-bottom: 6pt; }
+  .proj .meta { color: #595959; font-size: 9pt; margin: 1pt 0 2pt; }
+</style>
+</head>
+<body>
+  <h1>Harshit Talshania</h1>
+  <p class="contact"><span>Rajkot, Gujarat, India</span><span>+91 9574943968</span><span><a href="mailto:hrtalshania@gmail.com">hrtalshania@gmail.com</a></span><span><a href="https://www.linkedin.com/in/harshit-talshania/">www.linkedin.com/in/harshit-talshania</a></span><span><a href="https://github.com/hrtalshania">github.com/hrtalshania</a></span><span><a href="https://hrtalshania.github.io/portfolio/">hrtalshania.github.io/portfolio</a></span></p>
+
+  <h2>Summary</h2><p>Senior Software Developer with 2+ years building and running .NET back ends in production. C# and ASP.NET Core Web APIs, PostgreSQL and SQL Server with EF Core, REST contracts, JWT authentication, and asynchronous messaging with RabbitMQ. Ships payment, storage, email and messaging integrations end to end, and deploys to Docker and Linux hosts.</p>
+
+  <h2>Education</h2>
+    <div class="row"><span class="title">Bachelor of Engineering, Computer Engineering</span><span class="when">2022 - 2025</span></div>
+    <p class="sub">Gujarat Technological University (GTU)  -  SPI: 9.00  |  CPI: 8.05  |  CGPA: 8.30</p>
+  
+    <div class="row"><span class="title">Diploma in Computer Engineering</span><span class="when">2019 - 2022</span></div>
+    <p class="sub">A.V. Parekh Technical Institute, Rajkot  -  Grade: A  |  SPI: 10.00  |  CPI: 9.18</p>
+  
+
+  <h2>Technical Skills</h2><div class="skills"><p><b>Languages:</b> C#, SQL, TypeScript, Python</p><p><b>Backend:</b> ASP.NET Core Web API, Minimal APIs, .NET, Entity Framework Core, LINQ, REST API design</p><p><b>Data:</b> PostgreSQL (Neon), SQL Server (T-SQL), Schema design</p><p><b>Messaging &amp; Auth:</b> RabbitMQ, WebSocket, JWT, Refresh-token rotation, Role-based access</p><p><b>Integrations:</b> GoCardless, Razorpay, Google Auth, Mailjet, Azure Blob Storage, Cloudflare R2</p><p><b>Runtime &amp; Tools:</b> Docker, Linux, Azure, Git, Playwright, Postman, Jira</p></div>
+
+  <h2>Experience</h2>
+    <div class="row"><span class="title">Senior Software Developer - Sky9 IT Craft Private Limited, Rajkot</span><span class="when">Aug 2024 - Present</span></div>
+    <ul><li>Back-end and full-stack work across the full lifecycle on three client products: API endpoints, EF Core data access, SQL schema and query work, authentication, payment integration, and deployment. Started with a six-month internship on a live project.</li></ul>
+    <ul><li><b>DownWind Aviation:</b> Aircraft ownership and flight-record platform. Server-side booking, pilot techlog and expense flows, document uploads to Azure Blob Storage, multi-factor authentication, and GoCardless payment integration. (ASP.NET Core, Blazor, EF Core, SQL Server, Azure Blob Storage, GoCardless)</li></ul><ul><li><b>Presort EMS:</b> Enterprise mailing platform used by major US mailing organizations. Payment, invoice and reconciliation flows, plus legacy RDLC PDF generation, on SQL Server. (ASP.NET Core, Blazor, EF Core, SQL Server, RDLC)</li></ul><ul><li><b>Country Style:</b> UK waste-management admin platform. Secure authentication, bookings, invoices, reports and analysis across multiple SQL servers, an interactive site map, and charting over collection, sorting, material-waste and disposables data. (ASP.NET Core, Blazor, EF Core, SQL Server, Azure)</li></ul>
+  
+
+  <h2>Projects</h2>
+    <div class="proj">
+      <div class="row"><span class="title"><a href="https://staging-arenahub.netlify.app/">ArenaHub - Sports Venue Booking Platform</a></span><span class="when">Personal project</span></div>
+      <p>Built the API and data layer end to end: ASP.NET Core Minimal API, PostgreSQL schema on Neon with spatial queries, Razorpay payment flow, Google sign-in, and image uploads to Cloudflare R2. Angular front end on Netlify.</p>
+      <p class="meta"><b>Tech:</b> ASP.NET Core Minimal API, PostgreSQL (Neon), Entity Framework Core, Razorpay, Cloudflare R2</p>
+    </div>
+  
+    <div class="proj">
+      <div class="row"><span class="title"><a href="https://algo-trade-by-hrt.netlify.app/">Algo Trade - Real-Time Market Dashboard</a></span><span class="when">Personal project</span></div>
+      <p>Python/FastAPI service consuming broker APIs and WebSocket market feeds, streamed to an Angular UI. Built around an unreliable feed: reconnects, out-of-order ticks and stale data.</p>
+      <p class="meta"><b>Tech:</b> Python, FastAPI, WebSocket, Angular, Broker APIs</p>
+    </div>
+  
+    <div class="proj">
+      <div class="row"><span class="title">BlazingAuth - Authentication From Scratch</span><span class="when">Personal project</span></div>
+      <p>Password hashing, JWT access tokens with refresh-token rotation, role-based policies, protected API endpoints and Angular routes, and a Mailjet password-reset flow. (ASP.NET Core Web API, Angular, JWT, SQL Server)</p>
+      <p class="meta"><b>Tech:</b> ASP.NET Core Web API, JWT, Angular, SQL Server, Mailjet</p>
+    </div>
+  
+    <div class="proj">
+      <div class="row"><span class="title">Bridge Messaging - Slack / Discord / Telegram</span><span class="when">Experimental</span></div>
+      <p>Cross-platform messaging bridge in Python handling replies, reactions, threads and document sync across the Slack, Discord and Telegram APIs, with the Slack client being extended in .NET MAUI.</p>
+      <p class="meta"><b>Tech:</b> Python, Slack API, Discord API, Telegram API, .NET MAUI</p>
+    </div>
+  
+    <div class="proj">
+      <div class="row"><span class="title"><a href="https://ruhicabs.duckdns.org/">Cab Booking Platform (Self-Hosted)</a></span><span class="when">Personal project</span></div>
+      <p>Booking platform with .NET APIs and an Angular front end, self-hosted end to end on an Oracle Cloud free-tier VM: Linux setup, SSH hardening, firewall, DuckDNS domain, HTTPS, and a Neon PostgreSQL database.</p>
+      <p class="meta"><b>Tech:</b> ASP.NET Core, Angular, Linux, Oracle Cloud VM, Neon (PostgreSQL)</p>
+    </div>
+  
+
+  
+</body>
+</html>

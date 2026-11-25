@@ -1,0 +1,23 @@
+HARSHIT TALSHANIA
+Rajkot, Gujarat, India | +91 9574943968 | hrtalshania@gmail.com | www.linkedin.com/in/harshit-talshania | github.com/hrtalshania | hrtalshania.github.io/portfolio
+
+24 November 2026
+
+Hiring Manager
+Senior Back-End Developer
+Jibble Group
+
+Dear Jibble Group Hiring Team,
+
+I'm applying for the Senior Back-End Developer role at Jibble Group. I'm a Senior Software Developer at Sky9 IT Craft in Rajkot, India, where I build and run .NET back ends for client products in aviation, mailing and waste management.
+
+The part of my work closest to yours is the integration layer. I've built GoCardless payment flows and multi-factor authentication for an aircraft records platform, invoice and reconciliation logic for an enterprise mailing system, and reporting across multiple SQL Server instances for a UK waste-management product. On my own time I built ArenaHub end to end: an ASP.NET Core Minimal API, a PostgreSQL schema on Neon with spatial queries, Razorpay checkout, Google sign-in, and image uploads to Cloudflare R2.
+
+That work runs on C# and ASP.NET Core, EF Core against PostgreSQL and SQL Server, REST contracts other teams can consume, JWT authentication, and RabbitMQ where a request should not block on the work behind it. I deploy to Docker and Linux hosts, and I test the failure paths before calling a feature done: reconnects, retries, and stale reads.
+
+Jibble 2.0 runs on .NET Core, but what the product actually lives on is its integrations: Gusto, Intercom, Zenefits and Zapier. That is the surface I've spent the last two years on, and a time-tracking product is only as good as the systems it keeps in sync. I'd want to own that layer: the contracts, the retries, and the reconciliation when a third party changes something without warning. I also like that Jibble has been remote-first since 2017 and keeps teams small enough that one engineer can carry a feature from schema to deployment.
+
+I'm based in UTC+5:30, inside the UTC to UTC+8 window in your posting, and I can start after 30 days' notice. My portfolio and case studies are at https://hrtalshania.github.io/portfolio/. I'd welcome a conversation about the back end at Jibble Group. Thank you for your time.
+
+Sincerely,
+Harshit Talshania

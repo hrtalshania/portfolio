@@ -13,8 +13,11 @@ const {
   ExternalHyperlink,
 } = require("docx");
 
+// Variant support: `node build.js data.backend.json`
+// Each data file can set "outputBase" to control the file name it writes.
+const dataFile = process.argv[2] || "data.json";
 const data = JSON.parse(
-  fs.readFileSync(path.join(__dirname, "data.json"), "utf8")
+  fs.readFileSync(path.join(__dirname, dataFile), "utf8")
 );
 
 const FONT = "Calibri";
@@ -279,11 +282,8 @@ const doc = new Document({
   ],
 });
 
-const outPath = path.join(
-  __dirname,
-  "..",
-  "Harshit_Talshania_Resume.docx"
-);
+const outBase = data.outputBase || "Harshit_Talshania_Resume";
+const outPath = path.join(__dirname, "..", outBase + ".docx");
 
 Packer.toBuffer(doc).then((buf) => {
   fs.writeFileSync(outPath, buf);

@@ -42,7 +42,7 @@
     },
     {
       "category": "Cloud & Integrations",
-      "items": ["Azure Blob Storage", "Cloudflare R2", "Neon", "Razorpay", "GoCardless", "Netlify", "Render", "Oracle Cloud", "DuckDNS", "WebSocket", "Mailjet"]
+      "items": ["Azure Blob Storage", "Cloudflare R2", "Neon", "Razorpay", "GoCardless", "Netlify", "Render", "Oracle Cloud", "DuckDNS", "WebSocket", "RabbitMQ", "Mailjet"]
     },
     {
       "category": "Testing & Tools",
@@ -51,7 +51,7 @@
   ],
   "experience": [
     {
-      "role": "Software Engineer (Full Stack .NET)",
+      "role": "Senior Software Developer",
       "company": "Sky9 IT Craft Private Limited, Rajkot",
       "period": "Aug 2024 - Present",
       "description": "Work across the full development lifecycle: development, debugging, APIs, databases, cloud, and deployment. Started with a 6-month internship on a live project, contributing to backend development and Blazor UI. Client projects:",
